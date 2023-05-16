@@ -41,7 +41,7 @@ namespace membership_system_G_fit
 			//sqlConn.Open();
 
 			Profile profile = new Profile();
-			profile.account = lblUser.Text;
+		//	profile.account = lblUser.Text;
 			profile.Show();
 			this.Hide();
 
@@ -56,31 +56,38 @@ namespace membership_system_G_fit
 
 		private void Dashboard_members_Load(object sender, EventArgs e)
 		{
-			Loginuser loginuser = new Loginuser();
+			//Loginuser loginuser = new Loginuser();
+
+			// Retrieve the data
+			string data = ApplicationData.Instance.SharedData;  //load the saved user who logged in 
+
+			/*	string nameData = "";
+			   try
+			   {
+				   sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				   sqlConn.Open();
+				   sqlQuery = "SELECT * FROM membership.members WHERE username = '"+ data + "'";
+				   sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+				   sqlReader = sqlCmd.ExecuteReader();
+
+				   while (sqlReader.Read())
+				   {
+					   nameData = sqlReader.GetString("first_name");
+					   //retrieve other column values as needed
+				   }
+
+				   lblUser.Text = nameData;
+
+			   }
+			   catch (Exception ex)
+			   {
+
+				   MessageBox.Show(ex.Message);
+			   } */
+
+			lblUser.Text = data;
+
 			
-			string nameData = "";
-			try
-			{
-				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-				sqlConn.Open();
-				sqlQuery = "SELECT * FROM membership.members WHERE username = '"+User+"'";
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-				sqlReader = sqlCmd.ExecuteReader();
-
-				while (sqlReader.Read())
-				{
-					nameData = sqlReader.GetString("first_name");
-					//retrieve other column values as needed
-				}
-
-				lblUser.Text = nameData;
-
-			}
-			catch (Exception ex)
-			{
-
-				MessageBox.Show(ex.Message);
-			}
 		}
 
 		private void label4_Click(object sender, EventArgs e)
@@ -110,5 +117,7 @@ namespace membership_system_G_fit
 			}
 			
 		}
+
+
 	}
 }

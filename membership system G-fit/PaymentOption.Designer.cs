@@ -168,6 +168,7 @@
 			this.rdbEwallet.Text = "E- wallet";
 			this.rdbEwallet.UseVisualStyleBackColor = true;
 			this.rdbEwallet.CheckedChanged += new System.EventHandler(this.rdbEwallet_CheckedChanged);
+			this.rdbEwallet.Click += new System.EventHandler(this.rdbEwallet_Click);
 			// 
 			// cmbEwallet
 			// 
@@ -181,7 +182,9 @@
 			this.cmbEwallet.Name = "cmbEwallet";
 			this.cmbEwallet.Size = new System.Drawing.Size(121, 27);
 			this.cmbEwallet.TabIndex = 7;
+			this.cmbEwallet.Visible = false;
 			this.cmbEwallet.SelectedIndexChanged += new System.EventHandler(this.cmbEwallet_SelectedIndexChanged);
+			this.cmbEwallet.SelectedValueChanged += new System.EventHandler(this.cmbEwallet_SelectedValueChanged);
 			// 
 			// pictureBox5
 			// 

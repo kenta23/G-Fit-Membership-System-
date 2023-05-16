@@ -55,7 +55,12 @@
 			this.rdbFemale = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.label10 = new System.Windows.Forms.Label();
-			this.txtID = new System.Windows.Forms.TextBox();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.txtUsername = new System.Windows.Forms.TextBox();
+			this.txtPassword = new System.Windows.Forms.TextBox();
+			this.lblPassword = new System.Windows.Forms.Label();
+			this.panelAccount = new System.Windows.Forms.Panel();
+			this.lblID = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridEmployees)).BeginInit();
@@ -70,7 +75,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1016, 70);
+			this.panel1.Size = new System.Drawing.Size(1007, 70);
 			this.panel1.TabIndex = 1;
 			// 
 			// label1
@@ -227,6 +232,8 @@
 			this.cmbPosition.Name = "cmbPosition";
 			this.cmbPosition.Size = new System.Drawing.Size(130, 27);
 			this.cmbPosition.TabIndex = 14;
+			this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
+			this.cmbPosition.SelectedValueChanged += new System.EventHandler(this.cmbPosition_SelectedValueChanged);
 			// 
 			// txtAddress
 			// 
@@ -284,7 +291,7 @@
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(81, 38);
 			this.btnEdit.TabIndex = 18;
-			this.btnEdit.Text = "Edit";
+			this.btnEdit.Text = "Update";
 			this.btnEdit.TextColor = System.Drawing.Color.White;
 			this.btnEdit.UseVisualStyleBackColor = false;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -390,21 +397,76 @@
 			this.label10.TabIndex = 25;
 			this.label10.Text = "Staff ID:";
 			// 
-			// txtID
+			// lblUsername
 			// 
-			this.txtID.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtID.Location = new System.Drawing.Point(200, 390);
-			this.txtID.Name = "txtID";
-			this.txtID.Size = new System.Drawing.Size(37, 27);
-			this.txtID.TabIndex = 27;
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblUsername.Location = new System.Drawing.Point(465, 612);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.Size = new System.Drawing.Size(105, 26);
+			this.lblUsername.TabIndex = 28;
+			this.lblUsername.Text = "Username:";
+			this.lblUsername.Visible = false;
+			// 
+			// txtUsername
+			// 
+			this.txtUsername.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.txtUsername.Location = new System.Drawing.Point(576, 611);
+			this.txtUsername.Name = "txtUsername";
+			this.txtUsername.Size = new System.Drawing.Size(134, 27);
+			this.txtUsername.TabIndex = 29;
+			this.txtUsername.Visible = false;
+			this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+			// 
+			// txtPassword
+			// 
+			this.txtPassword.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.txtPassword.Location = new System.Drawing.Point(576, 653);
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(134, 27);
+			this.txtPassword.TabIndex = 31;
+			this.txtPassword.UseSystemPasswordChar = true;
+			this.txtPassword.Visible = false;
+			// 
+			// lblPassword
+			// 
+			this.lblPassword.AutoSize = true;
+			this.lblPassword.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblPassword.Location = new System.Drawing.Point(465, 654);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(100, 26);
+			this.lblPassword.TabIndex = 30;
+			this.lblPassword.Text = "Password:";
+			this.lblPassword.Visible = false;
+			// 
+			// panelAccount
+			// 
+			this.panelAccount.Location = new System.Drawing.Point(464, 590);
+			this.panelAccount.Name = "panelAccount";
+			this.panelAccount.Size = new System.Drawing.Size(263, 109);
+			this.panelAccount.TabIndex = 32;
+			// 
+			// lblID
+			// 
+			this.lblID.AutoSize = true;
+			this.lblID.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblID.Location = new System.Drawing.Point(200, 391);
+			this.lblID.Name = "lblID";
+			this.lblID.Size = new System.Drawing.Size(20, 23);
+			this.lblID.TabIndex = 33;
+			this.lblID.Text = "*";
 			// 
 			// Staff
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-			this.ClientSize = new System.Drawing.Size(1016, 711);
-			this.Controls.Add(this.txtID);
+			this.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.ClientSize = new System.Drawing.Size(1007, 749);
+			this.Controls.Add(this.lblID);
+			this.Controls.Add(this.txtPassword);
+			this.Controls.Add(this.lblPassword);
+			this.Controls.Add(this.txtUsername);
+			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.radioButton1);
 			this.Controls.Add(this.rdbFemale);
@@ -429,6 +491,7 @@
 			this.Controls.Add(this.dataGridEmployees);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.panelAccount);
 			this.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Staff";
@@ -473,6 +536,11 @@
 		private RadioButton rdbFemale;
 		private RadioButton radioButton1;
 		private Label label10;
-		private TextBox txtID;
+		private Label lblUsername;
+		private TextBox txtUsername;
+		private TextBox txtPassword;
+		private Label lblPassword;
+		private Panel panelAccount;
+		private Label lblID;
 	}
 }

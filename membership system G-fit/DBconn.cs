@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace membership_system_G_fit
 {
@@ -120,7 +121,6 @@ namespace membership_system_G_fit
 			DataTable tbl = new DataTable();
 			adp.Fill(tbl);
 			dgv.DataSource = tbl;
-			con.Close();
 		}
 		
 	}

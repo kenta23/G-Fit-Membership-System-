@@ -25,6 +25,8 @@ namespace membership_system_G_fit
 		public string paymentoption { get; set; }
 		public string cmbOption { get; set; }
 
+		string data;
+
 		//DATABASE CONNECTION
 		MySqlConnection sqlConn = new MySqlConnection();
 		MySqlCommand sqlCmd = new MySqlCommand();
@@ -59,41 +61,49 @@ namespace membership_system_G_fit
 
 		private void btnYes_Click(object sender, EventArgs e)
 		{
-			
-
-         try
+			if (cmbType.SelectedItem == null)
 			{
-				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-				sqlConn.Open();
-				sqlQuery = "UPDATE membership.members SET paid = '"+"Yes"+"', member_type = '" + cmbType.Text + "' WHERE username = '"+lblUser.Text+"' ";
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-
-				sqlCmd.ExecuteNonQuery();
-				
-				MessageBox.Show("You paid " + amountPay + " Thank you!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				sqlConn.Close();
-				this.Hide();
-				new Loginuser().Show();
-			}
-	 	catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Please select your membership type", "Membership type required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 
+			else
+			{
+				try
+				{
+					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+					sqlConn.Open();
+					sqlQuery = "UPDATE membership.members SET paid = '" + "yes" + "', member_type = '" + cmbType.Text + "' WHERE username = '" + data + "' ";
+					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 
-			
+					sqlCmd.ExecuteNonQuery();
+
+					MessageBox.Show("You paid " + amountPay + " Thank you!", "Membership paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					sqlConn.Close();
+
+
+					this.Hide();
+					Dashboard_members members = new Dashboard_members();
+					this.Hide();
+					members.Show();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+
+
+			}
 
 		}
 
 		private void btnNo_Click(object sender, EventArgs e)
 		{
-			DialogResult result = MessageBox.Show("You want to go back to Homepage?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+			DialogResult result = MessageBox.Show("You want to go back", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
 			if(result == DialogResult.Yes)
 			{
 				this.Hide();
-				this.Hide();
-				new Dashboard_members().Show();
+				new PaymentOption().Show();
 			}
 		}
 
@@ -103,9 +113,13 @@ namespace membership_system_G_fit
 			//	string textBoxValue = paymentopt.GetTextBoxValue();
 			//	lblPaymentOpt.Text = textBoxValue;
 
+			data = ApplicationData.Instance.SharedData;
 
-			lblUser.Text = user;
+
+			//lblUser.Text = user;
+			lblUser.Text = data;
 			//lblAmount.Text = pay;
+
 			lblPaymentOpt.Text = paymentoption;
 			cmbType.Text = cmbOption;
 		}

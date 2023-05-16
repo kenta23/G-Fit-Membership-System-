@@ -65,6 +65,7 @@
 			panel2.Size = new System.Drawing.Size(325, 304);
 			panel2.TabIndex = 2;
 			panel2.UseWaitCursor = true;
+			panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
 			// 
 			// checkBox1
 			// 
@@ -132,6 +133,7 @@
 			this.pictureBox4.TabIndex = 5;
 			this.pictureBox4.TabStop = false;
 			this.pictureBox4.UseWaitCursor = true;
+			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
 			// 
 			// pictureBox3
 			// 
@@ -164,6 +166,7 @@
 			this.txtUser.Size = new System.Drawing.Size(192, 31);
 			this.txtUser.TabIndex = 0;
 			this.txtUser.UseWaitCursor = true;
+			this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
 			// 
 			// pictureBox1
 			// 
@@ -212,6 +215,7 @@
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 3;
 			this.pictureBox2.TabStop = false;
+			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
 			// 
 			// btnBack
 			// 

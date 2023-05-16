@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
+
+		
 
 		//DATABASE CONNECTION
 		MySqlConnection sqlConn = new MySqlConnection();
@@ -39,7 +42,7 @@ namespace membership_system_G_fit
 
 			exitApp = MessageBox.Show("Exit Application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
+			
 			try
 			{
 
@@ -62,12 +65,15 @@ namespace membership_system_G_fit
 		}
 		public void Clear()
 		{
+			lblID.Text = "";
 			txtFirstname.Text = "";
 			txtLastname.Text = "";
 			txtContact.Text = "";
 			txtAddress.Text = "";
 			cmbPosition.Text = "";
 			txtAge.Text = "";
+			txtUsername.Text = "";
+			txtPassword.Text = "";
 		}
 	     string gender = "";
 
@@ -86,35 +92,75 @@ namespace membership_system_G_fit
 				gender = "Others";
 			}
 
-			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-			sqlConn.Open();
-
-			try
+			if (txtFirstname.Text == "" || txtLastname.Text == "" || txtContact.Text == "" || txtAddress.Text == "" || txtAge.Text == "" || cmbPosition.Text == "" || txtUsername.Text == "" || txtPassword.Text == "")
 			{
-				sqlQuery = "INSERT INTO membership.staff (firstname, lastname, contact, address, Gender, age, position) " +
-						   "VALUES('" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtContact.Text + "', '" + txtAddress.Text + "', '" + gender + "', '" + txtAge.Text + "', '" + cmbPosition.Text + "')";
-
-
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-				sqlReader = sqlCmd.ExecuteReader();
-				sqlConn.Close();
-
-				MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+				MessageBox.Show("Complete all the fields", "Incomplete input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
-			catch (Exception ex)
+			else
 			{
-				MessageBox.Show(ex.Message);
-			}
 
-			display();
-			Clear();
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				sqlConn.Open();
 
-		}
+				string existedAccount = "SELECT * FROM membership.staff WHERE username=@username AND password=@password";
+				MySqlCommand command = new MySqlCommand(existedAccount, sqlConn);
+				//command.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+				//command.Parameters.AddWithValue("@lastname", txtLastname.Text);
+				command.Parameters.AddWithValue("@username", txtUsername.Text);
+				command.Parameters.AddWithValue("@password", txtPassword.Text);
+
+				sqlReader = command.ExecuteReader();
+				
+
+				if(sqlReader.HasRows) {
+					MessageBox.Show("This Username and Password already existed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					
+				}
+
+				else
+				{
+					sqlReader.Close();
+
+
+					try
+					{
+						sqlQuery = "INSERT INTO membership.staff (firstname, lastname, contact, address, Gender, age, position, username, password) " +
+								   "VALUES('" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtContact.Text + "', '" + txtAddress.Text + "', '" + gender + "', '" + txtAge.Text + "', '" + cmbPosition.Text + "', '" + txtUsername.Text + "',  '" + txtPassword.Text + "')";
+
+
+						sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+						sqlReader = sqlCmd.ExecuteReader();
+
+
+						MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						sqlReader.Close();
+
+
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+					finally
+					{
+						sqlConn.Close();
+					}
+
+				}				
+		  }
+			
+
+
+				display();
+				Clear();
+			
+			sqlConn.Close();
+
+    }
 
 		private void dataGridEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			txtID.Text = dataGridEmployees.SelectedRows[0].Cells[0].Value.ToString();
+			lblID.Text = dataGridEmployees.SelectedRows[0].Cells[0].Value.ToString();
 			txtFirstname.Text = dataGridEmployees.SelectedRows[0].Cells[1].Value.ToString();
 			txtLastname.Text = dataGridEmployees.SelectedRows[0].Cells[2].Value.ToString();	
 			txtLastname.Text = dataGridEmployees.SelectedRows[0].Cells[2].Value.ToString();
@@ -123,6 +169,8 @@ namespace membership_system_G_fit
 			gender = dataGridEmployees.SelectedRows[0].Cells[5].Value.ToString();
 			txtAge.Text = dataGridEmployees.SelectedRows[0].Cells[6].Value.ToString();
 			cmbPosition.Text = dataGridEmployees.SelectedRows[0].Cells[7].Value.ToString();
+			//txtUsername.Text = dataGridEmployees.SelectedRows[0].Cells[8].Value.ToString();
+			//txtPassword.Text = dataGridEmployees.SelectedRows[0].Cells[9].Value.ToString();
 		}
 
 		private void dataGridEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -144,25 +192,26 @@ namespace membership_system_G_fit
 				 {
 				  
 				   sqlCmd.Connection = sqlConn;
-				   sqlQuery = "UPDATE membership.staff SET firstname = @firstname, contact = @contact, address =@address, Gender =@gender, age = @age, position = @position WHERE id = @idValue";
+				   sqlQuery = "UPDATE membership.staff SET firstname = @firstname, contact = @contact, address =@address, Gender =@gender, age = @age, position = @position, username = @username, password = @password WHERE id = @idValue";
 										
 				   sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 				  
 
 				   sqlCmd.CommandType = CommandType.Text;
 
-
-				   sqlCmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+				   sqlCmd.Parameters.AddWithValue("@idValue", lblID.Text);
+			       sqlCmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
 				   sqlCmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
 				   sqlCmd.Parameters.AddWithValue("@contact", txtContact.Text);
 				   sqlCmd.Parameters.AddWithValue("@address", txtAddress.Text);
 				   sqlCmd.Parameters.AddWithValue("@gender", gender);
 				   sqlCmd.Parameters.AddWithValue("@age", txtAge.Text);
 				   sqlCmd.Parameters.AddWithValue("@position", cmbPosition.Text);
-				   sqlCmd.Parameters.AddWithValue("@idValue", txtID.Text);
+				   sqlCmd.Parameters.AddWithValue("@username", txtUsername.Text);
+				   sqlCmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
 
-				  sqlCmd.ExecuteNonQuery(); //for update, insert and deleting data 
+				sqlCmd.ExecuteNonQuery(); //for update, insert and deleting data 
 				  sqlConn.Close();
 
 				  MessageBox.Show("Successfully Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -225,6 +274,31 @@ namespace membership_system_G_fit
 		{
 			this.Hide();
 			new Dashboard().Show();
+		}
+
+		//don't delete!!
+		private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void cmbPosition_SelectedValueChanged(object sender, EventArgs e)
+		{
+			lblUsername.Visible = true; 
+			lblPassword.Visible = true;
+			txtUsername.Visible = true; 
+			txtPassword.Visible = true;
+			
+		}
+
+		private void txtUsername_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

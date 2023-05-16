@@ -11,7 +11,7 @@ namespace membership_system_G_fit
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
-			Application.Run(new Optionlogin());
+			Application.Run(new Starting_page());
 		}
 	}
 }

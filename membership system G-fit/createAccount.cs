@@ -84,6 +84,10 @@ namespace membership_system_G_fit
 			{
 				MessageBox.Show("Confirm Password correctly", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			else if (txtPassword.Text.Length <= 8 || txtPassword.Text.Length <= 8)
+			{
+				MessageBox.Show("Password is too short", "Password not valid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 
 		else { 
 				
@@ -113,19 +117,13 @@ namespace membership_system_G_fit
 			{
 				sqlConn.Close();
 			}
+ 
+                MessageBox.Show("Go back to Homepage", "Account Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-				DialogResult homepage;
-
-				homepage = MessageBox.Show("Go back to Homepage?", "G-Fit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-				if (homepage == DialogResult.Yes)
-				{
-					this.Hide();
-					Loginuser loginuser = new Loginuser();
-					loginuser.ShowDialog();
-					this.Show();
-				}
+				this.Hide();
+				Loginuser loginuser = new Loginuser();
+				loginuser.ShowDialog();
+				this.Show();
 
 			}
 		}

@@ -85,41 +85,53 @@ namespace membership_system_G_fit
 			//connection string 
 			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 
-			try
-			{
-				sqlConn.Open();
-				String account = "SELECT * FROM membership.members WHERE username = '" + txtUser.Text + "' and password = '" + txtPass.Text + "'";
-
-				sqlCmd = new MySqlCommand(account, sqlConn);
-				sqlReader = sqlCmd.ExecuteReader();
 
 
-				if (sqlReader.Read() == true)
+				try
 				{
-					MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					sqlConn.Open();
+					String account = "SELECT * FROM membership.members WHERE username = '" + txtUser.Text + "' and password = '" + txtPass.Text + "'";
+
+					sqlCmd = new MySqlCommand(account, sqlConn);
+					sqlReader = sqlCmd.ExecuteReader();
+
+
+
+					if (sqlReader.Read() == true)
+					{
+
+						MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						Dashboard_members dashboard = new Dashboard_members();
 						dashboard.User = txtUser.Text;
 						dashboard.Show();
-				    	this.Hide();
+						this.Hide();
 
-					//   Username = txtUser.Text;
+
+						//   Username = txtUser.Text;
+					}
+
+					else
+					{
+						MessageBox.Show("Username or Password doesn't match!", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
+
+
+
+
 				}
 
-				else
+				catch (Exception ex)
 				{
-					MessageBox.Show("Username or Password doesn't match!", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					MessageBox.Show(ex.Message);
+					sqlConn.Close();
 				}
 
-
-			}
-
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-				sqlConn.Close();
-			}
-
-
+				finally
+				{
+					sqlConn.Close();
+				}
+			
+			
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -148,6 +160,26 @@ namespace membership_system_G_fit
 		{
 			this.Hide();
 			new Optionlogin().Show();
+		}
+
+		private void panel2_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtUser_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void pictureBox4_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -118,11 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="335858524_1209455429715802_525137634072389757_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\335858524_1209455429715802_525137634072389757_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bar_2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bar_2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_g_-_fit-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_g_-_fit-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redbull" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redbull.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +139,8 @@
   <data name="335100357_938680437272391_1081034993042750670_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\335100357_938680437272391_1081034993042750670_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="334949177_6344072435605888_3789531196105063088_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\334949177_6344072435605888_3789531196105063088_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Silver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Silver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +169,9 @@
   <data name="hand money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hand money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gym" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gym.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="creatine caps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\creatine caps.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,14 +187,14 @@
   <data name="Protein shake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Protein shake.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="payment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\payment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="334884566_1250623032528665_7041467783503847149_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\334884566_1250623032528665_7041467783503847149_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="334916986_519895766976332_3617693967803212140_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\334916986_519895766976332_3617693967803212140_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_g_-_fit-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_g_-_fit-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Silver 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Silver 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +205,9 @@
   <data name="pink coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pink coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Platinum 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="universal creatine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\universal creatine.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,17 +217,14 @@
   <data name="protein shake bottle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\protein shake bottle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="334911262_584837146896162_3113683020547611700_n-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\334911262_584837146896162_3113683020547611700_n-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="334972438_521601413490553_2750415487389964587_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\334972438_521601413490553_2750415487389964587_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="334943619_606537104656910_1868755821071732830_n-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\334943619_606537104656910_1868755821071732830_n-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="walk in" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walk in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="steel pre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\steel pre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="png-clipart-arrow-computer-icons-right-arrow-angle-triangle-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-clipart-arrow-computer-icons-right-arrow-angle-triangle-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,9 +250,6 @@
   <data name="line full1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line full1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tumbler" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tumbler.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Gold 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,17 +268,26 @@
   <data name="335858524_1209455429715802_525137634072389757_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\335858524_1209455429715802_525137634072389757_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="334884566_1250623032528665_7041467783503847149_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\334884566_1250623032528665_7041467783503847149_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="335071777_868567987562577_119254835126047013_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\335071777_868567987562577_119254835126047013_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="334916986_519895766976332_3617693967803212140_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\334916986_519895766976332_3617693967803212140_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="335858524_1209455429715802_525137634072389757_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\335858524_1209455429715802_525137634072389757_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gold1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Platinum 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Platinum 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="334949177_6344072435605888_3789531196105063088_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\334949177_6344072435605888_3789531196105063088_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bar_2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3 gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3 gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,8 +313,8 @@
   <data name="monster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monster.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="334972438_521601413490553_2750415487389964587_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\334972438_521601413490553_2750415487389964587_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="334911262_584837146896162_3113683020547611700_n-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\334911262_584837146896162_3113683020547611700_n-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="weightlifting belt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weightlifting belt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,11 +322,11 @@
   <data name="335013289_1627043314480823_5027701437736796159_n-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\335013289_1627043314480823_5027701437736796159_n-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_g_-_fit-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_g_-_fit-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tumbler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tumbler.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_g_-_fit-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_g_-_fit-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="steel pre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\steel pre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vitamilk soya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vitamilk soya.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,16 +337,13 @@
   <data name="335013289_1627043314480823_5027701437736796159_n-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\335013289_1627043314480823_5027701437736796159_n-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Whey Protein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Whey Protein.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Platinum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Platinum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Whey Protein" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Whey Protein.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gym" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gym.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dumbbells-568094543df78ccc15a5b493" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dumbbells-568094543df78ccc15a5b493.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

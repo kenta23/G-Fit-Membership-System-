@@ -64,6 +64,9 @@
     <Compile Update="Staff.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Starting page.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="thirdID.cs">
       <SubType>Form</SubType>
     </Compile>

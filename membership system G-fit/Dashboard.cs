@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
+
 namespace membership_system_G_fit
 {
 	public partial class Dashboard : Form
@@ -102,7 +104,7 @@ namespace membership_system_G_fit
 			if(logout == DialogResult.Yes)
 			{
 				this.Hide();
-				new Loginadmin().Show();
+				new Starting_page().Show();
 			}
 		}
 

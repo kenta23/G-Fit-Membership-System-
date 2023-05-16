@@ -393,6 +393,16 @@ namespace membership_system_G_fit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dumbbells_568094543df78ccc15a5b493 {
+            get {
+                object obj = ResourceManager.GetObject("Dumbbells-568094543df78ccc15a5b493", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap employer {
             get {
                 object obj = ResourceManager.GetObject("employer", resourceCulture);

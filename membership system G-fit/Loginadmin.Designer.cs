@@ -140,7 +140,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+			this.panel1.BackColor = System.Drawing.Color.MistyRose;
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.pictureBox1);

@@ -24,12 +24,13 @@ namespace membership_system_G_fit
 
 		}
 		public String paymentString { get; set; }
-		public String user { get; set; }	
+		public String user { get; set; }
+
+		string choices = "";
 
 		public string GetTextBoxValue()
 		{
-			string choices = "";
-
+			
 			if (rdbOnHand.Checked)
 			{
 				choices = "On hand Payment";
@@ -68,53 +69,24 @@ namespace membership_system_G_fit
 
 		private void btnProceed_Click(object sender, EventArgs e)
 		{
-			/*string choices = "";
-
-			if (rdbOnHand.Checked)
+			if (cmbEwallet.Visible = true)
 			{
-				choices = "On hand Payment";
-			}
-		   if (rdbEwallet.Checked)
-			{
-				/*if (cmbEwallet.SelectedIndex == 0)
+				if (cmbEwallet.SelectedItem == null)
 				{
-					choices = "Gcash";
-				}
-				else if (cmbEwallet.SelectedIndex == 1)
-				{
-					choices = "Paymaya";
-				}
-				else if (cmbEwallet.SelectedIndex == 2)
-				{
-					choices = "Paypal";
+					MessageBox.Show("Please select your E-wallet payment", "Payment failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
 				else
 				{
-					choices = "";
-				} 
-				choices = "E wallet";
+					Amount amount = new Amount();
+					amount.user = lblUser.Text;
+					amount.pay = GetTextBoxValue();
+					amount.paymentoption = GetTextBoxValue();
+					amount.Show();
+					this.Hide();
+				}
 			}
-		  if (rdbCreds.Checked)
-			{
-				choices = "Credit card/Debit card";
-			}
-		  if (rdbOlBanking.Checked)
-			{
-				choices = "Online Banking";
-			}
+				
 
-
-			//paymentString = choices;
-			choices = label3.Text; */
-
-			//GetTextBoxValue();
-
-			Amount amount = new Amount();
-			amount.user = lblUser.Text;
-			//amount.pay = GetTextBoxValue();
-			amount.paymentoption = GetTextBoxValue();
-			amount.Show();
-			this.Hide();
 		}
 
 
@@ -122,50 +94,61 @@ namespace membership_system_G_fit
 
 		private void PaymentOption_Load(object sender, EventArgs e)
 		{
-			lblUser.Text = user;
+		  string data =	ApplicationData.Instance.SharedData;
+
+			//lblUser.Text = user;
+			lblUser.Text = data;
 			
 		}
 
 		private void rdbOnHand_CheckedChanged(object sender, EventArgs e)
 		{
-			string choices;
+			
 			choices = rdbOnHand.Text.ToString();
 			
 		}
 
 		private void rdbEwallet_CheckedChanged(object sender, EventArgs e)
 		{
-			string choices = "";
+			if(rdbEwallet.Checked)
+			{
+				cmbEwallet.Visible = true;
+			}
+			else
+			{
+				cmbEwallet.Visible = false;
+			}
+
+
 			choices = rdbEwallet.Text.ToString();
 		}
 
 		private void rdbCreds_CheckedChanged(object sender, EventArgs e)
 		{
-			string choices = "";
+			
 			choices = rdbEwallet.Text.ToString();
 		}
 
 		private void rdbOlBanking_CheckedChanged(object sender, EventArgs e)
 		{
-			string choices = "";
+			
 			choices = rdbEwallet.Text.ToString();
 		}
 
 		private void cmbEwallet_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if(cmbEwallet.SelectedIndex == 0) {
-				string choices = "";
+				//string choices = "";
 				choices = "Gcash";
 			}
 			else if(cmbEwallet.SelectedIndex == 1) {
-				string choices = "";
+				
 				choices = "Paymaya";
 
 			}
 
 			else if (cmbEwallet.SelectedIndex == 2)
 			{
-				string choices = "";
 				choices = "Paypal";
 
 			}
@@ -187,6 +170,16 @@ namespace membership_system_G_fit
 		{
 			this.Hide();
 			new Dashboard_members().Show();
+		}
+
+		private void cmbEwallet_SelectedValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void rdbEwallet_Click(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

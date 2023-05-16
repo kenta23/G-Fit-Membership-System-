@@ -126,7 +126,7 @@
 			// 
 			// panel2
 			// 
-			this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
+			this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.panel2.Controls.Add(this.pictureBox8);
 			this.panel2.Controls.Add(this.lblIDreg);
 			this.panel2.Controls.Add(this.label3);

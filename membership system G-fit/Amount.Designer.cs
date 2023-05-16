@@ -121,7 +121,7 @@
 			this.cmbType.Items.AddRange(new object[] {
             "Monthly",
             "6 Months ",
-            "12 Months/Annually "});
+            "12 Months"});
 			this.cmbType.Location = new System.Drawing.Point(286, 289);
 			this.cmbType.Name = "cmbType";
 			this.cmbType.Size = new System.Drawing.Size(121, 27);

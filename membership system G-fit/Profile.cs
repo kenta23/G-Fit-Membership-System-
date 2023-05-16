@@ -13,6 +13,7 @@ using System.Xml;
 using MySql.Data.MySqlClient;
 using System.Net.Http.Headers;
 using System.Xml.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace membership_system_G_fit
 {
@@ -40,6 +41,8 @@ namespace membership_system_G_fit
 		String username = "root";
 		String password = "123";
 		String database = "membership";
+
+		string data;
 		private void label14_Click(object sender, EventArgs e)
 		{
 
@@ -48,12 +51,16 @@ namespace membership_system_G_fit
 		{
 			try
 			{
+				//get the user's data
+				data = ApplicationData.Instance.SharedData;
+
+
 				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				sqlConn.Open();
 				sqlCmd.Connection = sqlConn;
 
 
-				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, member_type  FROM membership.members WHERE first_name = '"+ account + "'";
+				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, member_type  FROM membership.members WHERE username = '"+ data + "'";
 				sqlReader = sqlCmd.ExecuteReader();
 					
 					
@@ -82,7 +89,7 @@ namespace membership_system_G_fit
 		private void Profile_Load(object sender, EventArgs e)
 		{
 			uploadData();
-			lblusername.Text = account;
+			lblusername.Text = data;
 		}
 
 		private void lblExit_Click(object sender, EventArgs e)
@@ -173,70 +180,25 @@ namespace membership_system_G_fit
 		private void btnProfile_Click(object sender, EventArgs e)
 		{
 
-		/*	try
-			{
-				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-				sqlConn.Open();
-
-				sqlQuery = "SELECT first_name, last_name, member_type from membership.members WHERE username = '" + lblUser.Text + "' ";
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-
-				sqlReader = sqlCmd.ExecuteReader();
-
-				//sqlCmd.ExecuteNonQuery();
-				while (sqlReader.Read())
-				{
-					membertype = sqlReader.GetString("member_type");
-					// retrieve other column values as needed
-				}
-
-
-				sqlConn.Close();
-			}
-
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-		*/
+		
 			 Amount amount = new Amount();
 
 			
  
-		/*	if (lblMemberType.Text == "Monthly")
-			{
-				firstID firstid = new firstID();
-				firstid.name = lblusername.Text;
-				firstid.Show();
-			}
-
-			else if (lblMemberType.Text == "6 Months")
-			{
-				
-				secondID secondid = new secondID();
-				secondid.name = lblusername.Text;
-				secondid.Show();
-			}
-		   else if (lblMemberType.Text == "12 Months/Annually")
-			{
-				
-				thirdID thirdid = new thirdID();
-				thirdid.name = lblusername.Text;
-				thirdid.Show();
-			}
-
-			else
-			{
-				MessageBox.Show("You need to pay your Membership Subscription to get the ID ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-
-	   */
 		}
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
+			
+			// Retrieve the data
+			string data = ApplicationData.Instance.SharedData;
+
 			this.Hide();
-			new Dashboard_members().Show();
+			Dashboard_members members = new Dashboard_members();
+			members.User = data;
+			members.Show();
+			this.Hide();
+
 		}
 
 		private void lblusername_Click(object sender, EventArgs e)

@@ -50,3 +50,4 @@ C:\Users\admin.DESKTOP-RD36MUF\source\repos\membership system G-fit\membership s
 C:\Users\admin.DESKTOP-RD36MUF\source\repos\membership system G-fit\membership system G-fit\obj\Debug\net7.0-windows\membership_system_G_fit.RegisterID.resources
 C:\Users\admin.DESKTOP-RD36MUF\source\repos\membership system G-fit\membership system G-fit\obj\Debug\net7.0-windows\membership_system_G_fit.secondID.resources
 C:\Users\admin.DESKTOP-RD36MUF\source\repos\membership system G-fit\membership system G-fit\obj\Debug\net7.0-windows\membership_system_G_fit.thirdID.resources
+C:\Users\admin.DESKTOP-RD36MUF\source\repos\membership system G-fit\membership system G-fit\obj\Debug\net7.0-windows\membership_system_G_fit.Starting_page.resources

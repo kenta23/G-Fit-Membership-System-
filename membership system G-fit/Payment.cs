@@ -64,5 +64,10 @@ namespace membership_system_G_fit
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }

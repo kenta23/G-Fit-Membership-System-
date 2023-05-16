@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,13 @@ namespace membership_system_G_fit
 		String password = "123";
 		String database = "membership";
 
+
+	
+
+		
+
+		
+
 		private void label1_Click(object sender, EventArgs e)
 		{
 			DialogResult exitApp;
@@ -57,9 +65,15 @@ namespace membership_system_G_fit
 		}
 		private void display()
 		{
+
 			string sqlQuery = "SELECT customer_ID, first_name, last_name, username, member_type, status FROM membership.members";
 			DBconn.displayDB(sqlQuery, dataGridView1);
+
+
+			
 		}
+
+
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -89,12 +103,70 @@ namespace membership_system_G_fit
 				MessageBox.Show(ex.Message);
 			}
 			display();
+
 		}
 
 		private void Monitor_Load(object sender, EventArgs e)
 		{
 			display();
+
+
+			/*	try
+				{
+					//Update the status of members daily 
+
+					TimeSpan oneDay = TimeSpan.FromDays(1); // duration of one day
+					DateTime lastActionTime = DateTime.MinValue; // initialize to the earliest possible date
+
+					while (true)
+					{
+						if (DateTime.Now - lastActionTime >= TimeSpan.FromSeconds(50)) // check if one day has passed since the last action
+						{
+							// perform the daily action here
+							Console.WriteLine("Performing daily action...");
+
+							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+							String sqlDelete = "UPDATE membership.members SET status = null";
+
+							sqlConn.Open();
+
+							MySqlCommand command = new MySqlCommand(sqlDelete, sqlConn);
+							command.ExecuteNonQuery();
+							sqlConn.Close();
+
+
+							// update the last action time to the current time
+							lastActionTime = DateTime.Now;
+						}
+					}
+					Thread.Sleep(1000);
+					/*
+
+					/* while (true) // loop indefinitely
+					  {
+						 /*	sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+						  String sqlDelete = "UPDATE membership.members SET status = null";
+
+						  sqlConn.Open();
+
+						  MySqlCommand command = new MySqlCommand(sqlDelete, sqlConn);
+
+						  command.ExecuteNonQuery();
+
+
+						  sqlConn.Close(); 
+
+					// wait for one day before deleting the column again
+					//Thread.Sleep(TimeSpan.FromSeconds(50)); // wait for 1 day
+
+					}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				} */
 		}
+
+
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
@@ -111,5 +183,46 @@ namespace membership_system_G_fit
 		{
 
 		}
+
+		private void clearBtn_Click(object sender, EventArgs e)
+		{
+			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+			sqlConn.Open();
+			try
+			{
+				String sqlDelete = "UPDATE membership.members SET status = null";
+				sqlCmd = new MySqlCommand(sqlDelete, sqlConn);
+
+				sqlCmd.ExecuteNonQuery();
+				sqlConn.Close();
+
+
+				DialogResult choice;
+
+			 choice = MessageBox.Show("Are you sure you want to reset all the status of the members?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+  
+				try
+				{
+					if (choice == DialogResult.Yes)
+					{
+						MessageBox.Show("Cleared status successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+			 
+			 
+				
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			display();
+		}
 	}
-}
+  }
+
+
