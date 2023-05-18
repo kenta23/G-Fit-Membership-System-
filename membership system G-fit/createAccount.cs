@@ -63,6 +63,8 @@ namespace membership_system_G_fit
 		{
 			//Register register = new Register();
 
+
+
 			//Opening a database
 			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 
@@ -117,20 +119,18 @@ namespace membership_system_G_fit
 			{
 				sqlConn.Close();
 			}
- 
                 MessageBox.Show("Go back to Homepage", "Account Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 				this.Hide();
-				Loginuser loginuser = new Loginuser();
-				loginuser.ShowDialog();
-				this.Show();
+				Starting_page start = new Starting_page();
+				start.Show();
+				this.Hide();
 
 			}
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
-			if(checkBox1.Checked)
+			/*if(checkBox1.Checked)
 			{
 				txtPassword.PasswordChar = '\0';
 				txtConfirmPass.PasswordChar = '\0';
@@ -140,12 +140,14 @@ namespace membership_system_G_fit
 			{
 				txtPassword.PasswordChar = '*';
 				txtConfirmPass.PasswordChar = '*';
-			}
+			} ALREADY DELETED  */
 		}
 
 		private void createAccount_Load(object sender, EventArgs e)
 		{
-
+			Register register = new Register();
+			string firstnameText = register.firstnameGet;
+			//label8.Text = firstnameText;
 		}
 	}
 }

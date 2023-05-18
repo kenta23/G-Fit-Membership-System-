@@ -100,7 +100,6 @@ namespace membership_system_G_fit
 						//set the username of the user who logged in and save it 
 						ApplicationData.Instance.SharedData = txtUser.Text;
 
-
 						// grant member privileges
 						MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						Dashboard_members dashboard = new Dashboard_members();

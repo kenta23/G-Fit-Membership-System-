@@ -112,6 +112,26 @@ namespace membership_system_G_fit
 			con.Close();
 		}
 
+		public static void DeleteMembersFromArchive(string id)
+		{
+			string sql = "DELETE FROM membership.archives WHERE customer_ID = @customerID";
+			MySqlConnection con = GetConnection();
+			MySqlCommand cmd = new MySqlCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
+			cmd.Parameters.Add("@customerID", MySqlDbType.VarChar).Value = id;
+			try
+			{
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("Member deleted succesfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			con.Close();
+		}
+
 		public static void displayDB (string query, DataGridView dgv)
 		{
 			string sql = query;

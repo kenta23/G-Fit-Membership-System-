@@ -30,17 +30,15 @@
 		{
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.lblWelcome = new System.Windows.Forms.Label();
-			this.btnAdmin = new membership_system_G_fit.customizeButtons();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnCreate = new membership_system_G_fit.customizeButtons();
 			this.customizeButtons2 = new membership_system_G_fit.customizeButtons();
-			this.label1 = new System.Windows.Forms.Label();
 			this.lblName = new System.Windows.Forms.Label();
 			this.lblMembertype = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,8 +48,8 @@
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.MistyRose;
+			this.panel2.Controls.Add(this.label1);
 			this.panel2.Controls.Add(this.lblWelcome);
-			this.panel2.Controls.Add(this.btnAdmin);
 			this.panel2.Controls.Add(this.pictureBox4);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -69,26 +67,6 @@
 			this.lblWelcome.Size = new System.Drawing.Size(109, 42);
 			this.lblWelcome.TabIndex = 5;
 			this.lblWelcome.Text = "G- FIT";
-			// 
-			// btnAdmin
-			// 
-			this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.btnAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.btnAdmin.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnAdmin.BorderRadius = 12;
-			this.btnAdmin.BorderSize = 0;
-			this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAdmin.FlatAppearance.BorderSize = 0;
-			this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAdmin.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.btnAdmin.ForeColor = System.Drawing.Color.White;
-			this.btnAdmin.Location = new System.Drawing.Point(916, 20);
-			this.btnAdmin.Name = "btnAdmin";
-			this.btnAdmin.Size = new System.Drawing.Size(141, 36);
-			this.btnAdmin.TabIndex = 3;
-			this.btnAdmin.Text = "ID Registration";
-			this.btnAdmin.TextColor = System.Drawing.Color.White;
-			this.btnAdmin.UseVisualStyleBackColor = false;
 			// 
 			// pictureBox4
 			// 
@@ -114,6 +92,7 @@
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Image = global::membership_system_G_fit.Properties.Resources.Platinum;
 			this.pictureBox1.Location = new System.Drawing.Point(492, 110);
 			this.pictureBox1.Name = "pictureBox1";
@@ -164,25 +143,13 @@
 			this.customizeButtons2.UseVisualStyleBackColor = false;
 			this.customizeButtons2.Click += new System.EventHandler(this.customizeButtons2_Click);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.label1.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(748, 412);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(66, 30);
-			this.label1.TabIndex = 8;
-			this.label1.Text = "Name:";
-			// 
 			// lblName
 			// 
 			this.lblName.AutoSize = true;
 			this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
 			this.lblName.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblName.ForeColor = System.Drawing.Color.White;
-			this.lblName.Location = new System.Drawing.Point(805, 412);
+			this.lblName.Location = new System.Drawing.Point(759, 412);
 			this.lblName.Name = "lblName";
 			this.lblName.Size = new System.Drawing.Size(66, 30);
 			this.lblName.TabIndex = 9;
@@ -194,45 +161,47 @@
 			this.lblMembertype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
 			this.lblMembertype.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblMembertype.ForeColor = System.Drawing.Color.White;
-			this.lblMembertype.Location = new System.Drawing.Point(868, 442);
+			this.lblMembertype.Location = new System.Drawing.Point(759, 442);
 			this.lblMembertype.Name = "lblMembertype";
 			this.lblMembertype.Size = new System.Drawing.Size(120, 30);
 			this.lblMembertype.TabIndex = 11;
 			this.lblMembertype.Text = "member type";
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.label3.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(748, 442);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(125, 30);
-			this.label3.TabIndex = 10;
-			this.label3.Text = "Member type:";
-			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.BackColor = System.Drawing.Color.Transparent;
 			this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(156, 122);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(153, 33);
 			this.label2.TabIndex = 12;
 			this.label2.Text = "Member List";
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.label1.ForeColor = System.Drawing.Color.Red;
+			this.label1.Location = new System.Drawing.Point(1034, 21);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(32, 33);
+			this.label1.TabIndex = 28;
+			this.label1.Text = "X";
+			this.label1.Click += new System.EventHandler(this.label1_Click);
+			// 
 			// RegisterID
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ScrollBar;
+			this.BackgroundImage = global::membership_system_G_fit.Properties.Resources.background_gfit1;
 			this.ClientSize = new System.Drawing.Size(1078, 728);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.lblMembertype);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.lblName);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.customizeButtons2);
 			this.Controls.Add(this.btnCreate);
 			this.Controls.Add(this.pictureBox1);
@@ -256,17 +225,15 @@
 
 		#endregion
 		private Panel panel2;
-		private customizeButtons btnAdmin;
 		private PictureBox pictureBox4;
 		private DataGridView dataGridView1;
 		private PictureBox pictureBox1;
 		private customizeButtons btnCreate;
 		private customizeButtons customizeButtons2;
-		private Label label1;
 		private Label lblName;
 		private Label lblMembertype;
-		private Label label3;
 		private Label lblWelcome;
 		private Label label2;
+		private Label label1;
 	}
 }

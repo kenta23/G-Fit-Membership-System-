@@ -71,9 +71,15 @@ namespace membership_system_G_fit
 
 		}
 
+
+
 		public void uploadData()
 		{
-		try
+			DateTime currentTime = DateTime.Now;
+			DateTime onMinute = currentTime.AddMinutes(-1); //1 minute 
+			
+			
+			try
 			{
 				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				sqlConn.Open();
@@ -114,6 +120,8 @@ namespace membership_system_G_fit
 		private void members_Load(object sender, EventArgs e)
 		{
 			display();
+
+		
 		}
 
 		private void customizeButtons4_Click(object sender, EventArgs e)
@@ -201,26 +209,10 @@ namespace membership_system_G_fit
 
 		public void dataGridMembers_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			
+
 			try
 			{
-				//String imageLocation = "";
-				//Retrieving values from the database
-				/*	sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-					sqlConn.Open();
-
-					sqlQuery = "SELECT picture FROM membership.members WHERE customer_ID = @id";
-					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-
-				    sqlCmd.Parameters.AddWithValue("@id", lblCustomerID.Text);
-
-					string imageLocation = (string)sqlCmd.ExecuteScalar();
-					pictureBox.ImageLocation = imageLocation; //set the pictureBox.Image property to the loaded image
-
-
-					sqlConn.Close(); 
-				*/
-				
+		
 				string connectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				string sql = "SELECT picture FROM membership.members WHERE customer_ID = @id";
 
@@ -245,7 +237,7 @@ namespace membership_system_G_fit
 			catch (Exception ex)
 			{
 
-				MessageBox.Show(ex.Message);
+				//MessageBox.Show(ex.Message);
 			}
 			finally
 			{
@@ -284,21 +276,35 @@ namespace membership_system_G_fit
 			}
 			else
 			{
+				
 				try
 				{
-					MySqlCommand sqlcmd = new MySqlCommand();
-					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-					sqlConn.Open();
-					sqlCmd.Connection = sqlConn;
-					sqlCmd.CommandText = "DELETE FROM members WHERE customer_ID = " + key + ";";
+
+					   sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+					   sqlConn.Open();
+					  
+					
+	                     //member moved to archive first 
+					   string archiveMembers = "INSERT INTO membership.archives (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
+						   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+
+					   MySqlCommand archivecommand = new MySqlCommand(archiveMembers, sqlConn);
+
+					   archivecommand.ExecuteNonQuery();
+					  
+
+					  //Delete member after 
+					   sqlCmd.Connection = sqlConn;
+					   sqlCmd.CommandText = "DELETE FROM members WHERE customer_ID = " + key + ";";
+
+					   sqlCmd.ExecuteNonQuery();
+					   sqlConn.Close();
+
+					   MessageBox.Show("Member moved to Archived!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+				    	uploadData();
 
 
-
-					sqlCmd.ExecuteNonQuery();
-					sqlConn.Close();
-
-					MessageBox.Show("Member deleted Successfully!", "Member Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					uploadData();
+				   sqlConn.Close();
 
 				}
 				catch (Exception ex)
@@ -346,6 +352,8 @@ namespace membership_system_G_fit
 				sqlConn.Close();
 
 				Clear();
+
+				MessageBox.Show("Added member successfully!", "New member!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			catch (Exception ex)
 			{

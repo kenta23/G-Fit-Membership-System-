@@ -430,6 +430,7 @@
 			this.Name = "Register";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Register";
+			this.Load += new System.EventHandler(this.Register_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();

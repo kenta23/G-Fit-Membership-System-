@@ -48,7 +48,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.LightGray;
+			this.panel1.BackColor = System.Drawing.Color.MistyRose;
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.lblWelcome);
 			this.panel1.Controls.Add(this.pictureBox1);
@@ -76,7 +76,7 @@
 			this.lblWelcome.AutoSize = true;
 			this.lblWelcome.Font = new System.Drawing.Font("Corbel", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.lblWelcome.Location = new System.Drawing.Point(528, 18);
+			this.lblWelcome.Location = new System.Drawing.Point(502, 15);
 			this.lblWelcome.Name = "lblWelcome";
 			this.lblWelcome.Size = new System.Drawing.Size(97, 36);
 			this.lblWelcome.TabIndex = 4;
@@ -97,7 +97,7 @@
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.Black;
+			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(400, 94);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(334, 39);
@@ -106,7 +106,7 @@
 			// 
 			// dataGridView1
 			// 
-			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
+			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.dataGridView1.Location = new System.Drawing.Point(102, 191);
@@ -122,7 +122,7 @@
 			this.label3.AutoSize = true;
 			this.label3.BackColor = System.Drawing.Color.Transparent;
 			this.label3.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.Color.Black;
+			this.label3.ForeColor = System.Drawing.Color.White;
 			this.label3.Location = new System.Drawing.Point(102, 439);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(182, 33);
@@ -155,7 +155,7 @@
 			this.lblMemberName.AutoSize = true;
 			this.lblMemberName.BackColor = System.Drawing.Color.Transparent;
 			this.lblMemberName.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblMemberName.ForeColor = System.Drawing.Color.Black;
+			this.lblMemberName.ForeColor = System.Drawing.Color.White;
 			this.lblMemberName.Location = new System.Drawing.Point(275, 445);
 			this.lblMemberName.Name = "lblMemberName";
 			this.lblMemberName.Size = new System.Drawing.Size(142, 26);
@@ -167,7 +167,7 @@
 			this.label6.AutoSize = true;
 			this.label6.BackColor = System.Drawing.Color.Transparent;
 			this.label6.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label6.ForeColor = System.Drawing.Color.Black;
+			this.label6.ForeColor = System.Drawing.Color.White;
 			this.label6.Location = new System.Drawing.Point(102, 487);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(216, 33);
@@ -179,7 +179,7 @@
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label4.ForeColor = System.Drawing.Color.Black;
+			this.label4.ForeColor = System.Drawing.Color.White;
 			this.label4.Location = new System.Drawing.Point(102, 534);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(241, 33);
@@ -191,7 +191,7 @@
 			this.lblMembershipType.AutoSize = true;
 			this.lblMembershipType.BackColor = System.Drawing.Color.Transparent;
 			this.lblMembershipType.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblMembershipType.ForeColor = System.Drawing.Color.Black;
+			this.lblMembershipType.ForeColor = System.Drawing.Color.White;
 			this.lblMembershipType.Location = new System.Drawing.Point(310, 493);
 			this.lblMembershipType.Name = "lblMembershipType";
 			this.lblMembershipType.Size = new System.Drawing.Size(170, 26);
@@ -203,7 +203,7 @@
 			this.lblPaidDate.AutoSize = true;
 			this.lblPaidDate.BackColor = System.Drawing.Color.Transparent;
 			this.lblPaidDate.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblPaidDate.ForeColor = System.Drawing.Color.Black;
+			this.lblPaidDate.ForeColor = System.Drawing.Color.White;
 			this.lblPaidDate.Location = new System.Drawing.Point(338, 541);
 			this.lblPaidDate.Name = "lblPaidDate";
 			this.lblPaidDate.Size = new System.Drawing.Size(53, 26);
@@ -215,6 +215,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.BackgroundImage = global::membership_system_G_fit.Properties.Resources.background_gfit1;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1079, 653);
 			this.Controls.Add(this.lblPaidDate);

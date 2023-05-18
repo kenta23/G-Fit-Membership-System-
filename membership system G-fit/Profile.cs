@@ -60,11 +60,11 @@ namespace membership_system_G_fit
 				sqlCmd.Connection = sqlConn;
 
 
-				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, member_type  FROM membership.members WHERE username = '"+ data + "'";
+				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, paid, member_type, status  FROM membership.members WHERE username = '" + data + "'";
 				sqlReader = sqlCmd.ExecuteReader();
-					
-					
-					
+
+
+
 				sqlTable.Load(sqlReader);
 				dataGridView1.DataSource = sqlTable;
 
@@ -78,7 +78,7 @@ namespace membership_system_G_fit
 				MessageBox.Show(ex.Message);
 			}
 
-			
+
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,7 +98,7 @@ namespace membership_system_G_fit
 
 			exit = MessageBox.Show("Do you want to exit?", "Exit App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-			if(exit == DialogResult.Yes)
+			if (exit == DialogResult.Yes)
 			{
 				Application.Exit();
 			}
@@ -106,14 +106,14 @@ namespace membership_system_G_fit
 
 		private void browseImage_Click(object sender, EventArgs e)
 		{
-					
+
 			String imageLocation = "";
 			try
 			{
 				OpenFileDialog dialog = new OpenFileDialog();
 				dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png|All Files(*.*)|*.*";
 
-				if(dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+				if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 				{
 					imageLocation = dialog.FileName;
 					picture.ImageLocation = imageLocation;
@@ -122,15 +122,15 @@ namespace membership_system_G_fit
 				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				sqlConn.Open();
 				sqlQuery = "UPDATE members SET picture = '" + imageLocation + "' ORDER BY customer_ID DESC LIMIT 1";
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);	
+				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 				sqlCmd.ExecuteNonQuery();
 
-			
+
 				sqlConn.Close();
 
 				uploadData();
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
@@ -156,7 +156,7 @@ namespace membership_system_G_fit
 
 		private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
 		{
-			
+
 		}
 
 		private void panel2_Paint(object sender, PaintEventArgs e)
@@ -180,16 +180,16 @@ namespace membership_system_G_fit
 		private void btnProfile_Click(object sender, EventArgs e)
 		{
 
-		
-			 Amount amount = new Amount();
 
-			
- 
+			Amount amount = new Amount();
+
+
+
 		}
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
-			
+
 			// Retrieve the data
 			string data = ApplicationData.Instance.SharedData;
 
@@ -204,6 +204,39 @@ namespace membership_system_G_fit
 		private void lblusername_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void btnUpdateStatus_Click(object sender, EventArgs e)
+		{
+			if (cmbStatus.SelectedIndex == -1)
+			{
+				MessageBox.Show("No updated status", "Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+
+				try
+				{
+					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+					sqlConn.Open();
+
+					string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+					MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+					command.ExecuteNonQuery();
+
+					sqlConn.Close();
+
+					MessageBox.Show("Updated Status successfully", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+
+				catch (Exception ex)
+				{
+					MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+				}
+				uploadData();
+
+			}
 		}
 	}
 }

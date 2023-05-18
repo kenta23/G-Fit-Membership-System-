@@ -115,7 +115,9 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.BackColor = System.Drawing.Color.Transparent;
 			this.label3.Font = new System.Drawing.Font("Corbel", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label3.ForeColor = System.Drawing.Color.White;
 			this.label3.Location = new System.Drawing.Point(42, 116);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(224, 36);
@@ -138,7 +140,9 @@
 			// lblFirstname
 			// 
 			this.lblFirstname.AutoSize = true;
+			this.lblFirstname.BackColor = System.Drawing.Color.Transparent;
 			this.lblFirstname.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblFirstname.ForeColor = System.Drawing.Color.Transparent;
 			this.lblFirstname.Location = new System.Drawing.Point(96, 430);
 			this.lblFirstname.Name = "lblFirstname";
 			this.lblFirstname.Size = new System.Drawing.Size(104, 26);
@@ -164,7 +168,9 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label4.ForeColor = System.Drawing.Color.Transparent;
 			this.label4.Location = new System.Drawing.Point(96, 482);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(106, 26);
@@ -182,7 +188,9 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.Color.Transparent;
 			this.label5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label5.ForeColor = System.Drawing.Color.Transparent;
 			this.label5.Location = new System.Drawing.Point(96, 535);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(103, 26);
@@ -192,7 +200,9 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
+			this.label6.BackColor = System.Drawing.Color.Transparent;
 			this.label6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label6.ForeColor = System.Drawing.Color.White;
 			this.label6.Location = new System.Drawing.Point(464, 530);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(87, 26);
@@ -210,7 +220,9 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
+			this.label7.BackColor = System.Drawing.Color.Transparent;
 			this.label7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label7.ForeColor = System.Drawing.Color.White;
 			this.label7.Location = new System.Drawing.Point(465, 479);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(52, 26);
@@ -247,7 +259,9 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.Color.Transparent;
 			this.label8.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label8.ForeColor = System.Drawing.Color.Transparent;
 			this.label8.Location = new System.Drawing.Point(96, 580);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(86, 26);
@@ -341,7 +355,9 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.Color.Transparent;
 			this.label9.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label9.ForeColor = System.Drawing.Color.White;
 			this.label9.Location = new System.Drawing.Point(464, 428);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(81, 26);
@@ -351,46 +367,54 @@
 			// rdbMale
 			// 
 			this.rdbMale.AutoSize = true;
+			this.rdbMale.BackColor = System.Drawing.Color.Transparent;
 			this.rdbMale.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.rdbMale.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.rdbMale.ForeColor = System.Drawing.Color.White;
 			this.rdbMale.Location = new System.Drawing.Point(551, 433);
 			this.rdbMale.Name = "rdbMale";
 			this.rdbMale.Size = new System.Drawing.Size(60, 23);
 			this.rdbMale.TabIndex = 22;
 			this.rdbMale.TabStop = true;
 			this.rdbMale.Text = "Male";
-			this.rdbMale.UseVisualStyleBackColor = true;
+			this.rdbMale.UseVisualStyleBackColor = false;
 			// 
 			// rdbFemale
 			// 
 			this.rdbFemale.AutoSize = true;
+			this.rdbFemale.BackColor = System.Drawing.Color.Transparent;
 			this.rdbFemale.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.rdbFemale.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.rdbFemale.ForeColor = System.Drawing.Color.White;
 			this.rdbFemale.Location = new System.Drawing.Point(617, 433);
 			this.rdbFemale.Name = "rdbFemale";
 			this.rdbFemale.Size = new System.Drawing.Size(76, 23);
 			this.rdbFemale.TabIndex = 23;
 			this.rdbFemale.TabStop = true;
 			this.rdbFemale.Text = "Female";
-			this.rdbFemale.UseVisualStyleBackColor = true;
+			this.rdbFemale.UseVisualStyleBackColor = false;
 			// 
 			// radioButton1
 			// 
 			this.radioButton1.AutoSize = true;
+			this.radioButton1.BackColor = System.Drawing.Color.Transparent;
 			this.radioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.radioButton1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.radioButton1.ForeColor = System.Drawing.Color.White;
 			this.radioButton1.Location = new System.Drawing.Point(699, 433);
 			this.radioButton1.Name = "radioButton1";
 			this.radioButton1.Size = new System.Drawing.Size(73, 23);
 			this.radioButton1.TabIndex = 24;
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "Others";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.UseVisualStyleBackColor = false;
 			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
+			this.label10.BackColor = System.Drawing.Color.Transparent;
 			this.label10.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label10.ForeColor = System.Drawing.Color.White;
 			this.label10.Location = new System.Drawing.Point(96, 391);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(83, 26);
@@ -400,7 +424,9 @@
 			// lblUsername
 			// 
 			this.lblUsername.AutoSize = true;
+			this.lblUsername.BackColor = System.Drawing.Color.Transparent;
 			this.lblUsername.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblUsername.ForeColor = System.Drawing.Color.White;
 			this.lblUsername.Location = new System.Drawing.Point(465, 612);
 			this.lblUsername.Name = "lblUsername";
 			this.lblUsername.Size = new System.Drawing.Size(105, 26);
@@ -431,7 +457,9 @@
 			// lblPassword
 			// 
 			this.lblPassword.AutoSize = true;
+			this.lblPassword.BackColor = System.Drawing.Color.Transparent;
 			this.lblPassword.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblPassword.ForeColor = System.Drawing.Color.White;
 			this.lblPassword.Location = new System.Drawing.Point(465, 654);
 			this.lblPassword.Name = "lblPassword";
 			this.lblPassword.Size = new System.Drawing.Size(100, 26);
@@ -441,6 +469,7 @@
 			// 
 			// panelAccount
 			// 
+			this.panelAccount.BackColor = System.Drawing.Color.Transparent;
 			this.panelAccount.Location = new System.Drawing.Point(464, 590);
 			this.panelAccount.Name = "panelAccount";
 			this.panelAccount.Size = new System.Drawing.Size(263, 109);
@@ -449,7 +478,9 @@
 			// lblID
 			// 
 			this.lblID.AutoSize = true;
+			this.lblID.BackColor = System.Drawing.Color.Transparent;
 			this.lblID.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblID.ForeColor = System.Drawing.Color.White;
 			this.lblID.Location = new System.Drawing.Point(200, 391);
 			this.lblID.Name = "lblID";
 			this.lblID.Size = new System.Drawing.Size(20, 23);
@@ -461,6 +492,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.BackgroundImage = global::membership_system_G_fit.Properties.Resources.background_gfit1;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1007, 749);
 			this.Controls.Add(this.lblID);
 			this.Controls.Add(this.txtPassword);

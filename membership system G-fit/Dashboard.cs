@@ -19,14 +19,26 @@ namespace membership_system_G_fit
 		public Dashboard()
 		{
 			InitializeComponent();
-			
+
 		}
 
+		string nameData = "";
+		//DATABASE CONNECTION
+		MySqlConnection sqlConn = new MySqlConnection();
+		MySqlCommand sqlCmd;
+		String sqlQuery;
+		MySqlDataReader sqlReader;
+
+		String server = "127.0.0.1";
+		String username = "root";
+		String password = "123";
+		String database = "membership";
+
 		public String AdminName { get; set; }
-		
+
 		private void label1_Click(object sender, EventArgs e)
 		{
-			
+
 
 		}
 
@@ -42,17 +54,7 @@ namespace membership_system_G_fit
 
 		private void Dashboard_Load(object sender, EventArgs e)
 		{
-			string nameData = "";
-			//DATABASE CONNECTION
-			MySqlConnection sqlConn = new MySqlConnection();
-			MySqlCommand sqlCmd;
-			String sqlQuery;
-			MySqlDataReader sqlReader;
-
-			String server = "127.0.0.1";
-			String username = "root";
-			String password = "123";
-			String database = "membership";
+			
 
 			try
 			{
@@ -64,25 +66,25 @@ namespace membership_system_G_fit
 
 				while (sqlReader.Read())
 				{
-					 nameData = sqlReader.GetString("name");	
+					nameData = sqlReader.GetString("name");
 					//retrieve other column values as needed
 				}
 
 				lblWelcome.Text = nameData;
-				
+
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 
 				MessageBox.Show(ex.Message);
 			}
-			
+
 		}
 
 		private void label4_Click(object sender, EventArgs e)
 		{
 			new Payment().Show();
-			this.Hide();		
+			this.Hide();
 		}
 
 		private void label3_Click(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace membership_system_G_fit
 		{
 			DialogResult logout = MessageBox.Show("Are you sure you want to logout?", "Account Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-			if(logout == DialogResult.Yes)
+			if (logout == DialogResult.Yes)
 			{
 				this.Hide();
 				new Starting_page().Show();
@@ -126,6 +128,14 @@ namespace membership_system_G_fit
 		{
 			this.Hide();
 			new RegisterID().Show();
+		}
+
+		private void lblArchives_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Archives archives = new Archives();
+			archives.Show();
+
 		}
 	}
 }

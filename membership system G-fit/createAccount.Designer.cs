@@ -45,7 +45,6 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.btnSignup = new membership_system_G_fit.customizeButtons();
 			this.customizeButtons2 = new membership_system_G_fit.customizeButtons();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -244,27 +243,12 @@
 			this.customizeButtons2.UseVisualStyleBackColor = false;
 			this.customizeButtons2.Click += new System.EventHandler(this.customizeButtons2_Click);
 			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.checkBox1.ForeColor = System.Drawing.Color.White;
-			this.checkBox1.Location = new System.Drawing.Point(289, 378);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(139, 25);
-			this.checkBox1.TabIndex = 43;
-			this.checkBox1.Text = "Show password";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.UseWaitCursor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-			// 
 			// createAccount
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
 			this.ClientSize = new System.Drawing.Size(458, 541);
-			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.customizeButtons2);
 			this.Controls.Add(this.btnSignup);
 			this.Controls.Add(this.txtConfirmPass);
@@ -311,6 +295,5 @@
 		private Label label7;
 		private customizeButtons btnSignup;
 		private customizeButtons customizeButtons2;
-		private CheckBox checkBox1;
 	}
 }

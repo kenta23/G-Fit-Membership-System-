@@ -113,7 +113,7 @@ namespace membership_system_G_fit
 			if (logout == DialogResult.Yes)
 			{
 				this.Hide();
-				new Loginuser().Show();
+				new Starting_page().Show();
 			}
 			
 		}

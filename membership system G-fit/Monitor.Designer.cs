@@ -28,337 +28,333 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monitor));
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.lblWelcome = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.lblName = new System.Windows.Forms.Label();
-			this.lblUsername = new System.Windows.Forms.Label();
-			this.lblType = new System.Windows.Forms.Label();
-			this.cmbStatus = new System.Windows.Forms.ComboBox();
-			this.btnUpdate = new membership_system_G_fit.customizeButtons();
-			this.customizeButtons2 = new membership_system_G_fit.customizeButtons();
-			this.label7 = new System.Windows.Forms.Label();
-			this.lblCustomer_ID = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.clearBtn = new membership_system_G_fit.customizeButtons();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			this.SuspendLayout();
+			panel1 = new Panel();
+			label1 = new Label();
+			label2 = new Label();
+			lblWelcome = new Label();
+			pictureBox1 = new PictureBox();
+			dataGridView1 = new DataGridView();
+			label3 = new Label();
+			label4 = new Label();
+			label5 = new Label();
+			label6 = new Label();
+			lblName = new Label();
+			lblUsername = new Label();
+			lblType = new Label();
+			cmbStatus = new ComboBox();
+			btnUpdate = new customizeButtons();
+			customizeButtons2 = new customizeButtons();
+			label7 = new Label();
+			lblCustomer_ID = new Label();
+			label9 = new Label();
+			clearBtn = new customizeButtons();
+			panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			SuspendLayout();
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.LightCoral;
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.lblWelcome);
-			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1040, 65);
-			this.panel1.TabIndex = 2;
+			panel1.BackColor = Color.MistyRose;
+			panel1.Controls.Add(label1);
+			panel1.Controls.Add(label2);
+			panel1.Controls.Add(lblWelcome);
+			panel1.Controls.Add(pictureBox1);
+			panel1.Dock = DockStyle.Top;
+			panel1.Location = new Point(0, 0);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(1040, 65);
+			panel1.TabIndex = 2;
 			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.Red;
-			this.label1.Location = new System.Drawing.Point(980, 17);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(32, 33);
-			this.label1.TabIndex = 28;
-			this.label1.Text = "X";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
+			label1.AutoSize = true;
+			label1.Cursor = Cursors.Hand;
+			label1.Font = new Font("Corbel", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.ForeColor = Color.FromArgb(255, 82, 83);
+			label1.Location = new Point(980, 17);
+			label1.Name = "label1";
+			label1.Size = new Size(32, 33);
+			label1.TabIndex = 28;
+			label1.Text = "X";
+			label1.Click += label1_Click;
 			// 
 			// label2
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label2.ForeColor = System.Drawing.Color.Red;
-			this.label2.Location = new System.Drawing.Point(1035, 18);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(32, 33);
-			this.label2.TabIndex = 27;
-			this.label2.Text = "X";
+			label2.AutoSize = true;
+			label2.Cursor = Cursors.Hand;
+			label2.Font = new Font("Corbel", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+			label2.ForeColor = Color.Red;
+			label2.Location = new Point(1035, 18);
+			label2.Name = "label2";
+			label2.Size = new Size(32, 33);
+			label2.TabIndex = 27;
+			label2.Text = "X";
 			// 
 			// lblWelcome
 			// 
-			this.lblWelcome.AutoSize = true;
-			this.lblWelcome.Font = new System.Drawing.Font("Corbel", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.lblWelcome.ForeColor = System.Drawing.Color.White;
-			this.lblWelcome.Location = new System.Drawing.Point(478, 17);
-			this.lblWelcome.Name = "lblWelcome";
-			this.lblWelcome.Size = new System.Drawing.Size(97, 36);
-			this.lblWelcome.TabIndex = 4;
-			this.lblWelcome.Text = "G- FIT ";
+			lblWelcome.AutoSize = true;
+			lblWelcome.Font = new Font("Corbel", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+			lblWelcome.ForeColor = Color.FromArgb(255, 82, 83);
+			lblWelcome.Location = new Point(478, 17);
+			lblWelcome.Name = "lblWelcome";
+			lblWelcome.Size = new Size(97, 36);
+			lblWelcome.TabIndex = 4;
+			lblWelcome.Text = "G- FIT ";
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::membership_system_G_fit.Properties.Resources._334911878_1440815073393289_6073420652339816876_n_removebg_preview;
-			this.pictureBox1.Location = new System.Drawing.Point(36, 11);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			pictureBox1.Image = Properties.Resources._334911878_1440815073393289_6073420652339816876_n_removebg_preview;
+			pictureBox1.Location = new Point(36, 11);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(48, 49);
+			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureBox1.TabIndex = 0;
+			pictureBox1.TabStop = false;
 			// 
 			// dataGridView1
 			// 
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.GridColor = System.Drawing.Color.Red;
-			this.dataGridView1.Location = new System.Drawing.Point(41, 168);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 25;
-			this.dataGridView1.Size = new System.Drawing.Size(539, 392);
-			this.dataGridView1.TabIndex = 3;
-			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+			dataGridView1.BackgroundColor = Color.WhiteSmoke;
+			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridView1.GridColor = Color.Red;
+			dataGridView1.Location = new Point(27, 168);
+			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowTemplate.Height = 25;
+			dataGridView1.Size = new Size(633, 388);
+			dataGridView1.TabIndex = 3;
+			dataGridView1.CellClick += dataGridView1_CellClick;
+			dataGridView1.CellContentClick += dataGridView1_CellContentClick;
 			// 
 			// label3
 			// 
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(666, 207);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(70, 26);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Name:";
+			label3.AutoSize = true;
+			label3.BackColor = Color.Transparent;
+			label3.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label3.ForeColor = Color.White;
+			label3.Location = new Point(706, 207);
+			label3.Name = "label3";
+			label3.Size = new Size(70, 26);
+			label3.TabIndex = 4;
+			label3.Text = "Name:";
 			// 
 			// label4
 			// 
-			this.label4.AutoSize = true;
-			this.label4.BackColor = System.Drawing.Color.Transparent;
-			this.label4.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label4.ForeColor = System.Drawing.Color.White;
-			this.label4.Location = new System.Drawing.Point(666, 251);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(105, 26);
-			this.label4.TabIndex = 5;
-			this.label4.Text = "Username:";
+			label4.AutoSize = true;
+			label4.BackColor = Color.Transparent;
+			label4.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label4.ForeColor = Color.White;
+			label4.Location = new Point(706, 251);
+			label4.Name = "label4";
+			label4.Size = new Size(105, 26);
+			label4.TabIndex = 5;
+			label4.Text = "Username:";
 			// 
 			// label5
 			// 
-			this.label5.AutoSize = true;
-			this.label5.BackColor = System.Drawing.Color.Transparent;
-			this.label5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(666, 296);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(132, 26);
-			this.label5.TabIndex = 6;
-			this.label5.Text = "Member type:";
+			label5.AutoSize = true;
+			label5.BackColor = Color.Transparent;
+			label5.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label5.ForeColor = Color.White;
+			label5.Location = new Point(706, 296);
+			label5.Name = "label5";
+			label5.Size = new Size(132, 26);
+			label5.TabIndex = 6;
+			label5.Text = "Member type:";
 			// 
 			// label6
 			// 
-			this.label6.AutoSize = true;
-			this.label6.BackColor = System.Drawing.Color.Transparent;
-			this.label6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label6.ForeColor = System.Drawing.Color.White;
-			this.label6.Location = new System.Drawing.Point(666, 343);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(73, 26);
-			this.label6.TabIndex = 7;
-			this.label6.Text = "Status:";
+			label6.AutoSize = true;
+			label6.BackColor = Color.Transparent;
+			label6.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label6.ForeColor = Color.White;
+			label6.Location = new Point(706, 343);
+			label6.Name = "label6";
+			label6.Size = new Size(73, 26);
+			label6.TabIndex = 7;
+			label6.Text = "Status:";
 			// 
 			// lblName
 			// 
-			this.lblName.AutoSize = true;
-			this.lblName.BackColor = System.Drawing.Color.Transparent;
-			this.lblName.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblName.ForeColor = System.Drawing.Color.White;
-			this.lblName.Location = new System.Drawing.Point(728, 207);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(60, 26);
-			this.lblName.TabIndex = 8;
-			this.lblName.Text = "name";
+			lblName.AutoSize = true;
+			lblName.BackColor = Color.Transparent;
+			lblName.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblName.ForeColor = Color.White;
+			lblName.Location = new Point(768, 207);
+			lblName.Name = "lblName";
+			lblName.Size = new Size(60, 26);
+			lblName.TabIndex = 8;
+			lblName.Text = "name";
 			// 
 			// lblUsername
 			// 
-			this.lblUsername.AutoSize = true;
-			this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-			this.lblUsername.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblUsername.ForeColor = System.Drawing.Color.White;
-			this.lblUsername.Location = new System.Drawing.Point(763, 251);
-			this.lblUsername.Name = "lblUsername";
-			this.lblUsername.Size = new System.Drawing.Size(96, 26);
-			this.lblUsername.TabIndex = 9;
-			this.lblUsername.Text = "username";
+			lblUsername.AutoSize = true;
+			lblUsername.BackColor = Color.Transparent;
+			lblUsername.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblUsername.ForeColor = Color.White;
+			lblUsername.Location = new Point(803, 251);
+			lblUsername.Name = "lblUsername";
+			lblUsername.Size = new Size(96, 26);
+			lblUsername.TabIndex = 9;
+			lblUsername.Text = "username";
 			// 
 			// lblType
 			// 
-			this.lblType.AutoSize = true;
-			this.lblType.BackColor = System.Drawing.Color.Transparent;
-			this.lblType.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblType.ForeColor = System.Drawing.Color.White;
-			this.lblType.Location = new System.Drawing.Point(795, 296);
-			this.lblType.Name = "lblType";
-			this.lblType.Size = new System.Drawing.Size(50, 26);
-			this.lblType.TabIndex = 10;
-			this.lblType.Text = "type";
+			lblType.AutoSize = true;
+			lblType.BackColor = Color.Transparent;
+			lblType.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblType.ForeColor = Color.White;
+			lblType.Location = new Point(835, 296);
+			lblType.Name = "lblType";
+			lblType.Size = new Size(50, 26);
+			lblType.TabIndex = 10;
+			lblType.Text = "type";
 			// 
 			// cmbStatus
 			// 
-			this.cmbStatus.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.cmbStatus.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.cmbStatus.ForeColor = System.Drawing.Color.Black;
-			this.cmbStatus.FormattingEnabled = true;
-			this.cmbStatus.Items.AddRange(new object[] {
-            "Present ",
-            "Out"});
-			this.cmbStatus.Location = new System.Drawing.Point(738, 343);
-			this.cmbStatus.Name = "cmbStatus";
-			this.cmbStatus.Size = new System.Drawing.Size(121, 27);
-			this.cmbStatus.TabIndex = 12;
+			cmbStatus.BackColor = Color.WhiteSmoke;
+			cmbStatus.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			cmbStatus.ForeColor = Color.Black;
+			cmbStatus.FormattingEnabled = true;
+			cmbStatus.Items.AddRange(new object[] { "Present ", "Out" });
+			cmbStatus.Location = new Point(778, 343);
+			cmbStatus.Name = "cmbStatus";
+			cmbStatus.Size = new Size(121, 27);
+			cmbStatus.TabIndex = 12;
 			// 
 			// btnUpdate
 			// 
-			this.btnUpdate.BackColor = System.Drawing.Color.Green;
-			this.btnUpdate.BackgroundColor = System.Drawing.Color.Green;
-			this.btnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnUpdate.BorderRadius = 12;
-			this.btnUpdate.BorderSize = 0;
-			this.btnUpdate.FlatAppearance.BorderSize = 0;
-			this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnUpdate.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.btnUpdate.ForeColor = System.Drawing.Color.White;
-			this.btnUpdate.Location = new System.Drawing.Point(682, 390);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(107, 35);
-			this.btnUpdate.TabIndex = 13;
-			this.btnUpdate.Text = "Update";
-			this.btnUpdate.TextColor = System.Drawing.Color.White;
-			this.btnUpdate.UseVisualStyleBackColor = false;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			btnUpdate.BackColor = Color.Green;
+			btnUpdate.BackgroundColor = Color.Green;
+			btnUpdate.BorderColor = Color.PaleVioletRed;
+			btnUpdate.BorderRadius = 12;
+			btnUpdate.BorderSize = 0;
+			btnUpdate.FlatAppearance.BorderSize = 0;
+			btnUpdate.FlatStyle = FlatStyle.Flat;
+			btnUpdate.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			btnUpdate.ForeColor = Color.White;
+			btnUpdate.Location = new Point(722, 390);
+			btnUpdate.Name = "btnUpdate";
+			btnUpdate.Size = new Size(107, 35);
+			btnUpdate.TabIndex = 13;
+			btnUpdate.Text = "Update";
+			btnUpdate.TextColor = Color.White;
+			btnUpdate.UseVisualStyleBackColor = false;
+			btnUpdate.Click += btnUpdate_Click;
 			// 
 			// customizeButtons2
 			// 
-			this.customizeButtons2.BackColor = System.Drawing.Color.Red;
-			this.customizeButtons2.BackgroundColor = System.Drawing.Color.Red;
-			this.customizeButtons2.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.customizeButtons2.BorderRadius = 12;
-			this.customizeButtons2.BorderSize = 0;
-			this.customizeButtons2.FlatAppearance.BorderSize = 0;
-			this.customizeButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.customizeButtons2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.customizeButtons2.ForeColor = System.Drawing.Color.White;
-			this.customizeButtons2.Location = new System.Drawing.Point(910, 548);
-			this.customizeButtons2.Name = "customizeButtons2";
-			this.customizeButtons2.Size = new System.Drawing.Size(107, 35);
-			this.customizeButtons2.TabIndex = 14;
-			this.customizeButtons2.Text = "Back";
-			this.customizeButtons2.TextColor = System.Drawing.Color.White;
-			this.customizeButtons2.UseVisualStyleBackColor = false;
-			this.customizeButtons2.Click += new System.EventHandler(this.customizeButtons2_Click);
+			customizeButtons2.BackColor = Color.Red;
+			customizeButtons2.BackgroundColor = Color.Red;
+			customizeButtons2.BorderColor = Color.PaleVioletRed;
+			customizeButtons2.BorderRadius = 12;
+			customizeButtons2.BorderSize = 0;
+			customizeButtons2.FlatAppearance.BorderSize = 0;
+			customizeButtons2.FlatStyle = FlatStyle.Flat;
+			customizeButtons2.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			customizeButtons2.ForeColor = Color.White;
+			customizeButtons2.Location = new Point(910, 548);
+			customizeButtons2.Name = "customizeButtons2";
+			customizeButtons2.Size = new Size(107, 35);
+			customizeButtons2.TabIndex = 14;
+			customizeButtons2.Text = "Back";
+			customizeButtons2.TextColor = Color.White;
+			customizeButtons2.UseVisualStyleBackColor = false;
+			customizeButtons2.Click += customizeButtons2_Click;
 			// 
 			// label7
 			// 
-			this.label7.AutoSize = true;
-			this.label7.BackColor = System.Drawing.Color.Transparent;
-			this.label7.Font = new System.Drawing.Font("Corbel", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label7.ForeColor = System.Drawing.Color.White;
-			this.label7.Location = new System.Drawing.Point(359, 91);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(343, 36);
-			this.label7.TabIndex = 15;
-			this.label7.Text = "Monitoring inside the gym";
+			label7.AutoSize = true;
+			label7.BackColor = Color.Transparent;
+			label7.Font = new Font("Corbel", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+			label7.ForeColor = Color.White;
+			label7.Location = new Point(359, 91);
+			label7.Name = "label7";
+			label7.Size = new Size(343, 36);
+			label7.TabIndex = 15;
+			label7.Text = "Monitoring inside the gym";
 			// 
 			// lblCustomer_ID
 			// 
-			this.lblCustomer_ID.AutoSize = true;
-			this.lblCustomer_ID.BackColor = System.Drawing.Color.Transparent;
-			this.lblCustomer_ID.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblCustomer_ID.ForeColor = System.Drawing.Color.White;
-			this.lblCustomer_ID.Location = new System.Drawing.Point(776, 168);
-			this.lblCustomer_ID.Name = "lblCustomer_ID";
-			this.lblCustomer_ID.Size = new System.Drawing.Size(31, 26);
-			this.lblCustomer_ID.TabIndex = 17;
-			this.lblCustomer_ID.Text = "ID";
-			this.lblCustomer_ID.Click += new System.EventHandler(this.label8_Click);
+			lblCustomer_ID.AutoSize = true;
+			lblCustomer_ID.BackColor = Color.Transparent;
+			lblCustomer_ID.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblCustomer_ID.ForeColor = Color.White;
+			lblCustomer_ID.Location = new Point(816, 168);
+			lblCustomer_ID.Name = "lblCustomer_ID";
+			lblCustomer_ID.Size = new Size(31, 26);
+			lblCustomer_ID.TabIndex = 17;
+			lblCustomer_ID.Text = "ID";
+			lblCustomer_ID.Click += label8_Click;
 			// 
 			// label9
 			// 
-			this.label9.AutoSize = true;
-			this.label9.BackColor = System.Drawing.Color.Transparent;
-			this.label9.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label9.ForeColor = System.Drawing.Color.White;
-			this.label9.Location = new System.Drawing.Point(666, 168);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(113, 26);
-			this.label9.TabIndex = 16;
-			this.label9.Text = "Member ID:";
+			label9.AutoSize = true;
+			label9.BackColor = Color.Transparent;
+			label9.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label9.ForeColor = Color.White;
+			label9.Location = new Point(706, 168);
+			label9.Name = "label9";
+			label9.Size = new Size(113, 26);
+			label9.TabIndex = 16;
+			label9.Text = "Member ID:";
 			// 
 			// clearBtn
 			// 
-			this.clearBtn.BackColor = System.Drawing.Color.Crimson;
-			this.clearBtn.BackgroundColor = System.Drawing.Color.Crimson;
-			this.clearBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.clearBtn.BorderRadius = 12;
-			this.clearBtn.BorderSize = 0;
-			this.clearBtn.FlatAppearance.BorderSize = 0;
-			this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.clearBtn.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.clearBtn.ForeColor = System.Drawing.Color.White;
-			this.clearBtn.Location = new System.Drawing.Point(811, 392);
-			this.clearBtn.Name = "clearBtn";
-			this.clearBtn.Size = new System.Drawing.Size(107, 35);
-			this.clearBtn.TabIndex = 18;
-			this.clearBtn.Text = "Clear Status ";
-			this.clearBtn.TextColor = System.Drawing.Color.White;
-			this.clearBtn.UseVisualStyleBackColor = false;
-			this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+			clearBtn.BackColor = Color.Crimson;
+			clearBtn.BackgroundColor = Color.Crimson;
+			clearBtn.BorderColor = Color.PaleVioletRed;
+			clearBtn.BorderRadius = 12;
+			clearBtn.BorderSize = 0;
+			clearBtn.FlatAppearance.BorderSize = 0;
+			clearBtn.FlatStyle = FlatStyle.Flat;
+			clearBtn.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			clearBtn.ForeColor = Color.White;
+			clearBtn.Location = new Point(851, 392);
+			clearBtn.Name = "clearBtn";
+			clearBtn.Size = new Size(107, 35);
+			clearBtn.TabIndex = 18;
+			clearBtn.Text = "Clear Status ";
+			clearBtn.TextColor = Color.White;
+			clearBtn.UseVisualStyleBackColor = false;
+			clearBtn.Click += clearBtn_Click;
 			// 
 			// Monitor
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.ClientSize = new System.Drawing.Size(1040, 603);
-			this.Controls.Add(this.clearBtn);
-			this.Controls.Add(this.lblCustomer_ID);
-			this.Controls.Add(this.label9);
-			this.Controls.Add(this.label7);
-			this.Controls.Add(this.customizeButtons2);
-			this.Controls.Add(this.btnUpdate);
-			this.Controls.Add(this.cmbStatus);
-			this.Controls.Add(this.lblType);
-			this.Controls.Add(this.lblUsername);
-			this.Controls.Add(this.lblName);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.panel1);
-			this.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "Monitor";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Monitor";
-			this.Load += new System.EventHandler(this.Monitor_Load);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
-
+			AutoScaleDimensions = new SizeF(6F, 14F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = SystemColors.ButtonFace;
+			BackgroundImage = Properties.Resources.background_gfit1;
+			BackgroundImageLayout = ImageLayout.Center;
+			ClientSize = new Size(1040, 603);
+			Controls.Add(clearBtn);
+			Controls.Add(lblCustomer_ID);
+			Controls.Add(label9);
+			Controls.Add(label7);
+			Controls.Add(customizeButtons2);
+			Controls.Add(btnUpdate);
+			Controls.Add(cmbStatus);
+			Controls.Add(lblType);
+			Controls.Add(lblUsername);
+			Controls.Add(lblName);
+			Controls.Add(label6);
+			Controls.Add(label5);
+			Controls.Add(label4);
+			Controls.Add(label3);
+			Controls.Add(dataGridView1);
+			Controls.Add(panel1);
+			Cursor = Cursors.Hand;
+			Font = new Font("Corbel", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			FormBorderStyle = FormBorderStyle.None;
+			Name = "Monitor";
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "Monitor";
+			Load += Monitor_Load;
+			panel1.ResumeLayout(false);
+			panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion

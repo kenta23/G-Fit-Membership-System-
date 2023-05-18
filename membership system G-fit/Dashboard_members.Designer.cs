@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.lblUser = new System.Windows.Forms.Label();
 			this.lblWelcome = new System.Windows.Forms.Label();
 			this.btnAdmin = new membership_system_G_fit.customizeButtons();
@@ -40,16 +41,21 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.customizeButtons2 = new membership_system_G_fit.customizeButtons();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			this.panel3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.MistyRose;
+			this.panel1.Controls.Add(this.panel2);
 			this.panel1.Controls.Add(this.lblUser);
 			this.panel1.Controls.Add(this.lblWelcome);
 			this.panel1.Controls.Add(this.btnAdmin);
@@ -59,6 +65,13 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1068, 70);
 			this.panel1.TabIndex = 1;
+			// 
+			// panel2
+			// 
+			this.panel2.Location = new System.Drawing.Point(0, 70);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(239, 359);
+			this.panel2.TabIndex = 18;
 			// 
 			// lblUser
 			// 
@@ -117,7 +130,7 @@
 			// 
 			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox2.Image = global::membership_system_G_fit.Properties.Resources.profile;
-			this.pictureBox2.Location = new System.Drawing.Point(463, 565);
+			this.pictureBox2.Location = new System.Drawing.Point(31, 215);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(51, 53);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,11 +142,11 @@
 			this.lblViewProfile.AutoSize = true;
 			this.lblViewProfile.BackColor = System.Drawing.Color.Transparent;
 			this.lblViewProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.lblViewProfile.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+			this.lblViewProfile.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
 			this.lblViewProfile.ForeColor = System.Drawing.Color.White;
-			this.lblViewProfile.Location = new System.Drawing.Point(509, 575);
+			this.lblViewProfile.Location = new System.Drawing.Point(77, 225);
 			this.lblViewProfile.Name = "lblViewProfile";
-			this.lblViewProfile.Size = new System.Drawing.Size(180, 39);
+			this.lblViewProfile.Size = new System.Drawing.Size(139, 29);
 			this.lblViewProfile.TabIndex = 15;
 			this.lblViewProfile.Text = "View Profile ";
 			this.lblViewProfile.Click += new System.EventHandler(this.lblViewProfile_Click);
@@ -142,7 +155,7 @@
 			// 
 			this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox4.Image = global::membership_system_G_fit.Properties.Resources.shop;
-			this.pictureBox4.Location = new System.Drawing.Point(723, 566);
+			this.pictureBox4.Location = new System.Drawing.Point(44, 297);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(33, 42);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -153,7 +166,7 @@
 			// 
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.Image = global::membership_system_G_fit.Properties.Resources.payment;
-			this.pictureBox3.Location = new System.Drawing.Point(187, 566);
+			this.pictureBox3.Location = new System.Drawing.Point(44, 137);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(33, 42);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,11 +178,11 @@
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label4.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+			this.label4.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
 			this.label4.ForeColor = System.Drawing.Color.White;
-			this.label4.Location = new System.Drawing.Point(220, 575);
+			this.label4.Location = new System.Drawing.Point(77, 146);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(211, 39);
+			this.label4.Size = new System.Drawing.Size(159, 29);
 			this.label4.TabIndex = 11;
 			this.label4.Text = "Your Payment ";
 			this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -179,11 +192,11 @@
 			this.label5.AutoSize = true;
 			this.label5.BackColor = System.Drawing.Color.Transparent;
 			this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label5.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+			this.label5.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
 			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(756, 575);
+			this.label5.Location = new System.Drawing.Point(77, 306);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(86, 39);
+			this.label5.Size = new System.Drawing.Size(65, 29);
 			this.label5.TabIndex = 12;
 			this.label5.Text = "Shop";
 			this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -198,16 +211,42 @@
 			this.customizeButtons2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.customizeButtons2.FlatAppearance.BorderSize = 0;
 			this.customizeButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.customizeButtons2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.customizeButtons2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.customizeButtons2.ForeColor = System.Drawing.Color.White;
-			this.customizeButtons2.Location = new System.Drawing.Point(949, 634);
+			this.customizeButtons2.Location = new System.Drawing.Point(12, 564);
 			this.customizeButtons2.Name = "customizeButtons2";
-			this.customizeButtons2.Size = new System.Drawing.Size(107, 38);
+			this.customizeButtons2.Size = new System.Drawing.Size(86, 29);
 			this.customizeButtons2.TabIndex = 17;
 			this.customizeButtons2.Text = "Logout";
 			this.customizeButtons2.TextColor = System.Drawing.Color.White;
 			this.customizeButtons2.UseVisualStyleBackColor = false;
 			this.customizeButtons2.Click += new System.EventHandler(this.customizeButtons2_Click);
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.panel3.Controls.Add(this.label4);
+			this.panel3.Controls.Add(this.customizeButtons2);
+			this.panel3.Controls.Add(this.pictureBox3);
+			this.panel3.Controls.Add(this.pictureBox2);
+			this.panel3.Controls.Add(this.pictureBox4);
+			this.panel3.Controls.Add(this.lblViewProfile);
+			this.panel3.Controls.Add(this.label5);
+			this.panel3.Location = new System.Drawing.Point(0, 70);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(246, 641);
+			this.panel3.TabIndex = 18;
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox5.Image = global::membership_system_G_fit.Properties.Resources.logo_g___fit_removebg_preview;
+			this.pictureBox5.Location = new System.Drawing.Point(854, 70);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(214, 126);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox5.TabIndex = 19;
+			this.pictureBox5.TabStop = false;
 			// 
 			// Dashboard_members
 			// 
@@ -217,14 +256,9 @@
 			this.BackgroundImage = global::membership_system_G_fit.Properties.Resources.gym;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1068, 684);
-			this.Controls.Add(this.customizeButtons2);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.lblViewProfile);
+			this.Controls.Add(this.pictureBox5);
+			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.pictureBox4);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.pictureBox3);
-			this.Controls.Add(this.label5);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Dashboard_members";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -236,8 +270,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+			this.panel3.ResumeLayout(false);
+			this.panel3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -255,5 +291,8 @@
 		private Label label5;
 		private PictureBox pictureBox2;
 		private customizeButtons customizeButtons2;
+		private Panel panel2;
+		private Panel panel3;
+		private PictureBox pictureBox5;
 	}
 }

@@ -284,10 +284,20 @@ namespace membership_system_G_fit
 
 		private void cmbPosition_SelectedValueChanged(object sender, EventArgs e)
 		{
-			lblUsername.Visible = true; 
-			lblPassword.Visible = true;
-			txtUsername.Visible = true; 
-			txtPassword.Visible = true;
+			if(cmbPosition.SelectedItem != null)
+			{
+				lblUsername.Visible = true;
+				lblPassword.Visible = true;
+				txtUsername.Visible = true;
+				txtPassword.Visible = true;
+			}
+			else
+			{
+				lblUsername.Visible = false;
+				lblPassword.Visible = false;
+				txtUsername.Visible = false;
+				txtPassword.Visible = false;
+			}
 			
 		}
 

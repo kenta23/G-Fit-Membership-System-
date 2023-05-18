@@ -46,7 +46,9 @@ namespace membership_system_G_fit
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.OK;
+			this.Hide();
+			Register register = new Register();
+			register.Show();
 		}
 
 		private void label12_Click(object sender, EventArgs e)

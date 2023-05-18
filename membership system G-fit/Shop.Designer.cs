@@ -113,7 +113,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
+			this.panel1.BackColor = System.Drawing.Color.MistyRose;
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.lblWelcome);
 			this.panel1.Controls.Add(this.pictureBox1);
@@ -128,7 +128,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
 			this.label1.Location = new System.Drawing.Point(1043, 17);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(32, 33);
@@ -140,7 +140,7 @@
 			// 
 			this.lblWelcome.AutoSize = true;
 			this.lblWelcome.Font = new System.Drawing.Font("Corbel", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.lblWelcome.ForeColor = System.Drawing.Color.White;
+			this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
 			this.lblWelcome.Location = new System.Drawing.Point(449, 17);
 			this.lblWelcome.Name = "lblWelcome";
 			this.lblWelcome.Size = new System.Drawing.Size(226, 42);

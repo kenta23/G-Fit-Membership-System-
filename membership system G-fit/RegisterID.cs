@@ -69,5 +69,17 @@ namespace membership_system_G_fit
 			this.Hide();
 			new Dashboard().Show();
 		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+			DialogResult exit;
+
+			exit = MessageBox.Show("Do you want to exit?", "Exit page", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if(exit == DialogResult.Yes)
+			{
+				Application.Exit();
+			}
+		}
 	}
 }

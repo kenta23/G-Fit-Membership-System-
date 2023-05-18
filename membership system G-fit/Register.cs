@@ -36,33 +36,68 @@ namespace membership_system_G_fit
 			return n;
 			
 	    }
-		
+
+		private string firstname;
+		private string lastname;
+		private string middlename;
+		private string address;
+		private string barangay;
+		private string zipcode;
+		private string city;
+		private string age;
+		private string gender;
+		private string joindate;
+
+		public string firstnameGet { get; set; }
+
+
 		public Register()
 		{
+			//string firstnameText, string lastnameText, string  middlenameText, string addressText, string barangayText, string cityText, string zipcodeText, string ageText, string dateValue
 			InitializeComponent();
-			
-		}
+
+		/*	firstname = firstnameText;
+			lastname = lastnameText;
+			middlename = middlenameText;
+			address = addressText;
+			barangay = barangayText;
+			city = cityText;
+			zipcode = zipcodeText;
+			age = ageText;
+			joindate = dateValue; */
+
+	}
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.OK;
+			this.Hide();
+			Starting_page start = new Starting_page();
+			start.Show();
 		}
 
 		private void customizeButtons1_Click(object sender, EventArgs e)
 		{
-			string input = txtBarangay.Text;
-			string input2 = txtZipCode.Text;
+			string barangay = txtBarangay.Text;
+			string zipcode = txtZipCode.Text;
 
-				if(txtFirstname.Text == "" || txtLastname.Text == "" || txtAddress.Text == "" || txtBarangay.Text == "" || txtCity.Text == "" || txtAge.Text == "" || cmbGender.Text == "")
-			  {
-				  MessageBox.Show("Missing information", "Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			  }
-		        else if (Regex.IsMatch(input, "^[a-zA-Z]+$") || Regex.IsMatch(input2, "^[a-zA-Z]+$"))
-			    {
-			    	MessageBox.Show("Invalid input in " + "Barangay" + " and " + " Zipcode", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-		     	}
-
-			    else
+			if (txtFirstname.Text == "" || txtLastname.Text == "" || txtAddress.Text == "" || txtBarangay.Text == "" || txtCity.Text == "" || txtAge.Text == "" || cmbGender.Text == "")
+			{
+				MessageBox.Show("Fill out all the fields", "Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else if(Regex.IsMatch(txtAge.Text, "^[a-zA-Z]+$"))
+			{
+				MessageBox.Show("Invalid input in Age", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (Regex.IsMatch(barangay, "^[a-zA-Z]+$"))
+			{
+				MessageBox.Show("Invalid input in " + "Barangay", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if(Regex.IsMatch(zipcode, "^[a-zA-Z]+$"))
+			{
+				MessageBox.Show("Invalid input in " + "Zipcode", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
+				else
 		     	  {
 				  try
 				  {
@@ -82,6 +117,11 @@ namespace membership_system_G_fit
 					  Register2 register2 = new Register2();
 					  register2.ShowDialog();
 					  this.Show();
+
+
+					txtFirstname.Text = firstnameGet;
+
+					
 				  }
 				  catch(Exception ex)
 				  {
@@ -135,6 +175,20 @@ namespace membership_system_G_fit
 		internal string FirstName()
 		{
 			throw new NotImplementedException();
+		}
+
+		private void Register_Load(object sender, EventArgs e)
+		{
+			firstname = txtFirstname.Text;
+			lastname = txtLastname.Text;
+			middlename = txtMiddlename.Text;
+			address = txtAddress.Text;
+			barangay = txtBarangay.Text;
+			city = txtCity.Text;
+			zipcode = txtZipCode.Text;
+			age = txtAge.Text;
+			joindate = dateRegistration.Text;
+
 		}
 	}
 }
