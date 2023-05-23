@@ -171,7 +171,7 @@
 			// 
 			lblMemberType.AutoSize = true;
 			lblMemberType.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblMemberType.ForeColor = Color.White;
+			lblMemberType.ForeColor = Color.Black;
 			lblMemberType.Location = new Point(493, 238);
 			lblMemberType.Name = "lblMemberType";
 			lblMemberType.Size = new Size(0, 23);
@@ -181,7 +181,7 @@
 			// 
 			label11.AutoSize = true;
 			label11.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label11.ForeColor = Color.White;
+			label11.ForeColor = Color.Black;
 			label11.ImageAlign = ContentAlignment.MiddleLeft;
 			label11.Location = new Point(361, 235);
 			label11.Name = "label11";
@@ -194,7 +194,7 @@
 			// 
 			label2.AutoSize = true;
 			label2.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label2.ForeColor = Color.White;
+			label2.ForeColor = Color.Black;
 			label2.ImageAlign = ContentAlignment.MiddleLeft;
 			label2.Location = new Point(189, 324);
 			label2.Name = "label2";
@@ -220,7 +220,7 @@
 			// 
 			lblDateReg.AutoSize = true;
 			lblDateReg.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblDateReg.ForeColor = Color.White;
+			lblDateReg.ForeColor = Color.Black;
 			lblDateReg.Location = new Point(544, 194);
 			lblDateReg.Name = "lblDateReg";
 			lblDateReg.Size = new Size(0, 23);
@@ -230,7 +230,7 @@
 			// 
 			lblBarangay.AutoSize = true;
 			lblBarangay.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblBarangay.ForeColor = Color.White;
+			lblBarangay.ForeColor = Color.Black;
 			lblBarangay.ImageAlign = ContentAlignment.MiddleLeft;
 			lblBarangay.Location = new Point(451, 33);
 			lblBarangay.Name = "lblBarangay";
@@ -242,7 +242,7 @@
 			// 
 			label19.AutoSize = true;
 			label19.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label19.ForeColor = Color.White;
+			label19.ForeColor = Color.Black;
 			label19.ImageAlign = ContentAlignment.MiddleLeft;
 			label19.Location = new Point(361, 30);
 			label19.Name = "label19";
@@ -255,7 +255,7 @@
 			// 
 			lblUser.AutoSize = true;
 			lblUser.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblUser.ForeColor = Color.White;
+			lblUser.ForeColor = Color.Black;
 			lblUser.ImageAlign = ContentAlignment.MiddleLeft;
 			lblUser.Location = new Point(467, 154);
 			lblUser.Name = "lblUser";
@@ -267,7 +267,7 @@
 			// 
 			lblZipcode.AutoSize = true;
 			lblZipcode.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblZipcode.ForeColor = Color.White;
+			lblZipcode.ForeColor = Color.Black;
 			lblZipcode.ImageAlign = ContentAlignment.MiddleLeft;
 			lblZipcode.Location = new Point(442, 114);
 			lblZipcode.Name = "lblZipcode";
@@ -279,7 +279,7 @@
 			// 
 			lblCity.AutoSize = true;
 			lblCity.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblCity.ForeColor = Color.White;
+			lblCity.ForeColor = Color.Black;
 			lblCity.ImageAlign = ContentAlignment.MiddleLeft;
 			lblCity.Location = new Point(406, 74);
 			lblCity.Name = "lblCity";
@@ -291,7 +291,7 @@
 			// 
 			lblAddress.AutoSize = true;
 			lblAddress.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblAddress.ForeColor = Color.White;
+			lblAddress.ForeColor = Color.Black;
 			lblAddress.Location = new Point(103, 238);
 			lblAddress.Name = "lblAddress";
 			lblAddress.Size = new Size(0, 23);
@@ -301,7 +301,7 @@
 			// 
 			lblGender.AutoSize = true;
 			lblGender.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblGender.ForeColor = Color.White;
+			lblGender.ForeColor = Color.Black;
 			lblGender.Location = new Point(94, 201);
 			lblGender.Name = "lblGender";
 			lblGender.Size = new Size(0, 23);
@@ -311,7 +311,7 @@
 			// 
 			lblAge.AutoSize = true;
 			lblAge.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblAge.ForeColor = Color.White;
+			lblAge.ForeColor = Color.Black;
 			lblAge.Location = new Point(66, 164);
 			lblAge.Name = "lblAge";
 			lblAge.Size = new Size(0, 23);
@@ -321,7 +321,7 @@
 			// 
 			lblLastname.AutoSize = true;
 			lblLastname.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblLastname.ForeColor = Color.White;
+			lblLastname.ForeColor = Color.Black;
 			lblLastname.Location = new Point(123, 126);
 			lblLastname.Name = "lblLastname";
 			lblLastname.Size = new Size(0, 23);
@@ -331,7 +331,7 @@
 			// 
 			lblMiddlename.AutoSize = true;
 			lblMiddlename.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblMiddlename.ForeColor = Color.White;
+			lblMiddlename.ForeColor = Color.Black;
 			lblMiddlename.Location = new Point(145, 85);
 			lblMiddlename.Name = "lblMiddlename";
 			lblMiddlename.Size = new Size(0, 23);
@@ -341,7 +341,7 @@
 			// 
 			lblFirstname.AutoSize = true;
 			lblFirstname.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblFirstname.ForeColor = Color.White;
+			lblFirstname.ForeColor = Color.Black;
 			lblFirstname.Location = new Point(123, 44);
 			lblFirstname.Name = "lblFirstname";
 			lblFirstname.Size = new Size(0, 23);
@@ -352,7 +352,7 @@
 			// 
 			label13.AutoSize = true;
 			label13.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label13.ForeColor = Color.White;
+			label13.ForeColor = Color.Black;
 			label13.ImageAlign = ContentAlignment.MiddleLeft;
 			label13.Location = new Point(363, 151);
 			label13.Name = "label13";
@@ -365,7 +365,7 @@
 			// 
 			label12.AutoSize = true;
 			label12.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label12.ForeColor = Color.White;
+			label12.ForeColor = Color.Black;
 			label12.ImageAlign = ContentAlignment.MiddleLeft;
 			label12.Location = new Point(363, 191);
 			label12.Name = "label12";
@@ -378,7 +378,7 @@
 			// 
 			label10.AutoSize = true;
 			label10.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label10.ForeColor = Color.White;
+			label10.ForeColor = Color.Black;
 			label10.ImageAlign = ContentAlignment.MiddleLeft;
 			label10.Location = new Point(363, 112);
 			label10.Name = "label10";
@@ -391,7 +391,7 @@
 			// 
 			label9.AutoSize = true;
 			label9.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label9.ForeColor = Color.White;
+			label9.ForeColor = Color.Black;
 			label9.ImageAlign = ContentAlignment.MiddleLeft;
 			label9.Location = new Point(363, 71);
 			label9.Name = "label9";
@@ -404,7 +404,7 @@
 			// 
 			label7.AutoSize = true;
 			label7.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label7.ForeColor = Color.White;
+			label7.ForeColor = Color.Black;
 			label7.Location = new Point(20, 235);
 			label7.Name = "label7";
 			label7.Size = new Size(86, 26);
@@ -415,7 +415,7 @@
 			// 
 			label6.AutoSize = true;
 			label6.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label6.ForeColor = Color.White;
+			label6.ForeColor = Color.Black;
 			label6.Location = new Point(20, 161);
 			label6.Name = "label6";
 			label6.Size = new Size(52, 26);
@@ -426,7 +426,7 @@
 			// 
 			label5.AutoSize = true;
 			label5.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label5.ForeColor = Color.White;
+			label5.ForeColor = Color.Black;
 			label5.Location = new Point(20, 198);
 			label5.Name = "label5";
 			label5.Size = new Size(75, 26);
@@ -437,7 +437,7 @@
 			// 
 			label4.AutoSize = true;
 			label4.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.ForeColor = Color.White;
+			label4.ForeColor = Color.Black;
 			label4.Location = new Point(20, 123);
 			label4.Name = "label4";
 			label4.Size = new Size(110, 26);
@@ -448,7 +448,7 @@
 			// 
 			label3.AutoSize = true;
 			label3.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label3.ForeColor = Color.White;
+			label3.ForeColor = Color.Black;
 			label3.Location = new Point(20, 82);
 			label3.Name = "label3";
 			label3.Size = new Size(133, 26);
@@ -459,7 +459,7 @@
 			// 
 			label0.AutoSize = true;
 			label0.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label0.ForeColor = Color.White;
+			label0.ForeColor = Color.Black;
 			label0.Location = new Point(20, 41);
 			label0.Name = "label0";
 			label0.Size = new Size(112, 26);
@@ -559,7 +559,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(6F, 14F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackgroundImage = Properties.Resources.background_gfit1;
+			BackColor = SystemColors.ControlLight;
 			ClientSize = new Size(1037, 720);
 			Controls.Add(btnUpdateStatus);
 			Controls.Add(label8);

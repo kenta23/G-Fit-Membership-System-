@@ -136,6 +136,7 @@
 			label3.Size = new Size(70, 26);
 			label3.TabIndex = 4;
 			label3.Text = "Name:";
+			label3.Click += label3_Click;
 			// 
 			// label4
 			// 
@@ -148,6 +149,7 @@
 			label4.Size = new Size(105, 26);
 			label4.TabIndex = 5;
 			label4.Text = "Username:";
+			label4.Click += label4_Click;
 			// 
 			// label5
 			// 
@@ -160,6 +162,7 @@
 			label5.Size = new Size(132, 26);
 			label5.TabIndex = 6;
 			label5.Text = "Member type:";
+			label5.Click += label5_Click;
 			// 
 			// label6
 			// 
@@ -172,6 +175,7 @@
 			label6.Size = new Size(73, 26);
 			label6.TabIndex = 7;
 			label6.Text = "Status:";
+			label6.Click += label6_Click;
 			// 
 			// lblName
 			// 
@@ -184,6 +188,7 @@
 			lblName.Size = new Size(60, 26);
 			lblName.TabIndex = 8;
 			lblName.Text = "name";
+			lblName.Click += lblName_Click;
 			// 
 			// lblUsername
 			// 
@@ -196,6 +201,7 @@
 			lblUsername.Size = new Size(96, 26);
 			lblUsername.TabIndex = 9;
 			lblUsername.Text = "username";
+			lblUsername.Click += lblUsername_Click;
 			// 
 			// lblType
 			// 
@@ -208,6 +214,7 @@
 			lblType.Size = new Size(50, 26);
 			lblType.TabIndex = 10;
 			lblType.Text = "type";
+			lblType.Click += lblType_Click;
 			// 
 			// cmbStatus
 			// 
@@ -220,6 +227,7 @@
 			cmbStatus.Name = "cmbStatus";
 			cmbStatus.Size = new Size(121, 27);
 			cmbStatus.TabIndex = 12;
+			cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
 			// 
 			// btnUpdate
 			// 
@@ -297,6 +305,7 @@
 			label9.Size = new Size(113, 26);
 			label9.TabIndex = 16;
 			label9.Text = "Member ID:";
+			label9.Click += label9_Click;
 			// 
 			// clearBtn
 			// 

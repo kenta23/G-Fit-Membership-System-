@@ -37,7 +37,7 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
-		
+
 
 		public string firstname, middlename, lastname, age, gender, address, city, joindate;
 		public int barangay, zipcode;
@@ -77,8 +77,8 @@ namespace membership_system_G_fit
 		{
 			DateTime currentTime = DateTime.Now;
 			DateTime onMinute = currentTime.AddMinutes(-1); //1 minute 
-			
-			
+
+
 			try
 			{
 				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
@@ -92,8 +92,8 @@ namespace membership_system_G_fit
 
 				dataGridMembers.DataSource = sqlTable;
 			}
-		
-         catch  (Exception ex)
+
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
@@ -121,7 +121,7 @@ namespace membership_system_G_fit
 		{
 			display();
 
-		
+
 		}
 
 		private void customizeButtons4_Click(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace membership_system_G_fit
 
 		public void UpdateInfo()
 		{
-			
+
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
@@ -190,10 +190,11 @@ namespace membership_system_G_fit
 			{
 				MessageBox.Show("Invalid input in " + input + " and " + input2, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else {
+			else
+			{
 				try
 				{
-					
+
 					memberClass memberclass = new memberClass(lblCustomerID.Text, txtFirstname.Text, txtMiddlename.Text, txtLastname.Text, txtAge.Text, cmbGender.Text, txtAddress.Text, txtBarangay.Text, txtCity.Text, txtZipCode.Text, joinDate.Text);
 					DBconn.Updatemembers(memberclass, lblCustomerID.Text);
 					display();
@@ -204,7 +205,7 @@ namespace membership_system_G_fit
 					MessageBox.Show(ex.Message);
 				}
 			}
-			
+
 		}
 
 		public void dataGridMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -212,7 +213,7 @@ namespace membership_system_G_fit
 
 			try
 			{
-		
+
 				string connectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				string sql = "SELECT picture FROM membership.members WHERE customer_ID = @id";
 
@@ -226,12 +227,11 @@ namespace membership_system_G_fit
 
 						string imageLocation = (string)command.ExecuteScalar();
 
-						pictureBox.ImageLocation = imageLocation;
+						pictureboxMembers.ImageLocation = imageLocation;
 
 						connection.Close();
 					}
 				}
-
 			}
 
 			catch (Exception ex)
@@ -256,14 +256,17 @@ namespace membership_system_G_fit
 			txtZipCode.Text = dataGridMembers.SelectedRows[0].Cells[9].Value.ToString();
 			joinDate.Text = dataGridMembers.SelectedRows[0].Cells[12].Value.ToString();
 			//imageLocation = dataGridMembers.SelectedRows[0].Cells[14].Value.ToString();
-			//pictureBox.ImageLocation = dataGridMembers.SelectedRows[0].Cells[13].Value.ToString();
+			//pictureboxMembers.ImageLocation = dataGridMembers.SelectedRows[0].Cells[13].Value.ToString();
+
+			
 
 
 		}
 
+
 		private void InfoContainer_Paint(object sender, PaintEventArgs e)
 		{
-			
+
 		}
 
 		private void btnDelete_Click(object sender, EventArgs e)
@@ -276,35 +279,35 @@ namespace membership_system_G_fit
 			}
 			else
 			{
-				
+
 				try
 				{
 
-					   sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-					   sqlConn.Open();
-					  
-					
-	                     //member moved to archive first 
-					   string archiveMembers = "INSERT INTO membership.archives (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-						   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
-
-					   MySqlCommand archivecommand = new MySqlCommand(archiveMembers, sqlConn);
-
-					   archivecommand.ExecuteNonQuery();
-					  
-
-					  //Delete member after 
-					   sqlCmd.Connection = sqlConn;
-					   sqlCmd.CommandText = "DELETE FROM members WHERE customer_ID = " + key + ";";
-
-					   sqlCmd.ExecuteNonQuery();
-					   sqlConn.Close();
-
-					   MessageBox.Show("Member moved to Archived!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-				    	uploadData();
+					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+					sqlConn.Open();
 
 
-				   sqlConn.Close();
+					//member moved to archive first 
+					string archiveMembers = "INSERT INTO membership.archives (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
+						"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+
+					MySqlCommand archivecommand = new MySqlCommand(archiveMembers, sqlConn);
+
+					archivecommand.ExecuteNonQuery();
+
+
+					//Delete member after 
+					sqlCmd.Connection = sqlConn;
+					sqlCmd.CommandText = "DELETE FROM members WHERE customer_ID = " + key + ";";
+
+					sqlCmd.ExecuteNonQuery();
+					sqlConn.Close();
+
+					MessageBox.Show("Member moved to Archived!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					uploadData();
+
+
+					sqlConn.Close();
 
 				}
 				catch (Exception ex)
@@ -318,7 +321,7 @@ namespace membership_system_G_fit
 			}
 
 			uploadData();
-			
+
 		}
 
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -328,7 +331,7 @@ namespace membership_system_G_fit
 				DataView view = sqlTable.DefaultView;
 				view.RowFilter = string.Format("first_name like '%{0}%'", txtSearch.Text);
 				dataGridMembers.DataSource = view.ToTable();
-				
+
 			}
 			catch (Exception ex)
 			{
@@ -344,9 +347,9 @@ namespace membership_system_G_fit
 			try
 			{
 				sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-					       "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
-				
-				
+						   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+
+
 				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 				sqlReader = sqlCmd.ExecuteReader();
 				sqlConn.Close();

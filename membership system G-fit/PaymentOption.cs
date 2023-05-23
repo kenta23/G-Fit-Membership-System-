@@ -69,21 +69,23 @@ namespace membership_system_G_fit
 
 		private void btnProceed_Click(object sender, EventArgs e)
 		{
-			if (cmbEwallet.Visible = true)
+			if (cmbEwallet.Visible)
 			{
 				if (cmbEwallet.SelectedItem == null)
 				{
 					MessageBox.Show("Please select your E-wallet payment", "Payment failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
-				else
-				{
-					Amount amount = new Amount();
-					amount.user = lblUser.Text;
-					amount.pay = GetTextBoxValue();
-					amount.paymentoption = GetTextBoxValue();
-					amount.Show();
-					this.Hide();
-				}
+				
+			} 
+			else
+			{
+
+				Amount amount = new Amount();
+				amount.user = lblUser.Text;
+				amount.pay = GetTextBoxValue();
+				amount.paymentoption = GetTextBoxValue();
+				amount.Show();
+				this.Hide();
 			}
 				
 

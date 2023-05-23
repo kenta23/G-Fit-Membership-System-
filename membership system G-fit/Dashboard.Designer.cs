@@ -34,6 +34,9 @@
 			btnAdmin = new customizeButtons();
 			pictureBox1 = new PictureBox();
 			panel2 = new Panel();
+			pictureBox7 = new PictureBox();
+			lblArchives = new Label();
+			label5 = new Label();
 			pictureBox8 = new PictureBox();
 			lblIDreg = new Label();
 			label3 = new Label();
@@ -48,19 +51,16 @@
 			label4 = new Label();
 			lblMonitor = new Label();
 			pictureBox4 = new PictureBox();
-			pictureBox7 = new PictureBox();
-			lblArchives = new Label();
-			label5 = new Label();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
 			SuspendLayout();
 			// 
 			// panel1
@@ -154,6 +154,40 @@
 			panel2.Size = new Size(246, 641);
 			panel2.TabIndex = 1;
 			// 
+			// pictureBox7
+			// 
+			pictureBox7.Image = Properties.Resources.archive;
+			pictureBox7.Location = new Point(29, 423);
+			pictureBox7.Name = "pictureBox7";
+			pictureBox7.Size = new Size(33, 42);
+			pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+			pictureBox7.TabIndex = 18;
+			pictureBox7.TabStop = false;
+			// 
+			// lblArchives
+			// 
+			lblArchives.AutoSize = true;
+			lblArchives.Cursor = Cursors.Hand;
+			lblArchives.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
+			lblArchives.ForeColor = Color.White;
+			lblArchives.Location = new Point(62, 423);
+			lblArchives.Name = "lblArchives";
+			lblArchives.Size = new Size(98, 25);
+			lblArchives.TabIndex = 17;
+			lblArchives.Text = "Archives";
+			lblArchives.Click += lblArchives_Click;
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.Cursor = Cursors.Hand;
+			label5.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			label5.ForeColor = Color.White;
+			label5.Location = new Point(62, 442);
+			label5.Name = "label5";
+			label5.Size = new Size(0, 33);
+			label5.TabIndex = 16;
+			// 
 			// pictureBox8
 			// 
 			pictureBox8.Image = Properties.Resources.Platinum;
@@ -168,11 +202,11 @@
 			// 
 			lblIDreg.AutoSize = true;
 			lblIDreg.Cursor = Cursors.Hand;
-			lblIDreg.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			lblIDreg.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
 			lblIDreg.ForeColor = Color.White;
-			lblIDreg.Location = new Point(62, 354);
+			lblIDreg.Location = new Point(68, 354);
 			lblIDreg.Name = "lblIDreg";
-			lblIDreg.Size = new Size(178, 33);
+			lblIDreg.Size = new Size(159, 25);
 			lblIDreg.TabIndex = 14;
 			lblIDreg.Text = "ID Registration";
 			lblIDreg.Click += lblIDreg_Click;
@@ -253,11 +287,11 @@
 			// 
 			lblStaff.AutoSize = true;
 			lblStaff.Cursor = Cursors.Hand;
-			lblStaff.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			lblStaff.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
 			lblStaff.ForeColor = Color.White;
 			lblStaff.Location = new Point(62, 294);
 			lblStaff.Name = "lblStaff";
-			lblStaff.Size = new Size(79, 33);
+			lblStaff.Size = new Size(72, 25);
 			lblStaff.TabIndex = 7;
 			lblStaff.Text = "Staffs";
 			lblStaff.Click += lblStaff_Click;
@@ -277,11 +311,11 @@
 			// 
 			label6.AutoSize = true;
 			label6.Cursor = Cursors.Hand;
-			label6.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			label6.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
 			label6.ForeColor = Color.White;
 			label6.Location = new Point(62, 226);
 			label6.Name = "label6";
-			label6.Size = new Size(136, 33);
+			label6.Size = new Size(123, 25);
 			label6.TabIndex = 3;
 			label6.Text = "Applicants ";
 			label6.Click += label6_Click;
@@ -290,11 +324,11 @@
 			// 
 			label4.AutoSize = true;
 			label4.Cursor = Cursors.Hand;
-			label4.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			label4.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
 			label4.ForeColor = Color.White;
 			label4.Location = new Point(62, 153);
 			label4.Name = "label4";
-			label4.Size = new Size(172, 33);
+			label4.Size = new Size(154, 25);
 			label4.TabIndex = 1;
 			label4.Text = "Paid Members";
 			label4.Click += label4_Click;
@@ -303,11 +337,11 @@
 			// 
 			lblMonitor.AutoSize = true;
 			lblMonitor.Cursor = Cursors.Hand;
-			lblMonitor.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
+			lblMonitor.Font = new Font("Inter", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
 			lblMonitor.ForeColor = Color.White;
 			lblMonitor.Location = new Point(62, 89);
 			lblMonitor.Name = "lblMonitor";
-			lblMonitor.Size = new Size(103, 33);
+			lblMonitor.Size = new Size(90, 25);
 			lblMonitor.TabIndex = 0;
 			lblMonitor.Text = "Monitor";
 			lblMonitor.Click += label3_Click;
@@ -322,40 +356,6 @@
 			pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
 			pictureBox4.TabIndex = 20;
 			pictureBox4.TabStop = false;
-			// 
-			// pictureBox7
-			// 
-			pictureBox7.Image = Properties.Resources.archive;
-			pictureBox7.Location = new Point(29, 423);
-			pictureBox7.Name = "pictureBox7";
-			pictureBox7.Size = new Size(33, 42);
-			pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-			pictureBox7.TabIndex = 18;
-			pictureBox7.TabStop = false;
-			// 
-			// lblArchives
-			// 
-			lblArchives.AutoSize = true;
-			lblArchives.Cursor = Cursors.Hand;
-			lblArchives.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
-			lblArchives.ForeColor = Color.White;
-			lblArchives.Location = new Point(62, 423);
-			lblArchives.Name = "lblArchives";
-			lblArchives.Size = new Size(109, 33);
-			lblArchives.TabIndex = 17;
-			lblArchives.Text = "Archives";
-			lblArchives.Click += lblArchives_Click;
-			// 
-			// label5
-			// 
-			label5.AutoSize = true;
-			label5.Cursor = Cursors.Hand;
-			label5.Font = new Font("Corbel", 20.25F, FontStyle.Underline, GraphicsUnit.Point);
-			label5.ForeColor = Color.White;
-			label5.Location = new Point(62, 442);
-			label5.Name = "label5";
-			label5.Size = new Size(0, 33);
-			label5.TabIndex = 16;
 			// 
 			// Dashboard
 			// 
@@ -379,13 +379,13 @@
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
 			ResumeLayout(false);
 		}
 

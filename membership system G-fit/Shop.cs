@@ -21,7 +21,7 @@ namespace membership_system_G_fit
 		{
 
 		}
-		public String buttonString (String n)
+		public String buttonString(String n)
 		{
 			return n;
 		}
@@ -56,7 +56,7 @@ namespace membership_system_G_fit
 
 		private void panelProducts_Paint(object sender, PaintEventArgs e)
 		{
-			
+
 
 			customizeButtons1.Click += ButtonClick;
 			customizeButtons2.Click += ButtonClick;
@@ -77,30 +77,39 @@ namespace membership_system_G_fit
 			customizeButtons17.Click += ButtonClick;
 			customizeButtons18.Click += ButtonClick;
 
-		
+
 		}
 
 		private void ButtonClick(object sender, EventArgs e)
 		{
 			//get the value of text in each buttons
-			
-			
 
-			DialogResult choice =	MessageBox.Show("Buy this Product?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-			if(choice == DialogResult.Yes)
+
+			DialogResult choice = MessageBox.Show("Buy this Product?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (choice == DialogResult.Yes)
 			{
 				MessageBox.Show("Processing, Please wait. Thank you", "Shop", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-	
+
 		}
 
 		private void customizeButtons1_Click(object sender, EventArgs e)
 		{
 
 		}
-		
+
+		private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
 	}
 
-	
+
 }
