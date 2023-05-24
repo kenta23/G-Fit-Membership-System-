@@ -240,7 +240,7 @@
 			btnUpdate.FlatStyle = FlatStyle.Flat;
 			btnUpdate.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			btnUpdate.ForeColor = Color.White;
-			btnUpdate.Location = new Point(722, 390);
+			btnUpdate.Location = new Point(835, 390);
 			btnUpdate.Name = "btnUpdate";
 			btnUpdate.Size = new Size(107, 35);
 			btnUpdate.TabIndex = 13;
@@ -318,7 +318,7 @@
 			clearBtn.FlatStyle = FlatStyle.Flat;
 			clearBtn.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			clearBtn.ForeColor = Color.White;
-			clearBtn.Location = new Point(851, 392);
+			clearBtn.Location = new Point(712, 390);
 			clearBtn.Name = "clearBtn";
 			clearBtn.Size = new Size(107, 35);
 			clearBtn.TabIndex = 18;

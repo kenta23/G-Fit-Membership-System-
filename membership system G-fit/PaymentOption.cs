@@ -17,8 +17,6 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
-
-
 		private void btnSkip_Click(object sender, EventArgs e)
 		{
 
@@ -79,7 +77,6 @@ namespace membership_system_G_fit
 			} 
 			else
 			{
-
 				Amount amount = new Amount();
 				amount.user = lblUser.Text;
 				amount.pay = GetTextBoxValue();
@@ -87,12 +84,9 @@ namespace membership_system_G_fit
 				amount.Show();
 				this.Hide();
 			}
-				
-
 		}
 
 
-	
 
 		private void PaymentOption_Load(object sender, EventArgs e)
 		{
@@ -178,7 +172,6 @@ namespace membership_system_G_fit
 		{
 
 		}
-
 		private void rdbEwallet_Click(object sender, EventArgs e)
 		{
 			

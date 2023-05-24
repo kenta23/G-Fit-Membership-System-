@@ -34,9 +34,11 @@
 			lblExit = new Label();
 			label1 = new Label();
 			panel2 = new Panel();
-			lblMemberType = new Label();
+			cmbRenewal = new ComboBox();
 			label11 = new Label();
+			label8 = new Label();
 			label2 = new Label();
+			cmbStatus = new ComboBox();
 			dataGridView1 = new DataGridView();
 			lblDateReg = new Label();
 			lblBarangay = new Label();
@@ -60,17 +62,13 @@
 			label4 = new Label();
 			label3 = new Label();
 			label0 = new Label();
-			picture = new PictureBox();
-			browseImage = new Button();
+			lblMemberType = new Label();
 			customizeButtons2 = new customizeButtons();
-			cmbStatus = new ComboBox();
-			label8 = new Label();
 			btnUpdateStatus = new customizeButtons();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-			((System.ComponentModel.ISupportInitialize)picture).BeginInit();
 			SuspendLayout();
 			// 
 			// panel1
@@ -135,9 +133,11 @@
 			// panel2
 			// 
 			panel2.BackColor = Color.Transparent;
-			panel2.Controls.Add(lblMemberType);
+			panel2.Controls.Add(cmbRenewal);
 			panel2.Controls.Add(label11);
+			panel2.Controls.Add(label8);
 			panel2.Controls.Add(label2);
+			panel2.Controls.Add(cmbStatus);
 			panel2.Controls.Add(dataGridView1);
 			panel2.Controls.Add(lblDateReg);
 			panel2.Controls.Add(lblBarangay);
@@ -163,19 +163,19 @@
 			panel2.Controls.Add(label0);
 			panel2.Location = new Point(28, 105);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(754, 451);
+			panel2.Size = new Size(780, 558);
 			panel2.TabIndex = 2;
 			panel2.Paint += panel2_Paint;
 			// 
-			// lblMemberType
+			// cmbRenewal
 			// 
-			lblMemberType.AutoSize = true;
-			lblMemberType.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblMemberType.ForeColor = Color.Black;
-			lblMemberType.Location = new Point(493, 238);
-			lblMemberType.Name = "lblMemberType";
-			lblMemberType.Size = new Size(0, 23);
-			lblMemberType.TabIndex = 28;
+			cmbRenewal.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			cmbRenewal.FormattingEnabled = true;
+			cmbRenewal.Items.AddRange(new object[] { "Monthly", "6 Months", "12 Months" });
+			cmbRenewal.Location = new Point(501, 242);
+			cmbRenewal.Name = "cmbRenewal";
+			cmbRenewal.Size = new Size(120, 24);
+			cmbRenewal.TabIndex = 28;
 			// 
 			// label11
 			// 
@@ -183,12 +183,24 @@
 			label11.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			label11.ForeColor = Color.Black;
 			label11.ImageAlign = ContentAlignment.MiddleLeft;
-			label11.Location = new Point(361, 235);
+			label11.Location = new Point(363, 238);
 			label11.Name = "label11";
 			label11.Size = new Size(132, 26);
 			label11.TabIndex = 27;
 			label11.Text = "Member type:";
 			label11.TextAlign = ContentAlignment.MiddleLeft;
+			// 
+			// label8
+			// 
+			label8.AutoSize = true;
+			label8.BackColor = Color.Transparent;
+			label8.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label8.ForeColor = Color.Black;
+			label8.Location = new Point(363, 280);
+			label8.Name = "label8";
+			label8.Size = new Size(67, 26);
+			label8.TabIndex = 20;
+			label8.Text = "Status";
 			// 
 			// label2
 			// 
@@ -196,18 +208,28 @@
 			label2.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			label2.ForeColor = Color.Black;
 			label2.ImageAlign = ContentAlignment.MiddleLeft;
-			label2.Location = new Point(189, 324);
+			label2.Location = new Point(199, 417);
 			label2.Name = "label2";
 			label2.Size = new Size(323, 26);
 			label2.TabIndex = 26;
 			label2.Text = "Click here to view your Personal info ";
 			label2.TextAlign = ContentAlignment.MiddleLeft;
 			// 
+			// cmbStatus
+			// 
+			cmbStatus.Font = new Font("Corbel", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			cmbStatus.FormattingEnabled = true;
+			cmbStatus.Items.AddRange(new object[] { "In ", "Out" });
+			cmbStatus.Location = new Point(436, 285);
+			cmbStatus.Name = "cmbStatus";
+			cmbStatus.Size = new Size(121, 23);
+			cmbStatus.TabIndex = 19;
+			// 
 			// dataGridView1
 			// 
 			dataGridView1.BackgroundColor = SystemColors.ControlLight;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(20, 363);
+			dataGridView1.Location = new Point(30, 456);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowTemplate.Height = 25;
 			dataGridView1.Size = new Size(709, 70);
@@ -467,29 +489,16 @@
 			label0.Text = "First Name:";
 			label0.Click += label0_Click;
 			// 
-			// picture
+			// lblMemberType
 			// 
-			picture.BorderStyle = BorderStyle.FixedSingle;
-			picture.Location = new Point(808, 185);
-			picture.Name = "picture";
-			picture.Size = new Size(173, 156);
-			picture.SizeMode = PictureBoxSizeMode.Zoom;
-			picture.TabIndex = 4;
-			picture.TabStop = false;
-			// 
-			// browseImage
-			// 
-			browseImage.BackColor = Color.ForestGreen;
-			browseImage.Cursor = Cursors.Hand;
-			browseImage.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			browseImage.ForeColor = Color.White;
-			browseImage.Location = new Point(846, 357);
-			browseImage.Name = "browseImage";
-			browseImage.Size = new Size(103, 34);
-			browseImage.TabIndex = 5;
-			browseImage.Text = "Browse";
-			browseImage.UseVisualStyleBackColor = false;
-			browseImage.Click += browseImage_Click;
+			lblMemberType.AutoSize = true;
+			lblMemberType.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			lblMemberType.ForeColor = Color.Black;
+			lblMemberType.Location = new Point(834, 324);
+			lblMemberType.Name = "lblMemberType";
+			lblMemberType.Size = new Size(64, 23);
+			lblMemberType.TabIndex = 28;
+			lblMemberType.Text = "fsdfdsf";
 			// 
 			// customizeButtons2
 			// 
@@ -512,28 +521,6 @@
 			customizeButtons2.UseVisualStyleBackColor = false;
 			customizeButtons2.Click += customizeButtons2_Click;
 			// 
-			// cmbStatus
-			// 
-			cmbStatus.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			cmbStatus.FormattingEnabled = true;
-			cmbStatus.Items.AddRange(new object[] { "In ", "Out" });
-			cmbStatus.Location = new Point(189, 581);
-			cmbStatus.Name = "cmbStatus";
-			cmbStatus.Size = new Size(121, 34);
-			cmbStatus.TabIndex = 19;
-			// 
-			// label8
-			// 
-			label8.AutoSize = true;
-			label8.BackColor = Color.Transparent;
-			label8.Font = new Font("Corbel", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			label8.ForeColor = Color.White;
-			label8.Location = new Point(97, 582);
-			label8.Name = "label8";
-			label8.Size = new Size(86, 33);
-			label8.TabIndex = 20;
-			label8.Text = "Status";
-			// 
 			// btnUpdateStatus
 			// 
 			btnUpdateStatus.BackColor = Color.FromArgb(0, 192, 0);
@@ -546,9 +533,9 @@
 			btnUpdateStatus.FlatStyle = FlatStyle.Flat;
 			btnUpdateStatus.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			btnUpdateStatus.ForeColor = Color.White;
-			btnUpdateStatus.Location = new Point(329, 582);
+			btnUpdateStatus.Location = new Point(900, 149);
 			btnUpdateStatus.Name = "btnUpdateStatus";
-			btnUpdateStatus.Size = new Size(96, 33);
+			btnUpdateStatus.Size = new Size(107, 38);
 			btnUpdateStatus.TabIndex = 21;
 			btnUpdateStatus.Text = "Update ";
 			btnUpdateStatus.TextColor = Color.White;
@@ -561,14 +548,11 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLight;
 			ClientSize = new Size(1037, 720);
+			Controls.Add(lblMemberType);
 			Controls.Add(btnUpdateStatus);
-			Controls.Add(label8);
-			Controls.Add(cmbStatus);
 			Controls.Add(customizeButtons2);
-			Controls.Add(browseImage);
 			Controls.Add(panel2);
 			Controls.Add(panel1);
-			Controls.Add(picture);
 			Font = new Font("Corbel", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			FormBorderStyle = FormBorderStyle.None;
 			Name = "Profile";
@@ -581,7 +565,6 @@
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-			((System.ComponentModel.ISupportInitialize)picture).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -602,8 +585,6 @@
 		private Label label4;
 		private Label label3;
 		private Label label0;
-		private PictureBox picture;
-		private Button browseImage;
 		private DataGridView dataGridView1;
 		private PictureBox pictureBox2;
 		private Label lblDateReg;
@@ -626,5 +607,6 @@
 		private ComboBox cmbStatus;
 		private Label label8;
 		private customizeButtons btnUpdateStatus;
+		private ComboBox cmbRenewal;
 	}
 }

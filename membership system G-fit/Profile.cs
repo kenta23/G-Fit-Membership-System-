@@ -116,7 +116,7 @@ namespace membership_system_G_fit
 				if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 				{
 					imageLocation = dialog.FileName;
-					picture.ImageLocation = imageLocation;
+					//picture.ImageLocation = imageLocation;
 				}
 
 				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
@@ -151,6 +151,10 @@ namespace membership_system_G_fit
 			lblUser.Text = dataGridView1.SelectedRows[0].Cells[10].Value.ToString();
 			lblDateReg.Text = dataGridView1.SelectedRows[0].Cells[12].Value.ToString();
 			lblMemberType.Text = dataGridView1.SelectedRows[0].Cells[14].Value.ToString();
+			cmbRenewal.Text = dataGridView1.SelectedRows[0].Cells[15].Value.ToString();
+			cmbStatus.Text = dataGridView1.SelectedRows[0].Cells[16].Value.ToString();
+
+
 
 		}
 
@@ -208,32 +212,80 @@ namespace membership_system_G_fit
 
 		private void btnUpdateStatus_Click(object sender, EventArgs e)
 		{
-			if (cmbStatus.SelectedIndex == -1)
+			if(cmbStatus.Text == "" && cmbRenewal.Text == "")
 			{
-				MessageBox.Show("No updated status", "Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show("Nothing Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
+			
+			else if (cmbStatus.SelectedIndex == -1)
+			{
+				//MessageBox.Show("No updated status", "Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				cmbStatus.Text = string.Empty;
+			}
+
+			else if (cmbRenewal.SelectedIndex == -1)
+			{
+				cmbRenewal.Text = string.Empty;
+			}
+
+
 			else
 			{
-
-				try
+				if (cmbRenewal.SelectedIndex != -1)
 				{
-					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-					sqlConn.Open();
+					DialogResult choice = MessageBox.Show("Do you want to change your Membership status?", "Membership Renewal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-					string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "' WHERE username = '" + lblUser.Text + "'";
 
-					MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
-					command.ExecuteNonQuery();
+					if (choice == DialogResult.Yes)
+					{
 
-					sqlConn.Close();
+						try
+						{
+							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+							sqlConn.Open();
 
-					MessageBox.Show("Updated Status successfully", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "', member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+							MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+							command.ExecuteNonQuery();
+
+							sqlConn.Close();
+
+							MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+
+						catch (Exception ex)
+						{
+							MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+						}
+
+
+					}
+
+
+					try
+					{
+						sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+						sqlConn.Open();
+
+						string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "', member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+						MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+						command.ExecuteNonQuery();
+
+						sqlConn.Close();
+
+						MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+
+					catch (Exception ex)
+					{
+						MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+					}
+
+
 				}
 
-				catch (Exception ex)
-				{
-					MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
-				}
 				uploadData();
 
 			}

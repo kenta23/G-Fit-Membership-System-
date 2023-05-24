@@ -26,6 +26,7 @@ namespace membership_system_G_fit
 		String password = "123";
 		String database = "membership";
 
+
 		public createAccount()
 		{
 			InitializeComponent();
@@ -119,7 +120,7 @@ namespace membership_system_G_fit
 			{
 				sqlConn.Close();
 			}
-                MessageBox.Show("Successfully Regist", "Account Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully Registered", "Account Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				Starting_page start = new Starting_page();
 				start.Show();
 				this.Hide();

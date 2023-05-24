@@ -14,6 +14,10 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 
+
+
+
+
 namespace membership_system_G_fit
 {
 	public partial class Monitor : Form
@@ -22,6 +26,7 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
+
 
 
 		//DATABASE CONNECTION
@@ -37,7 +42,6 @@ namespace membership_system_G_fit
 		String username = "root";
 		String password = "123";
 		String database = "membership";
-
 
 
 
@@ -132,7 +136,6 @@ namespace membership_system_G_fit
 			display();
 
 		}
-
 
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

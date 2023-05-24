@@ -28,206 +28,240 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.lblWelcome = new System.Windows.Forms.Label();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnCreate = new membership_system_G_fit.customizeButtons();
-			this.customizeButtons2 = new membership_system_G_fit.customizeButtons();
-			this.lblName = new System.Windows.Forms.Label();
-			this.lblMembertype = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.SuspendLayout();
+			panel2 = new Panel();
+			label1 = new Label();
+			lblWelcome = new Label();
+			pictureBox4 = new PictureBox();
+			dataGridView1 = new DataGridView();
+			idPlatinum = new PictureBox();
+			btnCreate = new customizeButtons();
+			customizeButtons2 = new customizeButtons();
+			lblName = new Label();
+			lblMembertype = new Label();
+			label2 = new Label();
+			IdSilver = new PictureBox();
+			idGold = new PictureBox();
+			panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)idPlatinum).BeginInit();
+			((System.ComponentModel.ISupportInitialize)IdSilver).BeginInit();
+			((System.ComponentModel.ISupportInitialize)idGold).BeginInit();
+			SuspendLayout();
 			// 
 			// panel2
 			// 
-			this.panel2.BackColor = System.Drawing.Color.MistyRose;
-			this.panel2.Controls.Add(this.label1);
-			this.panel2.Controls.Add(this.lblWelcome);
-			this.panel2.Controls.Add(this.pictureBox4);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(0, 0);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1078, 70);
-			this.panel2.TabIndex = 3;
-			// 
-			// lblWelcome
-			// 
-			this.lblWelcome.AutoSize = true;
-			this.lblWelcome.Font = new System.Drawing.Font("Corbel", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.lblWelcome.Location = new System.Drawing.Point(492, 14);
-			this.lblWelcome.Name = "lblWelcome";
-			this.lblWelcome.Size = new System.Drawing.Size(109, 42);
-			this.lblWelcome.TabIndex = 5;
-			this.lblWelcome.Text = "G- FIT";
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Image = global::membership_system_G_fit.Properties.Resources._334911878_1440815073393289_6073420652339816876_n_removebg_preview;
-			this.pictureBox4.Location = new System.Drawing.Point(36, 12);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(56, 52);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 0;
-			this.pictureBox4.TabStop = false;
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.GridColor = System.Drawing.SystemColors.InfoText;
-			this.dataGridView1.Location = new System.Drawing.Point(21, 184);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 25;
-			this.dataGridView1.Size = new System.Drawing.Size(454, 320);
-			this.dataGridView1.TabIndex = 4;
-			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = global::membership_system_G_fit.Properties.Resources.Platinum;
-			this.pictureBox1.Location = new System.Drawing.Point(492, 110);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(549, 495);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
-			// 
-			// btnCreate
-			// 
-			this.btnCreate.BackColor = System.Drawing.Color.Green;
-			this.btnCreate.BackgroundColor = System.Drawing.Color.Green;
-			this.btnCreate.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnCreate.BorderRadius = 14;
-			this.btnCreate.BorderSize = 0;
-			this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCreate.FlatAppearance.BorderSize = 0;
-			this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCreate.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.btnCreate.ForeColor = System.Drawing.Color.White;
-			this.btnCreate.Location = new System.Drawing.Point(622, 620);
-			this.btnCreate.Name = "btnCreate";
-			this.btnCreate.Size = new System.Drawing.Size(271, 45);
-			this.btnCreate.TabIndex = 6;
-			this.btnCreate.Text = "Create ID ";
-			this.btnCreate.TextColor = System.Drawing.Color.White;
-			this.btnCreate.UseVisualStyleBackColor = false;
-			this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-			// 
-			// customizeButtons2
-			// 
-			this.customizeButtons2.BackColor = System.Drawing.Color.Red;
-			this.customizeButtons2.BackgroundColor = System.Drawing.Color.Red;
-			this.customizeButtons2.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.customizeButtons2.BorderRadius = 12;
-			this.customizeButtons2.BorderSize = 0;
-			this.customizeButtons2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.customizeButtons2.FlatAppearance.BorderSize = 0;
-			this.customizeButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.customizeButtons2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.customizeButtons2.ForeColor = System.Drawing.Color.White;
-			this.customizeButtons2.Location = new System.Drawing.Point(12, 683);
-			this.customizeButtons2.Name = "customizeButtons2";
-			this.customizeButtons2.Size = new System.Drawing.Size(105, 33);
-			this.customizeButtons2.TabIndex = 7;
-			this.customizeButtons2.Text = "Back";
-			this.customizeButtons2.TextColor = System.Drawing.Color.White;
-			this.customizeButtons2.UseVisualStyleBackColor = false;
-			this.customizeButtons2.Click += new System.EventHandler(this.customizeButtons2_Click);
-			// 
-			// lblName
-			// 
-			this.lblName.AutoSize = true;
-			this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.lblName.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblName.ForeColor = System.Drawing.Color.White;
-			this.lblName.Location = new System.Drawing.Point(759, 412);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(66, 30);
-			this.lblName.TabIndex = 9;
-			this.lblName.Text = "Name:";
-			// 
-			// lblMembertype
-			// 
-			this.lblMembertype.AutoSize = true;
-			this.lblMembertype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-			this.lblMembertype.Font = new System.Drawing.Font("Shruti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lblMembertype.ForeColor = System.Drawing.Color.White;
-			this.lblMembertype.Location = new System.Drawing.Point(759, 442);
-			this.lblMembertype.Name = "lblMembertype";
-			this.lblMembertype.Size = new System.Drawing.Size(120, 30);
-			this.lblMembertype.TabIndex = 11;
-			this.lblMembertype.Text = "member type";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.BackColor = System.Drawing.Color.Transparent;
-			this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(156, 122);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(153, 33);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Member List";
+			panel2.BackColor = Color.MistyRose;
+			panel2.Controls.Add(label1);
+			panel2.Controls.Add(lblWelcome);
+			panel2.Controls.Add(pictureBox4);
+			panel2.Dock = DockStyle.Top;
+			panel2.Location = new Point(0, 0);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(1078, 70);
+			panel2.TabIndex = 3;
 			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.Red;
-			this.label1.Location = new System.Drawing.Point(1034, 21);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(32, 33);
-			this.label1.TabIndex = 28;
-			this.label1.Text = "X";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
+			label1.AutoSize = true;
+			label1.Cursor = Cursors.Hand;
+			label1.Font = new Font("Corbel", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.ForeColor = Color.Red;
+			label1.Location = new Point(1034, 21);
+			label1.Name = "label1";
+			label1.Size = new Size(32, 33);
+			label1.TabIndex = 28;
+			label1.Text = "X";
+			label1.Click += label1_Click;
+			// 
+			// lblWelcome
+			// 
+			lblWelcome.AutoSize = true;
+			lblWelcome.Font = new Font("Corbel", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
+			lblWelcome.ForeColor = Color.FromArgb(255, 82, 83);
+			lblWelcome.Location = new Point(492, 14);
+			lblWelcome.Name = "lblWelcome";
+			lblWelcome.Size = new Size(109, 42);
+			lblWelcome.TabIndex = 5;
+			lblWelcome.Text = "G- FIT";
+			// 
+			// pictureBox4
+			// 
+			pictureBox4.Image = Properties.Resources._334911878_1440815073393289_6073420652339816876_n_removebg_preview;
+			pictureBox4.Location = new Point(36, 12);
+			pictureBox4.Name = "pictureBox4";
+			pictureBox4.Size = new Size(56, 52);
+			pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureBox4.TabIndex = 0;
+			pictureBox4.TabStop = false;
+			// 
+			// dataGridView1
+			// 
+			dataGridView1.BackgroundColor = SystemColors.ButtonFace;
+			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridView1.GridColor = SystemColors.InfoText;
+			dataGridView1.Location = new Point(21, 184);
+			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowTemplate.Height = 25;
+			dataGridView1.Size = new Size(454, 320);
+			dataGridView1.TabIndex = 4;
+			dataGridView1.CellClick += dataGridView1_CellClick;
+			// 
+			// idPlatinum
+			// 
+			idPlatinum.BackColor = Color.Transparent;
+			idPlatinum.Image = Properties.Resources.Platinum;
+			idPlatinum.Location = new Point(492, 110);
+			idPlatinum.Name = "idPlatinum";
+			idPlatinum.Size = new Size(549, 495);
+			idPlatinum.SizeMode = PictureBoxSizeMode.Zoom;
+			idPlatinum.TabIndex = 5;
+			idPlatinum.TabStop = false;
+			idPlatinum.Visible = false;
+			// 
+			// btnCreate
+			// 
+			btnCreate.BackColor = Color.Green;
+			btnCreate.BackgroundColor = Color.Green;
+			btnCreate.BorderColor = Color.PaleVioletRed;
+			btnCreate.BorderRadius = 14;
+			btnCreate.BorderSize = 0;
+			btnCreate.Cursor = Cursors.Hand;
+			btnCreate.FlatAppearance.BorderSize = 0;
+			btnCreate.FlatStyle = FlatStyle.Flat;
+			btnCreate.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			btnCreate.ForeColor = Color.White;
+			btnCreate.Location = new Point(678, 620);
+			btnCreate.Name = "btnCreate";
+			btnCreate.Size = new Size(169, 41);
+			btnCreate.TabIndex = 6;
+			btnCreate.Text = "Create ID ";
+			btnCreate.TextColor = Color.White;
+			btnCreate.UseVisualStyleBackColor = false;
+			btnCreate.Click += btnCreate_Click;
+			// 
+			// customizeButtons2
+			// 
+			customizeButtons2.BackColor = Color.Red;
+			customizeButtons2.BackgroundColor = Color.Red;
+			customizeButtons2.BorderColor = Color.PaleVioletRed;
+			customizeButtons2.BorderRadius = 12;
+			customizeButtons2.BorderSize = 0;
+			customizeButtons2.Cursor = Cursors.Hand;
+			customizeButtons2.FlatAppearance.BorderSize = 0;
+			customizeButtons2.FlatStyle = FlatStyle.Flat;
+			customizeButtons2.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			customizeButtons2.ForeColor = Color.White;
+			customizeButtons2.Location = new Point(12, 683);
+			customizeButtons2.Name = "customizeButtons2";
+			customizeButtons2.Size = new Size(105, 33);
+			customizeButtons2.TabIndex = 7;
+			customizeButtons2.Text = "Back";
+			customizeButtons2.TextColor = Color.White;
+			customizeButtons2.UseVisualStyleBackColor = false;
+			customizeButtons2.Click += customizeButtons2_Click;
+			// 
+			// lblName
+			// 
+			lblName.AutoSize = true;
+			lblName.BackColor = SystemColors.ControlDarkDark;
+			lblName.Font = new Font("Inter", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			lblName.ForeColor = Color.White;
+			lblName.Location = new Point(765, 423);
+			lblName.Name = "lblName";
+			lblName.Size = new Size(68, 23);
+			lblName.TabIndex = 9;
+			lblName.Text = "Name:";
+			lblName.Visible = false;
+			// 
+			// lblMembertype
+			// 
+			lblMembertype.AutoSize = true;
+			lblMembertype.BackColor = SystemColors.ControlDarkDark;
+			lblMembertype.Font = new Font("Inter", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			lblMembertype.ForeColor = Color.White;
+			lblMembertype.Location = new Point(765, 453);
+			lblMembertype.Name = "lblMembertype";
+			lblMembertype.Size = new Size(131, 23);
+			lblMembertype.TabIndex = 11;
+			lblMembertype.Text = "member type";
+			lblMembertype.Visible = false;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.BackColor = Color.Transparent;
+			label2.Font = new Font("Corbel", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+			label2.ForeColor = Color.White;
+			label2.Location = new Point(156, 122);
+			label2.Name = "label2";
+			label2.Size = new Size(153, 33);
+			label2.TabIndex = 12;
+			label2.Text = "Member List";
+			// 
+			// IdSilver
+			// 
+			IdSilver.BackColor = Color.Transparent;
+			IdSilver.Image = Properties.Resources.Silver1;
+			IdSilver.Location = new Point(492, 110);
+			IdSilver.Name = "IdSilver";
+			IdSilver.Size = new Size(549, 495);
+			IdSilver.SizeMode = PictureBoxSizeMode.Zoom;
+			IdSilver.TabIndex = 13;
+			IdSilver.TabStop = false;
+			IdSilver.Visible = false;
+			// 
+			// idGold
+			// 
+			idGold.BackColor = Color.Transparent;
+			idGold.Image = Properties.Resources.Gold1;
+			idGold.Location = new Point(492, 110);
+			idGold.Name = "idGold";
+			idGold.Size = new Size(549, 495);
+			idGold.SizeMode = PictureBoxSizeMode.Zoom;
+			idGold.TabIndex = 14;
+			idGold.TabStop = false;
+			idGold.Visible = false;
 			// 
 			// RegisterID
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.ScrollBar;
-			this.BackgroundImage = global::membership_system_G_fit.Properties.Resources.background_gfit1;
-			this.ClientSize = new System.Drawing.Size(1078, 728);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.lblMembertype);
-			this.Controls.Add(this.lblName);
-			this.Controls.Add(this.customizeButtons2);
-			this.Controls.Add(this.btnCreate);
-			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.panel2);
-			this.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "RegisterID";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "RegisterID";
-			this.Load += new System.EventHandler(this.RegisterID_Load);
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
-
+			AutoScaleDimensions = new SizeF(6F, 14F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = SystemColors.ScrollBar;
+			BackgroundImage = Properties.Resources.background_gfit1;
+			ClientSize = new Size(1078, 728);
+			Controls.Add(lblMembertype);
+			Controls.Add(lblName);
+			Controls.Add(idGold);
+			Controls.Add(IdSilver);
+			Controls.Add(label2);
+			Controls.Add(customizeButtons2);
+			Controls.Add(btnCreate);
+			Controls.Add(idPlatinum);
+			Controls.Add(dataGridView1);
+			Controls.Add(panel2);
+			Font = new Font("Corbel", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			FormBorderStyle = FormBorderStyle.None;
+			Name = "RegisterID";
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "RegisterID";
+			Load += RegisterID_Load;
+			panel2.ResumeLayout(false);
+			panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			((System.ComponentModel.ISupportInitialize)idPlatinum).EndInit();
+			((System.ComponentModel.ISupportInitialize)IdSilver).EndInit();
+			((System.ComponentModel.ISupportInitialize)idGold).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
 		private Panel panel2;
 		private PictureBox pictureBox4;
 		private DataGridView dataGridView1;
-		private PictureBox pictureBox1;
+		private PictureBox idPlatinum;
 		private customizeButtons btnCreate;
 		private customizeButtons customizeButtons2;
 		private Label lblName;
@@ -235,5 +269,7 @@
 		private Label lblWelcome;
 		private Label label2;
 		private Label label1;
+		private PictureBox IdSilver;
+		private PictureBox idGold;
 	}
 }

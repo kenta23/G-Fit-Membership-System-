@@ -42,7 +42,7 @@ namespace membership_system_G_fit
 
 			try
 			{
-				
+
 				sqlConn.Open();
 
 
@@ -56,9 +56,9 @@ namespace membership_system_G_fit
 				memberAccount.Parameters.AddWithValue("@password", txtPass.Text);
 				memberCount = Convert.ToInt32(memberAccount.ExecuteScalar());
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
-				MessageBox.Show("Error "+ex.Message);
+				MessageBox.Show("Error " + ex.Message);
 			}
 
 			finally
@@ -86,7 +86,7 @@ namespace membership_system_G_fit
 					//user entered correct account admin or members
 					if (adminCount > 0)
 					{
-						
+
 						//grant admin privileges
 						MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						Dashboard dashboard = new Dashboard();
