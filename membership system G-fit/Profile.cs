@@ -250,7 +250,7 @@ namespace membership_system_G_fit
 
 				conn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 				conn.Open();
-				sqlQuery = "SELECT * FROM membership.members WHERE username = '" + data + "' ";
+				sqlQuery = "SELECT * FROM membership.members WHERE username = '" + lblUser.Text + "' ";
 				sqlCmd = new MySqlCommand(sqlQuery, conn);
 
 				sqlReader = sqlCmd.ExecuteReader();
