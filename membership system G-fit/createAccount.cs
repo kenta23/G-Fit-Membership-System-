@@ -67,9 +67,7 @@ namespace membership_system_G_fit
 
 
 			//Opening a database
-			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-
-
+		
 			if (txtUsername.Text == "")
 			{
 				MessageBox.Show("Please input your username", "Username Required!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -92,27 +90,47 @@ namespace membership_system_G_fit
 				MessageBox.Show("Password is too short", "Password not valid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
-		else { 
+		 else {
+
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				sqlConn.Open();
+
+				string existedAccount = "SELECT * FROM membership.members WHERE username=@username AND password=@password";
+				MySqlCommand command = new MySqlCommand(existedAccount, sqlConn);
 				
-			try
-			{
+				command.Parameters.AddWithValue("@username", txtUsername.Text);
+				command.Parameters.AddWithValue("@password", txtPassword.Text);
+
+				sqlReader = command.ExecuteReader();
+
+
+				if (sqlReader.HasRows)
+				{
+					MessageBox.Show("This Username and Password already existed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+				}
+
+				else
+				{
+					sqlReader.Close();
+					try
+			      {
+					
+					string updateMember = "UPDATE members SET username = '" + txtUsername.Text + "', password = '" + txtPassword.Text + "' ORDER BY customer_ID DESC LIMIT 1"; //pick the last row
+
+					MySqlCommand commandMember = new MySqlCommand(updateMember, sqlConn);
+					commandMember.ExecuteNonQuery();
+
 					MessageBox.Show("Successfully Created your Account!", "Membership Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					sqlConn.Open();
-					sqlQuery = "UPDATE members SET username = '" + txtUsername.Text + "', password = '" + txtPassword.Text + "' ORDER BY customer_ID DESC LIMIT 1"; //pick the last row
+					this.Hide();
+					Starting_page start = new Starting_page();
+					start.ShowDialog();
 
-
-					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-					sqlReader = sqlCmd.ExecuteReader();
 					sqlConn.Close();
 
 					txtUsername.Text = "";
 					txtPassword.Text = "";
 					txtConfirmPass.Text = "";
-
-
-					this.Hide();
-					Starting_page start = new Starting_page();
-					start.ShowDialog();
 
 				}
 
@@ -126,8 +144,9 @@ namespace membership_system_G_fit
 				sqlConn.Close();
 			}
 
-				
+				}
 			}
+			sqlConn.Close();
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)

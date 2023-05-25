@@ -58,18 +58,7 @@ namespace membership_system_G_fit
 
 			try
 			{
-				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-				sqlConn.Open();
-				sqlQuery = "SELECT * FROM membership.admin";
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-				sqlReader = sqlCmd.ExecuteReader();
-
-				while (sqlReader.Read())
-				{
-					nameData = sqlReader.GetString("name");
-					//retrieve other column values as needed
-				}
-
+				string nameData = ApplicationData.Instance.SharedData;
 				lblWelcome.Text = nameData;
 
 			}

@@ -39,6 +39,7 @@ namespace membership_system_G_fit
 
 			int adminCount = 0;
 			int memberCount = 0;
+			int staffCount = 0;
 
 			try
 			{
@@ -55,6 +56,12 @@ namespace membership_system_G_fit
 				memberAccount.Parameters.AddWithValue("@username", txtUser.Text);
 				memberAccount.Parameters.AddWithValue("@password", txtPass.Text);
 				memberCount = Convert.ToInt32(memberAccount.ExecuteScalar());
+
+
+				MySqlCommand staffAccount = new MySqlCommand("SELECT * FROM membership.staff WHERE username = @username AND password = @password", sqlConn);
+				staffAccount.Parameters.AddWithValue("@username", txtUser.Text);
+				staffAccount.Parameters.AddWithValue("@password", txtPass.Text);
+				staffCount = Convert.ToInt32(staffAccount.ExecuteScalar());
 			}
 			catch (Exception ex)
 			{
@@ -104,6 +111,17 @@ namespace membership_system_G_fit
 						MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						Dashboard_members dashboard = new Dashboard_members();
 						//dashboard.User = txtUser.Text;
+						dashboard.Show();
+						this.Hide();
+					}
+					else if (staffCount > 0)
+					{
+						//set the username of the user who logged in and save it 
+						ApplicationData.Instance.SharedData = txtUser.Text;
+
+						// grant member Staff previleges
+						MessageBox.Show("Succesful", "Account log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						Dashboard dashboard = new Dashboard();
 						dashboard.Show();
 						this.Hide();
 					}

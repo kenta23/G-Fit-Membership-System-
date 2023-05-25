@@ -292,7 +292,7 @@ namespace membership_system_G_fit
 				}
 			}
 
-			else if (cmbRenewal.SelectedIndex != -1)
+			else 
 			{
 				string membertypeValue = "";
 			   
@@ -411,10 +411,6 @@ namespace membership_system_G_fit
 				
 			} */
 
-			else
-			{
-				
-			}
 			uploadData();
 		}
 	}

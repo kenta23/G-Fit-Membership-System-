@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 
 namespace membership_system_G_fit
@@ -117,25 +118,23 @@ namespace membership_system_G_fit
 					
 				}
 
+			
 				else
 				{
 					sqlReader.Close();
-
-
 					try
 					{
-						sqlQuery = "INSERT INTO membership.staff (firstname, lastname, contact, address, Gender, age, position, username, password) " +
+						
+						//add to staff first
+						string addtoStaff = "INSERT INTO membership.staff (firstname, lastname, contact, address, Gender, age, position, username, password) " +
 								   "VALUES('" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtContact.Text + "', '" + txtAddress.Text + "', '" + gender + "', '" + txtAge.Text + "', '" + cmbPosition.Text + "', '" + txtUsername.Text + "',  '" + txtPassword.Text + "')";
 
+						MySqlCommand staffCommand = new MySqlCommand(addtoStaff, sqlConn);
+						staffCommand.ExecuteNonQuery();
 
-						sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-						sqlReader = sqlCmd.ExecuteReader();
-
-
-						MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						sqlReader.Close();
-
-
+						MessageBox.Show("Successfully Added Staff", "Staff Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						sqlConn.Close();
+						Clear();
 					}
 					catch (Exception ex)
 					{
@@ -147,7 +146,7 @@ namespace membership_system_G_fit
 					}
 
 				}				
-		  }
+		     }
 			
 
 
@@ -169,8 +168,8 @@ namespace membership_system_G_fit
 			gender = dataGridEmployees.SelectedRows[0].Cells[5].Value.ToString();
 			txtAge.Text = dataGridEmployees.SelectedRows[0].Cells[6].Value.ToString();
 			cmbPosition.Text = dataGridEmployees.SelectedRows[0].Cells[7].Value.ToString();
-			//txtUsername.Text = dataGridEmployees.SelectedRows[0].Cells[8].Value.ToString();
-			//txtPassword.Text = dataGridEmployees.SelectedRows[0].Cells[9].Value.ToString();
+			txtUsername.Text = dataGridEmployees.SelectedRows[0].Cells[8].Value.ToString();
+			txtPassword.Text = dataGridEmployees.SelectedRows[0].Cells[9].Value.ToString();
 		}
 
 		private void dataGridEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
