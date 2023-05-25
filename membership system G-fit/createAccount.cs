@@ -127,7 +127,6 @@ namespace membership_system_G_fit
 					start.ShowDialog();
 
 					sqlConn.Close();
-
 					txtUsername.Text = "";
 					txtPassword.Text = "";
 					txtConfirmPass.Text = "";
