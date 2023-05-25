@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace membership_system_G_fit
 {
-	
+
 	public partial class Register : Form
 	{
 		//DATABASE CONNECTION
@@ -30,12 +30,12 @@ namespace membership_system_G_fit
 		String database = "membership";
 
 
-		public string FirstName (string n)
+		public string FirstName(string n)
 		{
 			n = txtFirstname.Text;
 			return n;
-			
-	    }
+
+		}
 
 		private string firstname;
 		private string lastname;
@@ -50,23 +50,25 @@ namespace membership_system_G_fit
 
 		public string firstnameGet { get; set; }
 
+		public string membershipDataGet { get; set; }
+
 
 		public Register()
 		{
 			//string firstnameText, string lastnameText, string  middlenameText, string addressText, string barangayText, string cityText, string zipcodeText, string ageText, string dateValue
 			InitializeComponent();
 
-		/*	firstname = firstnameText;
-			lastname = lastnameText;
-			middlename = middlenameText;
-			address = addressText;
-			barangay = barangayText;
-			city = cityText;
-			zipcode = zipcodeText;
-			age = ageText;
-			joindate = dateValue; */
+			/*	firstname = firstnameText;
+				lastname = lastnameText;
+				middlename = middlenameText;
+				address = addressText;
+				barangay = barangayText;
+				city = cityText;
+				zipcode = zipcodeText;
+				age = ageText;
+				joindate = dateValue; */
 
-	}
+		}
 
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
@@ -80,62 +82,97 @@ namespace membership_system_G_fit
 			string barangay = txtBarangay.Text;
 			string zipcode = txtZipCode.Text;
 
+			string patternLettersOnly = @"^[^\d]+$";
+			string patternNumbersOnly = @"^[^\p{L}]+$";
+
+		    
+
 			if (txtFirstname.Text == "" || txtLastname.Text == "" || txtAddress.Text == "" || txtBarangay.Text == "" || txtCity.Text == "" || txtAge.Text == "" || cmbGender.Text == "")
 			{
 				MessageBox.Show("Fill out all the fields", "Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-			else if(Regex.IsMatch(txtAge.Text, "^[a-zA-Z]+$"))
+			else if (!Regex.IsMatch(txtFirstname.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (txtMiddlename.Text != "" && !Regex.IsMatch(txtMiddlename.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (!Regex.IsMatch(txtLastname.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (!Regex.IsMatch(txtAge.Text, patternNumbersOnly))
 			{
 				MessageBox.Show("Invalid input in Age", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
+			else if (!Regex.IsMatch(cmbGender.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Invalid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (cmbGender.Text != "Male" && cmbGender.Text != "Female" && cmbGender.Text != "Others")
+			{
+				MessageBox.Show("Please Select a valid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else if (Regex.IsMatch(barangay, "^[a-zA-Z]+$"))
 			{
 				MessageBox.Show("Invalid input in " + "Barangay", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if(Regex.IsMatch(zipcode, "^[a-zA-Z]+$"))
+			else if (!Regex.IsMatch(txtCity.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Country name should not contain any numbers or characters", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+			else if (Regex.IsMatch(zipcode, "^[a-zA-Z]+$"))
 			{
 				MessageBox.Show("Invalid input in " + "Zipcode", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			
-				else
-		     	  {
-				  try
-				  {
-					  MessageBox.Show("Successfully Created!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					  //Opening a database
-				     	  sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+			else
+			{
+				try
+				{
+					MessageBox.Show("Successfully Created!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					//Opening a database
+					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 
-						  sqlConn.Open();
-						  sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration)" +
-									  "VALUES('"+txtFirstname.Text+"', '"+txtMiddlename.Text+"', '"+txtLastname.Text+"', '"+txtAge.Text+"', '"+cmbGender.Text+"', '"+txtAddress.Text+"', '"+txtBarangay.Text+"', '"+txtCity.Text+"', '"+txtZipCode.Text+"', '"+dateRegistration.Text+"')";
+					sqlConn.Open();
+					sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration, member_type)" +
+								"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + dateRegistration.Text + "',  '"+membershipDataGet+"')";
 
-						  sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-						  sqlReader = sqlCmd.ExecuteReader();
-						  sqlConn.Close();
+					//string updateMember = "UPDATE membership.members SET first_name = '" + txtFirstname.Text + "', middle_name = '" + txtMiddlename.Text + "', last_name = '" + txtLastname.Text + "', age = '" + txtAge.Text + "', gender = '" + cmbGender.Text + "', address = '" + txtAddress.Text + "'," +
+					//	" barangay = '" + txtBarangay.Text + "', city = '" + txtCity.Text + "', zipcode = '" + txtZipCode.Text + "', date_of_registration = '" + dateRegistration.Text + "', member_type = '" + membershipDataGet + "' ORDER BY customer_ID DESC LIMIT 1";
+                   
 
-					  this.Hide();
-					  Register2 register2 = new Register2();
-					  register2.ShowDialog();
-					  this.Show();
+
+					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+					sqlReader = sqlCmd.ExecuteReader();
+					sqlConn.Close();
+
+					this.Hide();
+					createAccount CreateAccount = new createAccount();
+					CreateAccount.ShowDialog();
+					this.Show();
 
 
 					txtFirstname.Text = firstnameGet;
 
-					
-				  }
-				  catch(Exception ex)
-				  {
-					  MessageBox.Show(ex.Message);
-				  }
-				  finally
-				  {
 
-					  sqlConn.Close();
-				  }
-			  }
-			 
-		
-		
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+
+					sqlConn.Close();
+				}
+			}
+
+
+
 
 		}
 
@@ -148,8 +185,6 @@ namespace membership_system_G_fit
 
 			try
 			{
-
-
 				if (exitApp == DialogResult.Yes)
 				{
 					Application.Exit();
@@ -164,12 +199,12 @@ namespace membership_system_G_fit
 
 		private void label13_Click(object sender, EventArgs e)
 		{
-			
+
 		}
 
 		private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			
+
 		}
 
 		internal string FirstName()

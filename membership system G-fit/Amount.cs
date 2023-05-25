@@ -17,6 +17,9 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
+
+
+
 		string amountPay = "";
 		public string pay { get; set; }
 
@@ -26,6 +29,7 @@ namespace membership_system_G_fit
 		public string cmbOption { get; set; }
 
 		string data;
+		string membertypeValue = "";
 
 		//DATABASE CONNECTION
 		MySqlConnection sqlConn = new MySqlConnection();
@@ -43,11 +47,11 @@ namespace membership_system_G_fit
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
-			if(cmbType.SelectedIndex == 0)
+		/*	if (cmbType.SelectedIndex == 0)
 			{
 				amountPay = "P292.00";
 			}
-			else if(cmbType.SelectedIndex == 1)
+			else if (cmbType.SelectedIndex == 1)
 			{
 				amountPay = "P1750.00";
 			}
@@ -56,7 +60,7 @@ namespace membership_system_G_fit
 				amountPay = "P3500.00";
 			}
 
-			lblAmount.Text = amountPay;
+			lblAmount.Text = amountPay; */
 		}
 
 		private void btnYes_Click(object sender, EventArgs e)
@@ -100,7 +104,7 @@ namespace membership_system_G_fit
 		{
 			DialogResult result = MessageBox.Show("You want to go back", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-			if(result == DialogResult.Yes)
+			if (result == DialogResult.Yes)
 			{
 				this.Hide();
 				new PaymentOption().Show();
@@ -109,20 +113,56 @@ namespace membership_system_G_fit
 
 		private void Amount_Load(object sender, EventArgs e)
 		{
-			//	PaymentOption paymentopt = new PaymentOption();
-			//	string textBoxValue = paymentopt.GetTextBoxValue();
-			//	lblPaymentOpt.Text = textBoxValue;
-
-			data = ApplicationData.Instance.SharedData;
+			
+		 	data = ApplicationData.Instance.SharedData;
 
 
-			//lblUser.Text = user;
 			lblUser.Text = data;
-			//lblAmount.Text = pay;
+	
 
 			lblPaymentOpt.Text = paymentoption;
 			cmbType.Text = cmbOption;
+
+			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+			sqlConn.Open();
+			sqlQuery = "SELECT member_type FROM membership.members WHERE username = '" + data + "' ";
+			sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+
+			 sqlReader = sqlCmd.ExecuteReader();
+
+			while(sqlReader.Read())
+			{
+				 membertypeValue = sqlReader.GetString("member_type");
+			}
+
+			
+			lblMembership.Text = membertypeValue;
+
+
+			if (membertypeValue == "Monthly")
+			{
+				amountPay = "P699";
+			}
+			else if (membertypeValue == "6 Months")
+			{
+				amountPay = "P3700";
+			}
+			else if (membertypeValue == "12 Months")
+			{
+				amountPay = "8700";
+			}
+
+			else
+			{
+				lblAmount.Text = amountPay;
+			}
+
+			lblAmount.Text = amountPay;
+
+			sqlConn.Close();
+			sqlReader.Close();
 		}
+
 
 		private void label2_Click(object sender, EventArgs e)
 		{

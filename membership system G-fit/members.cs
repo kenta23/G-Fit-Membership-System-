@@ -109,6 +109,8 @@ namespace membership_system_G_fit
 			txtAddress.Text = "";
 			txtBarangay.Text = "";
 			txtZipCode.Text = "";
+			txtUsername.Text = "";
+			txtPassword.Text = "";
 			txtCity.Text = "";
 			joinDate.Text = "";
 		}
@@ -143,45 +145,12 @@ namespace membership_system_G_fit
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			//sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-			//sqlConn.Open();
-			/*	try
-				 {
-				   MySqlCommand sqlcmd = new MySqlCommand();
-				   sqlCmd.Connection = sqlConn;
-				   sqlQuery = "UPDATE members SET first_name = @firstname, middle_name = @middlename, last_name = @lastname, age =  @age, gender = @gender, address = @address, barangay = @barangay, city = @city, zipcode = @zipcode, date_of_registration = @date" + 
-										"WHERE member_no = @memberNo";
-				   sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-				   //sqlReader = sqlCmd.ExecuteReader();
 
-				   sqlCmd.CommandType = CommandType.Text;
+			if (dataGridMembers.SelectedCells.Count == 0)
+			{
+				MessageBox.Show("No Data has been updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 
-
-				   /*sqlCmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
-				   sqlCmd.Parameters.AddWithValue("@middlename", txtMiddlename.Text);
-				   sqlCmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
-				   sqlCmd.Parameters.AddWithValue("@age", txtAge.Text);
-				   sqlCmd.Parameters.AddWithValue("@gender", cmbGender.Text);
-				   sqlCmd.Parameters.AddWithValue("@address", txtAddress.Text);
-				   sqlCmd.Parameters.AddWithValue("@barangay", txtBarangay.Text);
-				   sqlCmd.Parameters.AddWithValue("@city", txtCity.Text);
-				   sqlCmd.Parameters.AddWithValue("@zipcode", txtZipCode.Text);
-				   sqlCmd.Parameters.AddWithValue("@memberNo", txtMemberNo.Text);
-				   sqlCmd.Parameters.AddWithValue("@date", joinDate.Text);
-
-
-				   sqlCmd.ExecuteNonQuery(); //for update, insert and deleting data 
-				   sqlConn.Close();
-
-			   }
-			   catch (Exception ex)
-			   {
-				   MessageBox.Show(ex.Message);	
-			   }
-			   finally
-			   {
-				   sqlConn.Close();
-			   } */
 
 			string input = txtBarangay.Text;
 			string input2 = txtZipCode.Text;
@@ -227,7 +196,7 @@ namespace membership_system_G_fit
 
 						string imageLocation = (string)command.ExecuteScalar();
 
-						pictureboxMembers.ImageLocation = imageLocation;
+						//pictureboxMembers.ImageLocation = imageLocation;
 
 						connection.Close();
 					}
@@ -254,11 +223,13 @@ namespace membership_system_G_fit
 			txtBarangay.Text = dataGridMembers.SelectedRows[0].Cells[7].Value.ToString();
 			txtCity.Text = dataGridMembers.SelectedRows[0].Cells[8].Value.ToString();
 			txtZipCode.Text = dataGridMembers.SelectedRows[0].Cells[9].Value.ToString();
+			txtUsername.Text = dataGridMembers.SelectedRows[0].Cells[10].Value.ToString();
+			txtPassword.Text = dataGridMembers.SelectedRows[0].Cells[11].Value.ToString();
 			joinDate.Text = dataGridMembers.SelectedRows[0].Cells[12].Value.ToString();
 			//imageLocation = dataGridMembers.SelectedRows[0].Cells[14].Value.ToString();
 			//pictureboxMembers.ImageLocation = dataGridMembers.SelectedRows[0].Cells[13].Value.ToString();
 
-			
+
 
 
 		}
@@ -271,11 +242,12 @@ namespace membership_system_G_fit
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
+
 			int key = Convert.ToInt32(dataGridMembers.SelectedRows[0].Cells[0].Value.ToString());
 
 			if (key == 0)
 			{
-				MessageBox.Show("Select member to be deleted");
+				MessageBox.Show("Select member to move to archive");
 			}
 			else
 			{
@@ -288,8 +260,8 @@ namespace membership_system_G_fit
 
 
 					//member moved to archive first 
-					string archiveMembers = "INSERT INTO membership.archives (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-						"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+					string archiveMembers = "INSERT INTO membership.archives (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, username, password, date_of_registration) " +
+						"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + joinDate.Text + "')";
 
 					MySqlCommand archivecommand = new MySqlCommand(archiveMembers, sqlConn);
 
@@ -308,6 +280,8 @@ namespace membership_system_G_fit
 
 
 					sqlConn.Close();
+
+					Clear();
 
 				}
 				catch (Exception ex)
@@ -341,26 +315,78 @@ namespace membership_system_G_fit
 
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
-			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-			sqlConn.Open();
+			string patternLettersOnly = @"^[^\d]+$";
+			string patternNumbersOnly = @"^[^\p{L}]+$";
 
-			try
+
+
+			if (txtFirstname.Text == "" || txtLastname.Text == "" || txtAddress.Text == "" || txtBarangay.Text == "" || txtCity.Text == "" || txtAge.Text == "" || cmbGender.Text == "")
 			{
-				sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-						   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
-
-
-				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-				sqlReader = sqlCmd.ExecuteReader();
-				sqlConn.Close();
-
-				Clear();
-
-				MessageBox.Show("Added member successfully!", "New member!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show("Fill out all the fields", "Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-			catch (Exception ex)
+			else if (!Regex.IsMatch(txtFirstname.Text, patternLettersOnly))
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (txtMiddlename.Text != "" && !Regex.IsMatch(txtMiddlename.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (!Regex.IsMatch(txtLastname.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Names should not contain any numbers", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (!Regex.IsMatch(txtAge.Text, patternNumbersOnly))
+			{
+				MessageBox.Show("Invalid input in Age", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+			else if (!Regex.IsMatch(cmbGender.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Invalid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (cmbGender.Text != "Male" && cmbGender.Text != "Female" && cmbGender.Text != "Others")
+			{
+				MessageBox.Show("Please Select a valid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (Regex.IsMatch(txtBarangay.Text, "^[a-zA-Z]+$"))
+			{
+				MessageBox.Show("Invalid input in " + "Barangay", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (!Regex.IsMatch(txtCity.Text, patternLettersOnly))
+			{
+				MessageBox.Show("Country name should not contain any numbers or characters", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+			else if (Regex.IsMatch(txtZipCode.Text, "^[a-zA-Z]+$"))
+			{
+				MessageBox.Show("Invalid input in " + "Zipcode", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+
+			else
+			{
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				sqlConn.Open();
+
+				try
+				{
+					sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
+							   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+
+
+					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+					sqlReader = sqlCmd.ExecuteReader();
+					sqlConn.Close();
+
+					Clear();
+
+					MessageBox.Show("Added member successfully!", "New member!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
 
 			uploadData();

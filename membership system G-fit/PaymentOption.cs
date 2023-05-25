@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using MySql.Data.MySqlClient;
+
 
 namespace membership_system_G_fit
 {
@@ -17,12 +19,33 @@ namespace membership_system_G_fit
 		{
 			InitializeComponent();
 		}
+
+
+
+		
+
+
 		private void btnSkip_Click(object sender, EventArgs e)
 		{
 
 		}
 		public String paymentString { get; set; }
 		public String user { get; set; }
+
+
+		//DATABASE CONNECTION
+		MySqlConnection sqlConn = new MySqlConnection();
+		MySqlCommand sqlCmd = new MySqlCommand();
+		DataTable sqlTable = new DataTable();
+		string sqlQuery;
+		MySqlDataAdapter Dta = new MySqlDataAdapter();
+		DataSet Ds = new DataSet();
+		MySqlDataReader sqlReader;
+
+		String server = "127.0.0.1";
+		String username = "root";
+		String password = "123";
+		String database = "membership";
 
 		string choices = "";
 
@@ -65,25 +88,80 @@ namespace membership_system_G_fit
 			return choices;
 		}
 
+
+		private void paymentTypes (string payment)
+		{
+			try
+			{
+				string usernameData = ApplicationData.Instance.SharedData;
+
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+
+				sqlConn.Open();
+				sqlQuery = "UPDATE membership.members SET payment = '"+payment+"' WHERE username = '" + usernameData + "'";
+
+				//string updateMember = "UPDATE membership.members SET first_name = '" + txtFirstname.Text + "', middle_name = '" + txtMiddlename.Text + "', last_name = '" + txtLastname.Text + "', age = '" + txtAge.Text + "', gender = '" + cmbGender.Text + "', address = '" + txtAddress.Text + "'," +
+				//	" barangay = '" + txtBarangay.Text + "', city = '" + txtCity.Text + "', zipcode = '" + txtZipCode.Text + "', date_of_registration = '" + dateRegistration.Text + "', member_type = '" + membershipDataGet + "' ORDER BY customer_ID DESC LIMIT 1";
+
+				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+				sqlReader = sqlCmd.ExecuteReader();
+				sqlConn.Close();
+			}
+
+
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
 		private void btnProceed_Click(object sender, EventArgs e)
 		{
-			if (cmbEwallet.Visible)
+			if (rdbOnHand.Checked)
 			{
-				if (cmbEwallet.SelectedItem == null)
+				paymentTypes("On hand");
+
+			}
+
+			else if(rdbCreds.Checked)
+			{
+				paymentTypes("Credit/Debit Card");
+			}
+
+			else if (rdbOlBanking.Checked)
+			{
+				paymentTypes("Online banking");
+			}
+
+
+			else if (rdbEwallet.Checked)
+			{
+				if (cmbEwallet.Visible)
 				{
-					MessageBox.Show("Please select your E-wallet payment", "Payment failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					if (cmbEwallet.SelectedItem == null)
+					{
+						MessageBox.Show("Please select your E-wallet payment", "Payment failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
+
+					else
+					{
+						paymentTypes("E wallet "+cmbEwallet.SelectedItem.ToString());
+					}
+
 				}
-				
-			} 
+			}
+			
 			else
 			{
-				Amount amount = new Amount();
-				amount.user = lblUser.Text;
-				amount.pay = GetTextBoxValue();
-				amount.paymentoption = GetTextBoxValue();
-				amount.Show();
-				this.Hide();
+				
 			}
+
+			Amount amount = new Amount();
+			amount.user = lblUser.Text;
+			amount.pay = GetTextBoxValue();
+			amount.paymentoption = GetTextBoxValue();
+			amount.Show();
+			this.Hide();
 		}
 
 

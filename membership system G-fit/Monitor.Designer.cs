@@ -222,7 +222,7 @@
 			cmbStatus.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			cmbStatus.ForeColor = Color.Black;
 			cmbStatus.FormattingEnabled = true;
-			cmbStatus.Items.AddRange(new object[] { "Present ", "Out" });
+			cmbStatus.Items.AddRange(new object[] { "In", "Out" });
 			cmbStatus.Location = new Point(778, 343);
 			cmbStatus.Name = "cmbStatus";
 			cmbStatus.Size = new Size(121, 27);

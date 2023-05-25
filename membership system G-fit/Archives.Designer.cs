@@ -58,6 +58,10 @@
 			label4 = new Label();
 			txtFirstname = new TextBox();
 			label3 = new Label();
+			txtUsername = new TextBox();
+			label13 = new Label();
+			txtPassword = new TextBox();
+			label2 = new Label();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)datagridviewArchives).BeginInit();
@@ -211,7 +215,7 @@
 			// 
 			joinDate.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			joinDate.Format = DateTimePickerFormat.Custom;
-			joinDate.Location = new Point(612, 578);
+			joinDate.Location = new Point(535, 575);
 			joinDate.Name = "joinDate";
 			joinDate.Size = new Size(117, 27);
 			joinDate.TabIndex = 83;
@@ -221,7 +225,7 @@
 			label12.AutoSize = true;
 			label12.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			label12.ForeColor = Color.White;
-			label12.Location = new Point(519, 578);
+			label12.Location = new Point(442, 575);
 			label12.Name = "label12";
 			label12.Size = new Size(95, 26);
 			label12.TabIndex = 82;
@@ -233,7 +237,7 @@
 			cmbGender.ForeColor = Color.Black;
 			cmbGender.FormattingEnabled = true;
 			cmbGender.Items.AddRange(new object[] { "Male ", "Female ", "Others" });
-			cmbGender.Location = new Point(608, 443);
+			cmbGender.Location = new Point(535, 443);
 			cmbGender.Name = "cmbGender";
 			cmbGender.Size = new Size(121, 27);
 			cmbGender.TabIndex = 81;
@@ -243,7 +247,7 @@
 			label11.AutoSize = true;
 			label11.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			label11.ForeColor = Color.White;
-			label11.Location = new Point(530, 444);
+			label11.Location = new Point(457, 444);
 			label11.Name = "label11";
 			label11.Size = new Size(81, 26);
 			label11.TabIndex = 80;
@@ -253,7 +257,7 @@
 			// 
 			txtAge.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			txtAge.ForeColor = Color.Black;
-			txtAge.Location = new Point(592, 395);
+			txtAge.Location = new Point(519, 395);
 			txtAge.Name = "txtAge";
 			txtAge.Size = new Size(102, 27);
 			txtAge.TabIndex = 79;
@@ -263,7 +267,7 @@
 			label10.AutoSize = true;
 			label10.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			label10.ForeColor = Color.White;
-			label10.Location = new Point(530, 396);
+			label10.Location = new Point(457, 396);
 			label10.Name = "label10";
 			label10.Size = new Size(52, 26);
 			label10.TabIndex = 78;
@@ -411,12 +415,58 @@
 			label3.TabIndex = 64;
 			label3.Text = "First name:";
 			// 
+			// txtUsername
+			// 
+			txtUsername.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			txtUsername.ForeColor = Color.Black;
+			txtUsername.Location = new Point(808, 392);
+			txtUsername.Name = "txtUsername";
+			txtUsername.Size = new Size(204, 27);
+			txtUsername.TabIndex = 87;
+			// 
+			// label13
+			// 
+			label13.AutoSize = true;
+			label13.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label13.ForeColor = Color.White;
+			label13.Location = new Point(690, 392);
+			label13.Name = "label13";
+			label13.Size = new Size(105, 26);
+			label13.TabIndex = 86;
+			label13.Text = "Username:";
+			label13.Click += label13_Click;
+			// 
+			// txtPassword
+			// 
+			txtPassword.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			txtPassword.ForeColor = Color.Black;
+			txtPassword.Location = new Point(808, 446);
+			txtPassword.Name = "txtPassword";
+			txtPassword.Size = new Size(204, 27);
+			txtPassword.TabIndex = 89;
+			txtPassword.UseSystemPasswordChar = true;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label2.ForeColor = Color.White;
+			label2.Location = new Point(690, 446);
+			label2.Name = "label2";
+			label2.Size = new Size(100, 26);
+			label2.TabIndex = 88;
+			label2.Text = "Password:";
+			// 
 			// Archives
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.GrayText;
 			ClientSize = new Size(1034, 721);
+			Controls.Add(txtPassword);
+			Controls.Add(label2);
+			Controls.Add(txtUsername);
+			Controls.Add(label13);
 			Controls.Add(lblCustomerID);
 			Controls.Add(label14);
 			Controls.Add(joinDate);
@@ -489,5 +539,9 @@
 		private Label label4;
 		private TextBox txtFirstname;
 		private Label label3;
+		private TextBox txtUsername;
+		private Label label13;
+		private TextBox txtPassword;
+		private Label label2;
 	}
 }

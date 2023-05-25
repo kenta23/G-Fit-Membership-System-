@@ -61,6 +61,22 @@ namespace membership_system_G_fit
 			uploadData();
 		}
 
+		public void Clear()
+		{
+			txtFirstname.Text = "";
+			txtMiddlename.Text = "";
+			txtLastname.Text = "";
+			txtAge.Text = "";
+			cmbGender.Text = "";
+			txtAddress.Text = "";
+			txtBarangay.Text = "";
+			txtZipCode.Text = "";
+			txtUsername.Text = "";
+			txtPassword.Text = "";
+			txtCity.Text = "";
+			joinDate.Text = "";
+		}
+
 		private void customizeButtons2_Click(object sender, EventArgs e)
 		{
 			this.Hide();
@@ -86,8 +102,8 @@ namespace membership_system_G_fit
 						sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 						sqlConn.Open();
 						//member going back to membership 
-						string relocate = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-							"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+						string relocate = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, username, password, date_of_registration) " +
+							"VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '"+ txtUsername.Text+ "', '" + txtPassword.Text + "', '"+ joinDate.Text + "')";
 						MySqlCommand archivecommand = new MySqlCommand(relocate, sqlConn);
 						archivecommand.ExecuteNonQuery();
 
@@ -101,6 +117,8 @@ namespace membership_system_G_fit
 						deleteCommand.ExecuteNonQuery();
 
 						uploadData();
+
+						Clear();
 
 						sqlConn.Close();
 
@@ -132,6 +150,8 @@ namespace membership_system_G_fit
 			txtBarangay.Text = datagridviewArchives.SelectedRows[0].Cells[7].Value.ToString();
 			txtCity.Text = datagridviewArchives.SelectedRows[0].Cells[8].Value.ToString();
 			txtZipCode.Text = datagridviewArchives.SelectedRows[0].Cells[9].Value.ToString();
+			txtUsername.Text = datagridviewArchives.SelectedRows[0].Cells[10].Value.ToString();
+			txtPassword.Text = datagridviewArchives.SelectedRows[0].Cells[11].Value.ToString();
 			joinDate.Text = datagridviewArchives.SelectedRows[0].Cells[12].Value.ToString();
 			//imageLocation = dataGridMembers.SelectedRows[0].Cells[14].Value.ToString();
 			//pictureBox.ImageLocation = dataGridMembers.SelectedRows[0].Cells[13].Value.ToString();
@@ -141,11 +161,16 @@ namespace membership_system_G_fit
 		{
 			DialogResult choice = MessageBox.Show("Are you sure you want to delete this member?", "Member Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-			if(choice == DialogResult.Yes)
+			if (choice == DialogResult.Yes)
 			{
 				DBconn.DeleteMembersFromArchive(lblCustomerID.Text);
 			}
 			uploadData();
+		}
+
+		private void label13_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -174,8 +174,8 @@ namespace membership_system_G_fit
 
 		private void btnRegister_Click(object sender, EventArgs e)
 		{
-			Register register = new Register();
-			register.Show();
+			Register2 register2 = new Register2();
+			register2.Show();
 			this.Hide();
 		}
 	}

@@ -60,7 +60,7 @@ namespace membership_system_G_fit
 				sqlCmd.Connection = sqlConn;
 
 
-				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, paid, member_type, status  FROM membership.members WHERE username = '" + data + "'";
+				sqlCmd.CommandText = "SELECT customer_ID, first_name, middle_name, last_name, age, gender, address,barangay, city, zipcode, username, password, date_of_registration, picture, paid, member_type, status, payment  FROM membership.members WHERE username = '" + data + "'";
 				sqlReader = sqlCmd.ExecuteReader();
 
 
@@ -150,9 +150,9 @@ namespace membership_system_G_fit
 			lblZipcode.Text = dataGridView1.SelectedRows[0].Cells[9].Value.ToString();
 			lblUser.Text = dataGridView1.SelectedRows[0].Cells[10].Value.ToString();
 			lblDateReg.Text = dataGridView1.SelectedRows[0].Cells[12].Value.ToString();
-			lblMemberType.Text = dataGridView1.SelectedRows[0].Cells[14].Value.ToString();
 			cmbRenewal.Text = dataGridView1.SelectedRows[0].Cells[15].Value.ToString();
 			cmbStatus.Text = dataGridView1.SelectedRows[0].Cells[16].Value.ToString();
+			lblPayment.Text = dataGridView1.SelectedRows[0].Cells[17].Value.ToString();
 
 
 
@@ -212,11 +212,11 @@ namespace membership_system_G_fit
 
 		private void btnUpdateStatus_Click(object sender, EventArgs e)
 		{
-			if(cmbStatus.Text == "" && cmbRenewal.Text == "")
+			if (cmbStatus.Text == "" && cmbRenewal.Text == "")
 			{
 				MessageBox.Show("Nothing Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-			
+
 			else if (cmbStatus.SelectedIndex == -1)
 			{
 				//MessageBox.Show("No updated status", "Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);

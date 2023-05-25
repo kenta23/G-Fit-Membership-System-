@@ -34,6 +34,8 @@
 			lblExit = new Label();
 			label1 = new Label();
 			panel2 = new Panel();
+			lblPayment = new Label();
+			payment = new Label();
 			cmbRenewal = new ComboBox();
 			label11 = new Label();
 			label8 = new Label();
@@ -62,7 +64,6 @@
 			label4 = new Label();
 			label3 = new Label();
 			label0 = new Label();
-			lblMemberType = new Label();
 			customizeButtons2 = new customizeButtons();
 			btnUpdateStatus = new customizeButtons();
 			panel1.SuspendLayout();
@@ -133,6 +134,8 @@
 			// panel2
 			// 
 			panel2.BackColor = Color.Transparent;
+			panel2.Controls.Add(lblPayment);
+			panel2.Controls.Add(payment);
 			panel2.Controls.Add(cmbRenewal);
 			panel2.Controls.Add(label11);
 			panel2.Controls.Add(label8);
@@ -166,6 +169,26 @@
 			panel2.Size = new Size(780, 558);
 			panel2.TabIndex = 2;
 			panel2.Paint += panel2_Paint;
+			// 
+			// lblPayment
+			// 
+			lblPayment.AutoSize = true;
+			lblPayment.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblPayment.Location = new Point(618, 33);
+			lblPayment.Name = "lblPayment";
+			lblPayment.Size = new Size(95, 26);
+			lblPayment.TabIndex = 30;
+			lblPayment.Text = "Payment:";
+			// 
+			// payment
+			// 
+			payment.AutoSize = true;
+			payment.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			payment.Location = new Point(526, 33);
+			payment.Name = "payment";
+			payment.Size = new Size(95, 26);
+			payment.TabIndex = 29;
+			payment.Text = "Payment:";
 			// 
 			// cmbRenewal
 			// 
@@ -489,17 +512,6 @@
 			label0.Text = "First Name:";
 			label0.Click += label0_Click;
 			// 
-			// lblMemberType
-			// 
-			lblMemberType.AutoSize = true;
-			lblMemberType.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblMemberType.ForeColor = Color.Black;
-			lblMemberType.Location = new Point(834, 324);
-			lblMemberType.Name = "lblMemberType";
-			lblMemberType.Size = new Size(64, 23);
-			lblMemberType.TabIndex = 28;
-			lblMemberType.Text = "fsdfdsf";
-			// 
 			// customizeButtons2
 			// 
 			customizeButtons2.BackColor = Color.Red;
@@ -548,7 +560,6 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLight;
 			ClientSize = new Size(1037, 720);
-			Controls.Add(lblMemberType);
 			Controls.Add(btnUpdateStatus);
 			Controls.Add(customizeButtons2);
 			Controls.Add(panel2);
@@ -566,7 +577,6 @@
 			panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
@@ -602,11 +612,12 @@
 		private Label label2;
 		private Label lblusername;
 		private customizeButtons customizeButtons2;
-		private Label lblMemberType;
 		private Label label11;
 		private ComboBox cmbStatus;
 		private Label label8;
 		private customizeButtons btnUpdateStatus;
 		private ComboBox cmbRenewal;
+		private Label payment;
+		private Label lblPayment;
 	}
 }

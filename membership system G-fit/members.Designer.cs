@@ -63,13 +63,14 @@
 			txtFirstname = new TextBox();
 			label3 = new Label();
 			btnAdd = new customizeButtons();
+			txtPassword = new TextBox();
 			label13 = new Label();
-			pictureboxMembers = new PictureBox();
+			txtUsername = new TextBox();
+			label15 = new Label();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dataGridMembers).BeginInit();
 			InfoContainer.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureboxMembers).BeginInit();
 			SuspendLayout();
 			// 
 			// panel1
@@ -266,7 +267,7 @@
 			InfoContainer.ForeColor = Color.White;
 			InfoContainer.Location = new Point(43, 371);
 			InfoContainer.Name = "InfoContainer";
-			InfoContainer.Size = new Size(758, 388);
+			InfoContainer.Size = new Size(743, 397);
 			InfoContainer.TabIndex = 13;
 			InfoContainer.Paint += InfoContainer_Paint;
 			// 
@@ -518,28 +519,48 @@
 			btnAdd.UseVisualStyleBackColor = false;
 			btnAdd.Click += btnAdd_Click;
 			// 
+			// txtPassword
+			// 
+			txtPassword.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			txtPassword.ForeColor = Color.Black;
+			txtPassword.Location = new Point(919, 571);
+			txtPassword.Name = "txtPassword";
+			txtPassword.Size = new Size(204, 27);
+			txtPassword.TabIndex = 67;
+			txtPassword.UseSystemPasswordChar = true;
+			// 
 			// label13
 			// 
 			label13.AutoSize = true;
 			label13.BackColor = Color.Transparent;
 			label13.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label13.ForeColor = Color.Gold;
-			label13.Location = new Point(897, 573);
+			label13.ForeColor = Color.White;
+			label13.Location = new Point(801, 571);
 			label13.Name = "label13";
-			label13.Size = new Size(65, 26);
-			label13.TabIndex = 62;
-			label13.Text = "Image";
+			label13.Size = new Size(100, 26);
+			label13.TabIndex = 66;
+			label13.Text = "Password:";
 			// 
-			// pictureboxMembers
+			// txtUsername
 			// 
-			pictureboxMembers.BorderStyle = BorderStyle.FixedSingle;
-			pictureboxMembers.Location = new Point(846, 404);
-			pictureboxMembers.Name = "pictureboxMembers";
-			pictureboxMembers.Size = new Size(173, 156);
-			pictureboxMembers.SizeMode = PictureBoxSizeMode.Zoom;
-			pictureboxMembers.TabIndex = 63;
-			pictureboxMembers.TabStop = false;
-			pictureboxMembers.Click += pictureBox_Click;
+			txtUsername.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			txtUsername.ForeColor = Color.Black;
+			txtUsername.Location = new Point(919, 523);
+			txtUsername.Name = "txtUsername";
+			txtUsername.Size = new Size(204, 27);
+			txtUsername.TabIndex = 65;
+			// 
+			// label15
+			// 
+			label15.AutoSize = true;
+			label15.BackColor = Color.Transparent;
+			label15.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label15.ForeColor = Color.White;
+			label15.Location = new Point(801, 523);
+			label15.Name = "label15";
+			label15.Size = new Size(105, 26);
+			label15.TabIndex = 64;
+			label15.Text = "Username:";
 			// 
 			// members
 			// 
@@ -548,10 +569,12 @@
 			BackgroundImage = Properties.Resources.background_gfit1;
 			BackgroundImageLayout = ImageLayout.Stretch;
 			ClientSize = new Size(1200, 780);
-			Controls.Add(pictureboxMembers);
-			Controls.Add(label13);
+			Controls.Add(txtPassword);
 			Controls.Add(btnAdd);
+			Controls.Add(label13);
 			Controls.Add(InfoContainer);
+			Controls.Add(txtUsername);
+			Controls.Add(label15);
 			Controls.Add(customizeButtons4);
 			Controls.Add(btnReset);
 			Controls.Add(btnDelete);
@@ -572,7 +595,6 @@
 			((System.ComponentModel.ISupportInitialize)dataGridMembers).EndInit();
 			InfoContainer.ResumeLayout(false);
 			InfoContainer.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureboxMembers).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -612,9 +634,11 @@
 		private customizeButtons btnAdd;
 		private DateTimePicker joinDate;
 		private Label label12;
-		private Label label13;
-		private PictureBox pictureboxMembers;
 		private Label lblCustomerID;
 		private Label label14;
+		private TextBox txtPassword;
+		private Label label13;
+		private TextBox txtUsername;
+		private Label label15;
 	}
 }

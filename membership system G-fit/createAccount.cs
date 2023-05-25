@@ -109,7 +109,12 @@ namespace membership_system_G_fit
 					txtPassword.Text = "";
 					txtConfirmPass.Text = "";
 
-			}
+
+					this.Hide();
+					Starting_page start = new Starting_page();
+					start.ShowDialog();
+
+				}
 
 			catch (Exception ex)
 			{
@@ -120,11 +125,8 @@ namespace membership_system_G_fit
 			{
 				sqlConn.Close();
 			}
-                MessageBox.Show("Successfully Registered", "Account Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				Starting_page start = new Starting_page();
-				start.Show();
-				this.Hide();
 
+				
 			}
 		}
 
