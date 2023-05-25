@@ -34,7 +34,6 @@
 			pictureBox2 = new PictureBox();
 			label1 = new Label();
 			label3 = new Label();
-			cmbType = new ComboBox();
 			label4 = new Label();
 			lblAmount = new Label();
 			label5 = new Label();
@@ -114,17 +113,6 @@
 			label3.Size = new Size(193, 26);
 			label3.TabIndex = 3;
 			label3.Text = "Type of Membership:";
-			// 
-			// cmbType
-			// 
-			cmbType.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			cmbType.FormattingEnabled = true;
-			cmbType.Items.AddRange(new object[] { "Monthly", "6 Months ", "12 Months" });
-			cmbType.Location = new Point(412, 284);
-			cmbType.Name = "cmbType";
-			cmbType.Size = new Size(121, 27);
-			cmbType.TabIndex = 4;
-			cmbType.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
 			// 
 			// label4
 			// 
@@ -248,7 +236,6 @@
 			Controls.Add(label5);
 			Controls.Add(lblAmount);
 			Controls.Add(label4);
-			Controls.Add(cmbType);
 			Controls.Add(label3);
 			Controls.Add(label1);
 			Controls.Add(panel1);

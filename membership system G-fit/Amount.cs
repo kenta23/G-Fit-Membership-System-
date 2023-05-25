@@ -47,56 +47,52 @@ namespace membership_system_G_fit
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
-		/*	if (cmbType.SelectedIndex == 0)
-			{
-				amountPay = "P292.00";
-			}
-			else if (cmbType.SelectedIndex == 1)
-			{
-				amountPay = "P1750.00";
-			}
-			else if (cmbType.SelectedIndex == 2)
-			{
-				amountPay = "P3500.00";
-			}
+			/*	if (cmbType.SelectedIndex == 0)
+				{
+					amountPay = "P292.00";
+				}
+				else if (cmbType.SelectedIndex == 1)
+				{
+					amountPay = "P1750.00";
+				}
+				else if (cmbType.SelectedIndex == 2)
+				{
+					amountPay = "P3500.00";
+				}
 
-			lblAmount.Text = amountPay; */
+				lblAmount.Text = amountPay; */
 		}
 
 		private void btnYes_Click(object sender, EventArgs e)
 		{
-			if (cmbType.SelectedItem == null)
+			/*if (cmbType.SelectedItem == null)
 			{
 				MessageBox.Show("Please select your membership type", "Membership type required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-			}
+			} */
 
-			else
+			try
 			{
-				try
-				{
-					sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-					sqlConn.Open();
-					sqlQuery = "UPDATE membership.members SET paid = '" + "yes" + "', member_type = '" + cmbType.Text + "' WHERE username = '" + data + "' ";
-					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				sqlConn.Open();
+				sqlQuery = "UPDATE membership.members SET paid = '" + "yes" + "' WHERE username = '" + data + "' ";
+				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 
-					sqlCmd.ExecuteNonQuery();
+				sqlCmd.ExecuteNonQuery();
 
-					MessageBox.Show("You paid " + amountPay + " Thank you!", "Membership paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					sqlConn.Close();
+				MessageBox.Show("You paid " + amountPay + " Thank you!", "Membership paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				sqlConn.Close();
 
 
-					this.Hide();
-					Dashboard_members members = new Dashboard_members();
-					this.Hide();
-					members.Show();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-				}
-
-
+				this.Hide();
+				Dashboard_members members = new Dashboard_members();
+				this.Hide();
+				members.Show();
 			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
 
 		}
 
@@ -113,29 +109,34 @@ namespace membership_system_G_fit
 
 		private void Amount_Load(object sender, EventArgs e)
 		{
-			
-		 	data = ApplicationData.Instance.SharedData;
+
+			data = ApplicationData.Instance.SharedData;
 
 
 			lblUser.Text = data;
-	
+
 
 			lblPaymentOpt.Text = paymentoption;
-			cmbType.Text = cmbOption;
+			//cmbType.Text = cmbOption;
 
 			sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 			sqlConn.Open();
 			sqlQuery = "SELECT member_type FROM membership.members WHERE username = '" + data + "' ";
 			sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 
-			 sqlReader = sqlCmd.ExecuteReader();
+			sqlReader = sqlCmd.ExecuteReader();
 
-			while(sqlReader.Read())
+			while (sqlReader.Read())
 			{
-				 membertypeValue = sqlReader.GetString("member_type");
+				membertypeValue = sqlReader.GetString("member_type");
+
+				if (membertypeValue == null)
+				{
+					MessageBox.Show("No data", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
 			}
 
-			
+
 			lblMembership.Text = membertypeValue;
 
 

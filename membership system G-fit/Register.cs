@@ -112,14 +112,8 @@ namespace membership_system_G_fit
 			{
 				MessageBox.Show("Invalid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (cmbGender.Text != "Male" && cmbGender.Text != "Female" && cmbGender.Text != "Others")
-			{
-				MessageBox.Show("Please Select a valid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			else if (Regex.IsMatch(barangay, "^[a-zA-Z]+$"))
-			{
-				MessageBox.Show("Invalid input in " + "Barangay", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+			
+			
 			else if (!Regex.IsMatch(txtCity.Text, patternLettersOnly))
 			{
 				MessageBox.Show("Country name should not contain any numbers or characters", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -210,30 +210,146 @@ namespace membership_system_G_fit
 
 		}
 
+		public void updateStatusOrMemberType (string setQuery, ComboBox cmb)
+		{
+			try
+			{
+				sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				sqlConn.Open();
+
+				string updateStatusQuery = "UPDATE membership.members SET '"+ setQuery+"' = '"+cmb+"' WHERE username = '" + lblUser.Text + "'";
+
+				MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+				command.ExecuteNonQuery();
+
+				sqlConn.Close();
+
+				MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+
+			catch (Exception ex)
+			{
+				MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+			}
+		}
+
 		private void btnUpdateStatus_Click(object sender, EventArgs e)
 		{
+			DialogResult choice;
+
 			if (cmbStatus.Text == "" && cmbRenewal.Text == "")
 			{
 				MessageBox.Show("Nothing Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-
-			else if (cmbStatus.SelectedIndex == -1)
+			
+			else if(cmbStatus.SelectedIndex != -1 )
 			{
-				//MessageBox.Show("No updated status", "Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				cmbStatus.Text = string.Empty;
+
+				string statusValue = "";
+				MySqlConnection conn = new MySqlConnection();
+
+				conn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				conn.Open();
+				sqlQuery = "SELECT * FROM membership.members WHERE username = '" + data + "' ";
+				sqlCmd = new MySqlCommand(sqlQuery, conn);
+
+				sqlReader = sqlCmd.ExecuteReader();
+
+				while (sqlReader.Read())
+				{
+					statusValue = sqlReader.GetString("status");
+
+				}
+
+
+				if (cmbStatus.Text != statusValue)
+				{
+				    choice = MessageBox.Show("Do you want to change your  status?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+					if (choice == DialogResult.Yes)
+					{
+
+						try
+						{
+							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+							sqlConn.Open();
+
+							string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+							MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+							command.ExecuteNonQuery();
+
+							sqlConn.Close();
+
+							MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+
+						catch (Exception ex)
+						{
+							MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+						}
+					}
+				}
 			}
 
-			else if (cmbRenewal.SelectedIndex == -1)
+			else if (cmbRenewal.SelectedIndex != -1)
 			{
-				cmbRenewal.Text = string.Empty;
+				string membertypeValue = "";
+			   
+				MySqlConnection conn = new MySqlConnection();
+				
+				conn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+				conn.Open();
+
+				sqlQuery = "SELECT * FROM membership.members WHERE username = '" + data + "' ";
+				sqlCmd = new MySqlCommand(sqlQuery, conn);
+
+				sqlReader = sqlCmd.ExecuteReader();
+
+				while (sqlReader.Read())
+				{
+					membertypeValue = sqlReader.GetString("member_type");
+
+				}
+
+				if(cmbRenewal.Text != membertypeValue)
+				{
+					 choice = MessageBox.Show("Do you want to change your  Membership type?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (choice == DialogResult.Yes)
+					{
+
+						try
+						{
+							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+							sqlConn.Open();
+
+							string updateStatusQuery = "UPDATE membership.members SET member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+							MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+							command.ExecuteNonQuery();
+
+							sqlConn.Close();
+
+							MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+
+						catch (Exception ex)
+						{
+							MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+						}
+					}
+				}	
+
+
 			}
 
-
-			else
+		/*	else if (cmbStatus.SelectedIndex != -1 && cmbRenewal.SelectedIndex != -1) 
 			{
+
+				DialogResult choice;
 				if (cmbRenewal.SelectedIndex != -1)
 				{
-					DialogResult choice = MessageBox.Show("Do you want to change your Membership status?", "Membership Renewal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					choice = MessageBox.Show("Do you want to change your Membership status?", "Membership Renewal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 
 					if (choice == DialogResult.Yes)
@@ -244,7 +360,7 @@ namespace membership_system_G_fit
 							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
 							sqlConn.Open();
 
-							string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "', member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
+							string updateStatusQuery = "UPDATE membership.members SET member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
 
 							MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
 							command.ExecuteNonQuery();
@@ -262,33 +378,44 @@ namespace membership_system_G_fit
 
 					}
 
-
-					try
-					{
-						sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
-						sqlConn.Open();
-
-						string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "', member_type = '" + cmbRenewal.Text + "' WHERE username = '" + lblUser.Text + "'";
-
-						MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
-						command.ExecuteNonQuery();
-
-						sqlConn.Close();
-
-						MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-
-					catch (Exception ex)
-					{
-						MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
-					}
-
-
 				}
 
-				uploadData();
+				else if (cmbStatus.SelectedIndex != -1)
+				{
+					 choice = MessageBox.Show("Do you want to change your  status?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+					if (choice == DialogResult.Yes)
+					{
+
+						try
+						{
+							sqlConn.ConnectionString = "server =" + server + "; user id =" + username + "; password =" + password + "; database =" + database;
+							sqlConn.Open();
+
+							string updateStatusQuery = "UPDATE membership.members SET status = '" + cmbStatus.Text + "' WHERE username = '" + lblUser.Text + "'";
+
+							MySqlCommand command = new MySqlCommand(updateStatusQuery, sqlConn);
+							command.ExecuteNonQuery();
+
+							sqlConn.Close();
+
+							MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+
+						catch (Exception ex)
+						{
+							MessageBox.Show("Something went wrong!", "Information", MessageBoxButtons.OK);
+						}
+					}
+				}
+				
+			} */
+
+			else
+			{
+				
 			}
+			uploadData();
 		}
 	}
 }

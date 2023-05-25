@@ -113,6 +113,15 @@ namespace membership_system_G_fit
 			{
 				MessageBox.Show(ex.Message);
 			}
+
+
+
+			Amount amount = new Amount();
+			amount.user = lblUser.Text;
+			amount.pay = GetTextBoxValue();
+			amount.paymentoption = GetTextBoxValue();
+			amount.Show();
+			this.Hide();
 		}
 
 		private void btnProceed_Click(object sender, EventArgs e)
@@ -126,11 +135,13 @@ namespace membership_system_G_fit
 			else if(rdbCreds.Checked)
 			{
 				paymentTypes("Credit/Debit Card");
+
 			}
 
 			else if (rdbOlBanking.Checked)
 			{
 				paymentTypes("Online banking");
+
 			}
 
 
@@ -146,9 +157,11 @@ namespace membership_system_G_fit
 					else
 					{
 						paymentTypes("E wallet "+cmbEwallet.SelectedItem.ToString());
+
 					}
 
 				}
+				
 			}
 			
 			else
@@ -156,12 +169,6 @@ namespace membership_system_G_fit
 				
 			}
 
-			Amount amount = new Amount();
-			amount.user = lblUser.Text;
-			amount.pay = GetTextBoxValue();
-			amount.paymentoption = GetTextBoxValue();
-			amount.Show();
-			this.Hide();
 		}
 
 
