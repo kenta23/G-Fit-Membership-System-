@@ -345,10 +345,10 @@ namespace membership_system_G_fit
 			{
 				MessageBox.Show("Invalid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (cmbGender.Text != "Male" && cmbGender.Text != "Female" && cmbGender.Text != "Others")
+			/* else if (cmbGender.Text != "Male" && cmbGender.Text != "Female" && cmbGender.Text != "Others")
 			{
 				MessageBox.Show("Please Select a valid Gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+			} */
 			else if (Regex.IsMatch(txtBarangay.Text, "^[a-zA-Z]+$"))
 			{
 				MessageBox.Show("Invalid input in " + "Barangay", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -371,8 +371,9 @@ namespace membership_system_G_fit
 
 				try
 				{
-					sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, date_of_registration) " +
-							   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + joinDate.Text + "')";
+					sqlQuery = "INSERT INTO membership.members (first_name, middle_name, last_name, age, gender, address, barangay, city, zipcode, username, password, date_of_registration) " +
+							   "VALUES('" + txtFirstname.Text + "', '" + txtMiddlename.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + cmbGender.Text + "', '" + txtAddress.Text + "', '" + txtBarangay.Text + "', '" + txtCity.Text + "', '" + txtZipCode.Text + "', '" + txtUsername.Text + "', '"+txtPassword.Text+ "', '" + joinDate.Text + "' )";
+
 
 
 					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
