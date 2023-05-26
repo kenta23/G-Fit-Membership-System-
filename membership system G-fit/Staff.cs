@@ -237,7 +237,7 @@ namespace membership_system_G_fit
 
 			if (key == 0)
 			{
-				MessageBox.Show("Select member to be deleted");
+				MessageBox.Show("Select a Staff to be deleted");
 			}
 			else
 			{
@@ -254,7 +254,7 @@ namespace membership_system_G_fit
 					sqlCmd.ExecuteNonQuery();
 					sqlConn.Close();
 
-					MessageBox.Show("Member deleted Successfully!", "Member Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("Staff deleted Successfully!", "Member Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					display();
 
 				}
